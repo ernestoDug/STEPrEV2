@@ -1,4 +1,5 @@
-// npm create vite@latest my-vue-app
+// npm create vite@latest myName
+// npm run dev 
 
 // https://www.youtube.com/watch?v=CgkZ7MvWUAA
 
@@ -6,6 +7,7 @@
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Food from "./Components/Food/Food";
+import Card from "./Components/Card/Card";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Header />
             <Footer />
       <Food />
+
+      <Card/>
     </>
   );
 }
