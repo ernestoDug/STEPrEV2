@@ -7,7 +7,7 @@ export const  H_1_Style   = styled.h1 `
     
 color: #8a730e;
 font-weight: 80;
-background-color: #82eecc;
+background-color: #78ed74;
 
 `
 
