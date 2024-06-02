@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 
 export const Ul_Style_Food = styled.ul`
   list-style: none;
-  background-color: #bbd3d3;
+  background-color: #9ce7e7;
   list-style-type: circle;
 `;
 
