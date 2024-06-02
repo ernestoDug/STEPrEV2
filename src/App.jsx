@@ -3,20 +3,25 @@
 
 // https://www.youtube.com/watch?v=CgkZ7MvWUAA
 
-// 01/06    20.34
+// 02/06   40.0
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Food from "./Components/Food/Food";
 import Card from "./Components/Card/Card";
+import Button from "./Components/Button/Button";
+
 
 function App() {
-  return (
-    <>
+  return (    <>
       <Header />
+
             <Footer />
       <Food />
 
-      <Card/>
+      <Card>
+   
+        </Card>
+        <Button/>
     </>
   );
 }

@@ -1,18 +1,22 @@
-import  MyPhotoCabbage from "../../assets/imgs/cabbage.jpg";
-import {DivCardStyle} from './Card.module';
-
+import MyPhotoCabbage from "../../assets/imgs/cabbage.jpg";
+import { CardImgWrappStyle, DivCardStyle, ImgStyle } from "./Card.module";
+// import { Outlet } from 'react-router-dom';
+// npm i react-router-dom
 
 const Card = () => {
   return (
     <>
       <DivCardStyle>
-        <img src={MyPhotoCabbage} alt="photo cabbage" />
+        <CardImgWrappStyle>
+          <ImgStyle src={MyPhotoCabbage} alt="photo cabbage" />
+        </CardImgWrappStyle>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ratione
           necessitatibus quidem unde est fugit cupiditate ipsam nihil incidunt
           ullam.
         </p>
         <h2> super cabbage</h2>
+        {/* <Outlet /> */}
       </DivCardStyle>
     </>
   );
