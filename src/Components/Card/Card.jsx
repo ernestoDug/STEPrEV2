@@ -1,9 +1,11 @@
 import MyPhotoCabbage from "../../assets/imgs/cabbage.jpg";
 import { CardImgWrappStyle, DivCardStyle, ImgStyle } from "./Card.module";
+import PropTypes from "prop-types";
+
 // import { Outlet } from 'react-router-dom';
 // npm i react-router-dom
 
-const Card = () => {
+const Card = ({children}) => {
   return (
     <>
       <DivCardStyle>
@@ -16,6 +18,8 @@ const Card = () => {
           ullam.
         </p>
         <h2> super cabbage</h2>
+        {children}
+
         {/* <Outlet /> */}
       </DivCardStyle>
     </>
@@ -23,3 +27,9 @@ const Card = () => {
 };
 
 export default Card;
+
+Card.propTypes = {
+children:  PropTypes.node,
+};
+
+

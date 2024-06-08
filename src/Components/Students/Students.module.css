@@ -1,0 +1,24 @@
+/* example module without external library */
+
+.name {
+    background-color: rgb(206, 234, 234);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: 800;
+}
+
+.age{
+    background-color: rgb(182, 190, 229);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.isStudTrue{
+    background-color: rgb(60, 191, 143);
+}
+    
+.isStudFalse{
+    background-color: rgb(199, 35, 82);
+}
+    
