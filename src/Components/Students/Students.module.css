@@ -22,3 +22,19 @@
     background-color: rgb(199, 35, 82);
 }
     
+.wrapStud 
+{
+    max-width: 500px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.Login {
+    color: rgb(232, 36, 36);
+}
+
+.Logined {
+    color: rgb(165, 42, 147);
+}
