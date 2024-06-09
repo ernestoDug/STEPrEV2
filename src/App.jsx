@@ -4,7 +4,7 @@
 
 // https://www.youtube.com/watch?v=CgkZ7MvWUAA
 
-// 09/06   1 30.0
+//10/06   1 42.0
 
 import { motion } from "framer-motion";
 // npm i framer-motion
