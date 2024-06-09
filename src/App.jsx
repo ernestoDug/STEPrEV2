@@ -1,9 +1,10 @@
 // npm create vite@latest myName
 // npm run dev
 
+
 // https://www.youtube.com/watch?v=CgkZ7MvWUAA
 
-// 09/06   1 10.0
+// 09/06   1 30.0
 
 import { motion } from "framer-motion";
 // npm i framer-motion
@@ -17,6 +18,27 @@ import Students from "./Components/Students/Students";
 import List  from "./Components/List/List";
 
 function App() {
+
+  // const for props for List
+  const fruits = [
+    { type: "aple", callories: 6 },
+    { type: "banane", callories: 50 },
+    { type: "tomato", callories: 88 },
+    { type: "peach", callories: 100 },
+
+    // for demonstration sort on  forein language 
+    //  { type: "яблоко", callories: 6 },
+    // { type: "банан", callories: 50 },
+    // { type: "помидор", callories: 88 },
+    // { type: "персик", callories: 100 },
+  ];
+
+  const vegatables = [
+    { type: "carrot", callories: 63 },
+    { type: "cucumber", callories: 500 },
+    { type: "brokkoly", callories: 88 },
+  ]
+
   return (
     <>
       <motion.div
@@ -46,7 +68,23 @@ function App() {
         <Students isLogin = {true}/>
         {/* props dont pass howeever we are have defoult props  */}
 
-        <List/>
+        <List fruits = {fruits}
+        categories = 'fruits'
+                />
+        {/* тут протсо дав загальну назву пропсу фруйтес fruits =  а не наприклад там айтемс = чи ще що */}
+
+{/* reuse  List with sacondwith others props */}
+        <List fruits = {vegatables}
+        categories = 'vegatables'
+        />
+
+        {/* for demonstration conditional rendering if fruits length = 0  */}
+{/* ******************** */}
+{/* this component will not be rendered because the fruit props array was not 
+passed and we have a condition: if the length is zero then do not render */}
+        <List
+          categories = 'without props fruits'
+        />
 
       </motion.div>
     </>
