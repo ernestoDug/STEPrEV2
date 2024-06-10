@@ -1,32 +1,33 @@
-import ButtonCardStyle from './Button.module.css';
+import PropTypes from "prop-types";
 
-// names  import and ad for name className bla-bla.nameClasses from css 
+// names  import and ad for name className bla-bla.nameClasses from css +++++++1
+
 // pay attention on name file module.css
+// import ButtonCardStyle from "./Button.module.css";
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// this css we import in App  for props for name clasess
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++1
 
-const Button = () => {
-
-
-  
-const showerDouble = (e) => {
-    // replacing text on a button
-e.target.textContent = 'Bazinga';
-// change css +++++++++++++++++++++++++++++++++++++++++++
-e.target.style.color = 'white';
-
-}
-
-const showerMono = (e) => {
-
-e.target.style.color = 'red';
-    console.log('mono666');
-}
-
-return (
+const Button = ({ nameBtn, clickProps, doubleClickProps, classNameProps }) => {
+  return (
     <>
-    <button onClick={showerMono} onDoubleClick={showerDouble}  className= {ButtonCardStyle.buttonCards}> click hear</button>
+      <button
+        onClick={clickProps}
+        onDoubleClick={doubleClickProps}
+        className={classNameProps}
+      >
+        {" "}
+        {nameBtn}
+      </button>
     </>
-)
-}
-
+  );
+};
+Button.propTypes = {
+  nameBtn: PropTypes.string,
+  clickProps: PropTypes.func,
+  doubleClickProps: PropTypes.func,
+  classNameProps:PropTypes.string,
+  };
 
 export default Button;

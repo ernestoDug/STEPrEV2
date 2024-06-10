@@ -18,9 +18,10 @@ const Card = ({children}) => {
           ullam.
         </p>
         <h2> super cabbage</h2>
+        
+       {/* examle use children  */}
         {children}
 
-        {/* <Outlet /> */}
       </DivCardStyle>
     </>
   );
