@@ -13,24 +13,19 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useState, useEffect } from "react";
 
-
 import { open } from "./utils/indexdb.js";
 import Loading from "./Components/Loading/Loading.jsx";
-
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Food from "./Components/Food/Food";
 import Card from "./Components/Card/Card";
 import Button from "./Components/Button/Button";
-import Students from "./Components/Students/Students";
 import List from "./Components/List/List";
 import Form from "./Components/Form/Form";
-
 
 import ButtonCardStyle from "./Components/Button/Button.module.css";
 
 function App() {
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -47,9 +42,6 @@ function App() {
 
     // the side effect will only run when the props or state changed
   }, []);
-
-
-
 
   // const for props for List
   const fruits = [
@@ -99,66 +91,55 @@ function App() {
           ease: [0, 0.71, 0.2, 1.01],
         }}
       >
-         {/* контейнтер для сповіщень */}
-      <ToastContainer
-        position="bottom-left"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-
-{loading ? (
-        <>
-       
-          <Loading />
-        </>
-      ) : (<>
-        <Header />
-
-        <Footer />
-        <Food />
-
-        <Card>
-          <Button
-            nameBtn="click for eat"
-            clickProps={showerMono}
-            doubleClickProps={showerDouble}
-            classNameProps={ButtonCardStyle.buttonCards}
-          />
-        </Card>
-
-        <Students name="Hren" age={100} isStudent={true} isLogin={false} />
-
-        <Students
-          name="Dart Weider"
-          age={666}
-          isStudent={false}
-          isLogin={true}
+        {/* контейнтер для сповіщень */}
+        <ToastContainer
+          position="bottom-left"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
         />
 
-        <Students isLogin={true} />
-        {/* props dont pass howeever we are have defoult props  */}
+        {loading ? (
+          <>
+            <Loading />
+          </>
+        ) : (
+          <>
+            <Header />
 
-        <List fruits={fruits} categories="fruits" />
-        {/* тут протсо дав загальну назву пропсу фруйтес fruits =  а не наприклад там айтемс = чи ще що */}
+            <Footer />
+            <Food />
 
-        {/* reuse  List with sacondwith others props */}
-        <List fruits={vegatables} categories="vegatables" />
+            <Card>
+              <Button
+                nameBtn="click for eat"
+                clickProps={showerMono}
+                doubleClickProps={showerDouble}
+                classNameProps={ButtonCardStyle.buttonCards}
+              />
+            </Card>
 
-        {/* for demonstration conditional rendering if fruits length = 0  */}
-        {/* ******************** */}
-        {/* this component will not be rendered because the fruit props array was not 
+            <List fruits={fruits} categories="fruits" />
+            {/* тут протсо дав загальну назву пропсу фруйтес fruits =  а не наприклад там айтемс = чи ще що */}
+
+            {/* reuse  List with sacondwith others props */}
+            <List fruits={vegatables} categories="vegatables" />
+
+            {/* for demonstration conditional rendering if fruits length = 0  */}
+            {/* ******************** */}
+            {/* this component will not be rendered because the fruit props array was not 
 passed and we have a condition: if the length is zero then do not render */}
-        <List categories="without props fruits" />
-<Form/>
-</>)}
 
+            <List categories="without props fruits" />
+            <Form />
+          </>
+        )}
       </motion.div>
     </>
   );

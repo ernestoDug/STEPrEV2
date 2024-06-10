@@ -70,6 +70,15 @@ export const TextAreaStyle = styled.textarea`
 }
 `
 
+export const DivInputStyle = styled.div`
+ background-color: #f0d095;
+  border-radius: 7px;
+  box-shadow: 0px 4px 4px rgba(67, 66, 66, 0.04);
+    cursor: pointer;
+  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+`
+
+
 FormStyle.displayName = "FormStyleStyle";
 InputStyle.displayName = "InputStyle";
 ButtonStyle.displayName = "ButtonStyle";
