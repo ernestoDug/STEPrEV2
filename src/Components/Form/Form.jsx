@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-import Students from "../Students/Students";
+import Day from "../Day/Day";
 
 import {
   FormStyle,
@@ -16,23 +16,24 @@ import {
 // зразок в навва сторис джиек икс тільки воно ніхрена не працює
 
 const Form = ({ changer }) => {
-  const [nameMy, setName] = useState("");
+  const [nameMyDay, setnameMyDay] = useState("");
   const [ageMy, setAge] = useState("");
 
   const [date, setDate] = useState(new Date().toISOString().substring(0, 10));
   const [comment, setComment] = useState("");
-  const [isStudentMy, setIsStudent] = useState("");
+  const [isСompleted, setIsСompleted] = useState("");
   const [isLoginMy, setIsLogin] = useState("");
 
   
 
   const submiter = (e) => {
     e.preventDefault();
+    console.log(e,444444444444444);
 
-    changer(nameMy, date, comment);
+    changer(nameMyDay, date, comment);
     // To clean the field field after sending
 
-    setName("");
+    setnameMyDay("");
     setComment("");
     setAge("");
     // setIsStudent(false);
@@ -43,13 +44,13 @@ const Form = ({ changer }) => {
     const { value, name } = e.target;
 
     switch (name) {
-      case "nameMy": {
-        setName(value);
+      case "nameMyDay": {
+        setnameMyDay(value);
         break;
       }
 
-      case "isStudentMy": {
-        setIsStudent(value);
+      case "isСompleted": {
+        setIsСompleted(value);
         break;
       }
 
@@ -83,16 +84,16 @@ const Form = ({ changer }) => {
       <FormStyle action="" onSubmit={submiter}>
         <InputStyle
           type="string"
-          name="nameMy"
-          placeholder="input name"
-          value={nameMy}
+          name="nameMyDay"
+          placeholder="name this day"
+          value={nameMyDay}
           onChange={changerForm}
         />
 
         <InputStyle
           type="number"
           name="ageMy"
-          placeholder="input age"
+          placeholder="number of useful things you plan to do"
           value={ageMy}
           onChange={changerForm}
         />
@@ -107,13 +108,13 @@ const Form = ({ changer }) => {
         <DivInputStyle>
           <select
             onChange={changerForm}
-            name="isStudentMy"
+            name="isСompleted"
             id=""
-            value={isStudentMy}
+            value={isСompleted}
           >
-            <option value="">Select an status</option>
-            <option value="student">student</option>
-            <option value="Not are student">Not are student</option>
+            <option value="">check mark</option>
+            <option value="yes">yes</option>
+            <option value="No">No I have unfinished business</option>
           </select>
         </DivInputStyle>
 {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
@@ -139,12 +140,12 @@ const Form = ({ changer }) => {
 
       {/* // ************************************************st */}
 
-      {nameMy ? (
+      {nameMyDay ? (
         <>
-          <Students
-            name={nameMy}
+          <Day
+            name={nameMyDay}
             age={+ageMy}
-            isStudent={isStudentMy}
+            isСompleted={isСompleted}
             isLogin={isLoginMy}
           />
 

@@ -14,12 +14,12 @@
     font-weight: 500;
 }
 
-.isStudTrue{
+.isSucceeded{
     background-color: rgb(60, 191, 143);
 }
     
-.isStudFalse{
-    background-color: rgb(199, 35, 82);
+.isSucceededNo{
+    background-color: rgb(231, 139, 165);
 }
     
 .wrapStud 

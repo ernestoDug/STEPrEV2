@@ -4,20 +4,20 @@ import PropTypes from "prop-types";
 
 import Button from "../Button/Button";
 
-import StudentsStyle from "./Students.module.css";
+import DayStyle from "./Day.module.css";
 // names  import and ad for name className bla-bla.nameClasses from css
 // pay attention on name file module.css
 
-const Students = ({
+const Day = ({
   name = "Guest",
   age = 0,
-  isStudent = "Not are student",
+  isСompleted = "",
   isLogin = false,
 }) => {
   // example const for use in  render dom nodes
-  const logIned = <h1 className={StudentsStyle.Logined}>You Logined</h1>;
+  const logIned = <h1 className={DayStyle.Logined}>You Logined</h1>;
   // example const for use in  render dom nodes
-  const logIn = <h1 className={StudentsStyle.Login}>Please Login</h1>;
+  const logIn = <h1 className={DayStyle.Login}>Please Login</h1>;
 
   // handale for click as props for Button
   const handleClickStud = () => {
@@ -34,24 +34,24 @@ const Students = ({
 
   return (
     <>
-      <div className={StudentsStyle.wrapStud}>
-        <p className={StudentsStyle.name}>name: {name}</p>
-        <p className={StudentsStyle.age}>age: {age}</p>
-        <p className={StudentsStyle.age}>count: {count}</p>
+      <div className={DayStyle.wrapStud}>
+        <p className={DayStyle.name}>I called this day: {name}</p>
+        <p className={DayStyle.age}>the number of my useful things to do today: {age}</p>
+        <p className={DayStyle.age}>count: {count}</p>
         {/* conditional render */}
-        {isStudent === "student" ? (
-          <p className={StudentsStyle.isStudTrue}>{isStudent}</p>
+        {isСompleted === "yes" ? (
+          <p className={DayStyle.isSucceeded}> I succeeded: {isСompleted}</p>
         ) : (
-          <p className={StudentsStyle.isStudFalse}>{isStudent}</p>
+          <p className={DayStyle.isSucceededNo}> I succeeded: {isСompleted}</p>
         )}
         <Button
-          nameBtn="number of retakes"
-          classNameProps={StudentsStyle.btnStud}
+          nameBtn="number of outstanding cases"
+          classNameProps={DayStyle.btnStud}
           clickProps={handleClickStud}
         />
         <Button
-          nameBtn="resetreset debts"
-          classNameProps={StudentsStyle.btnStud}
+          nameBtn="all debts have been paid"
+          classNameProps={DayStyle.btnStud}
           clickProps={handleClickStudReset}
         />
         {/* conditional render wsth const 
@@ -62,11 +62,11 @@ const Students = ({
   );
 };
 
-Students.propTypes = {
+Day.propTypes = {
   name: PropTypes.string,
   age: PropTypes.number,
-  isStudent: PropTypes.string,
+  isСompleted: PropTypes.string,
   isLogin: PropTypes.string,
 };
 
-export default Students;
+export default Day;

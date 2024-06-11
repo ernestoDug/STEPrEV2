@@ -10,22 +10,32 @@ import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // npm i react-toastify
-
+import "normalize.css";
+/* npm install normalize.css */
+import { lazy } from "react";
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// npm install react-router-dom
 
+// *************************************************
 import { open } from "./utils/indexdb.js";
 import Loading from "./Components/Loading/Loading.jsx";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-import Food from "./Components/Food/Food";
-import Card from "./Components/Card/Card";
-import Button from "./Components/Button/Button";
-import List from "./Components/List/List";
-import Form from "./Components/Form/Form";
+// import Header from "./Components/Header/Header";
+// import Footer from "./Components/Footer/Footer";
+// import Food from "./Components/Food/Food";
+// import Card from "./Components/Card/Card";
+// import Button from "./Components/Button/Button";
+// import List from "./Components/List/List";
+import ErrorPage from "./Pages/ErrrorPage/ErrorPage.jsx";
+import Layout from "./Layout";
 
-import ButtonCardStyle from "./Components/Button/Button.module.css";
+// import ButtonCardStyle from "./Components/Button/Button.module.css";
 
-function App() {
+// Щоб відкласти завантаження коду цього компонента до його першого відтворення
+// щоб відкладений компонент, який ви імпортуєте, був експортований як defaultекспорт.
+const Home = lazy(() => import("./Pages/Home/Home"));
+
+const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,51 +43,15 @@ function App() {
       .then(() => {
         setLoading(loading === false);
         // сповіщення
-        toast("ЧЕКАЙТЕ ЗАВАНТАЖУЄМО");
+        toast("Wait a little friend");
       })
       .catch(() => {
-        console.error("Помилка");
+        alert.error("Error");
       });
     // підключаємось до бд стан лоадинг та вивід лоудера потрібен поки ще база за піделючена бо помилка
 
     // the side effect will only run when the props or state changed
   }, []);
-
-  // const for props for List
-  const fruits = [
-    { type: "aple", callories: 6 },
-    { type: "banane", callories: 50 },
-    { type: "tomato", callories: 88 },
-    { type: "peach", callories: 100 },
-
-    // for demonstration sort on  forein language
-    //  { type: "яблоко", callories: 6 },
-    // { type: "банан", callories: 50 },
-    // { type: "помидор", callories: 88 },
-    // { type: "персик", callories: 100 },
-  ];
-
-  const vegatables = [
-    { type: "carrot", callories: 63 },
-    { type: "cucumber", callories: 500 },
-    { type: "brokkoly", callories: 88 },
-  ];
-
-  // handler  for cards button ***************************1
-  const showerDouble = (e) => {
-    // replacing text on a button
-    e.target.textContent = "Nyams";
-    // change css +++++++++++++++++++++++++++++++++++++++++++
-    e.target.style.color = "white";
-  };
-
-  const showerMono = (e) => {
-    e.target.style.color = "red";
-    e.target.textContent = "click for eat";
-
-    console.log("mono666");
-  };
-  // *****************************************************
 
   return (
     <>
@@ -111,38 +85,23 @@ function App() {
           </>
         ) : (
           <>
-            <Header />
+            <BrowserRouter>
+              <Routes>
+                <Route>
+                  <Route path="/" element={<Layout />}>
+                    <Route path="home" element={<Home />} />
 
-            <Footer />
-            <Food />
-
-            <Card>
-              <Button
-                nameBtn="click for eat"
-                clickProps={showerMono}
-                doubleClickProps={showerDouble}
-                classNameProps={ButtonCardStyle.buttonCards}
-              />
-            </Card>
-
-            <List fruits={fruits} categories="fruits" />
-            {/* тут протсо дав загальну назву пропсу фруйтес fruits =  а не наприклад там айтемс = чи ще що */}
-
-            {/* reuse  List with sacondwith others props */}
-            <List fruits={vegatables} categories="vegatables" />
-
-            {/* for demonstration conditional rendering if fruits length = 0  */}
-            {/* ******************** */}
-            {/* this component will not be rendered because the fruit props array was not 
-passed and we have a condition: if the length is zero then do not render */}
-
-            <List categories="without props fruits" />
-            <Form />
+                    {/* подстановочный путь */}
+                    <Route path="*" element={<ErrorPage />} />
+                  </Route>
+                </Route>
+              </Routes>
+            </BrowserRouter>
           </>
         )}
       </motion.div>
     </>
   );
-}
+};
 
 export default App;
