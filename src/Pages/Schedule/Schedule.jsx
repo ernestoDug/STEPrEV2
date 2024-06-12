@@ -1,4 +1,5 @@
 import List from '../../Components/List/List'
+import FormShedule from '../../Components/FormShedule/FormShedule'
 
 
 
@@ -8,7 +9,7 @@ const Shedule = () => {
     return (
         <>
 <List/>
-5555555555555555555555
+<FormShedule/>
 
         </>
     )

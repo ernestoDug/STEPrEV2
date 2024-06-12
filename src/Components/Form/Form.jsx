@@ -50,7 +50,7 @@ const Form = () => {
 
   
 
-  // оuniversall haydl
+  // universall hadl
   const changerForm = (e) => {
     const { value, name } = e.target;
 
