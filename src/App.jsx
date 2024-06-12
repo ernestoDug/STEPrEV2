@@ -31,7 +31,7 @@ import Layout from "./Layout";
 // Щоб відкласти завантаження коду цього компонента до його першого відтворення
 //важлливо щоб відкладений компонент, який ви імпортуєте, був експортований як defaultекспорт.
 const Home = lazy(() => import("./Pages/Home/Home"));
-const Shedule = lazy(() => import("./Pages/Schedule/Schedule"));
+const Schedule = lazy(() => import("./Pages/Schedule/Schedule"));
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -88,7 +88,8 @@ const App = () => {
                 <Route>
                   <Route path="/" element={<Layout />}>
                     <Route path="home" element={<Home />} />
-                    <Route path="shedule" element={<Shedule />} />
+                   
+                    <Route path="schedule" element={<Schedule />} />
 
                     {/* подстановочный путь */}
                     <Route path="*" element={<ErrorPage />} />

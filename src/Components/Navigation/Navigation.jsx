@@ -28,16 +28,16 @@ const Navigation = () => {
           />
 
           <Button
-            nameBtn="Home"
+            nameBtn="Schedule"
             classNameProps={NavStyle.btnNavStyle}
-            clickProps={() => navigate("home", { replace: false })}
+            clickProps={() => navigate("schedule", { replace: false })}
           />
 
-          <Button
+          {/* <Button
             nameBtn="Home"
             classNameProps={NavStyle.btnNavStyle}
             clickProps={() => navigate("home", { replace: false })}
-          />
+          /> */}
         </li>
 
         {/* у лапках в навигейт пишемо те що у пошук адресі будемо бачити 
