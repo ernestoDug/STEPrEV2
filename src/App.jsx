@@ -15,24 +15,23 @@ import "normalize.css";
 import { lazy } from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
- 
+
 // *************************************************
 import { open } from "./utils/indexdb.js";
 import Loading from "./Components/Loading/Loading.jsx";
-// import Header from "./Components/Header/Header";
 // import Footer from "./Components/Footer/Footer";
 // import Food from "./Components/Food/Food";
 // import Card from "./Components/Card/Card";
 // import Button from "./Components/Button/Button";
-// import List from "./Components/List/List";
 import ErrorPage from "./Pages/ErrrorPage/ErrorPage.jsx";
 import Layout from "./Layout";
 
 // import ButtonCardStyle from "./Components/Button/Button.module.css";
 
 // Щоб відкласти завантаження коду цього компонента до його першого відтворення
-// щоб відкладений компонент, який ви імпортуєте, був експортований як defaultекспорт.
+//важлливо щоб відкладений компонент, який ви імпортуєте, був експортований як defaultекспорт.
 const Home = lazy(() => import("./Pages/Home/Home"));
+const Shedule = lazy(() => import("./Pages/Schedule/Schedule"));
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -89,6 +88,7 @@ const App = () => {
                 <Route>
                   <Route path="/" element={<Layout />}>
                     <Route path="home" element={<Home />} />
+                    <Route path="shedule" element={<Shedule />} />
 
                     {/* подстановочный путь */}
                     <Route path="*" element={<ErrorPage />} />

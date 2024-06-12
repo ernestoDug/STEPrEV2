@@ -1,0 +1,16 @@
+.listDay {
+    max-width: 500px;
+    margin: 10px auto;
+    border-radius: 8px;
+    list-style: none;
+    padding: 0;
+}
+
+
+.listDayItem
+{
+    background-color: #c3e7f3;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+
+
+}

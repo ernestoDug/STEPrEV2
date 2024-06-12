@@ -11,7 +11,7 @@ import {
   InputStyle,
   ButtonStyle,
   TextAreaStyle,
-  DivInputStyle,
+  DivSelectStyle,
 } from "./Form.module";
 // npx storybook@latest init
 // npm run storybook
@@ -117,8 +117,8 @@ const Form = () => {
             value={date}
             onChange={changerForm}
           />
-          <DivInputStyle>
-            <select
+          <div>
+            <DivSelectStyle
               onChange={changerForm}
               name="isСompleted"
               id=""
@@ -127,21 +127,21 @@ const Form = () => {
               <option value="">check mark</option>
               <option value="yes">yes</option>
               <option value="No">No I have unfinished business</option>
-            </select>
-          </DivInputStyle>
+            </DivSelectStyle>
+          </div>
           {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
-          <DivInputStyle>
+          <div>
             <input
               type="radio"
               id="stud"
               name="isLoginMy"
-              value="Login"
-              checked={isLoginMy === "Login"}
+              value="Fine"
+              checked={isLoginMy === "Fine"}
               // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
               onChange={changerForm}
             />
-            <label>Login</label>
-          </DivInputStyle>
+            <label>My mood is</label>
+          </div>
 
           <TextAreaStyle
             name="comment"

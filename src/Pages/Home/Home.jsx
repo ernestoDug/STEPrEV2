@@ -5,6 +5,11 @@ import { getItems } from "../../utils/indexdb";
 
 import Day from "../../Components/Day/Day";
 import { nanoid } from "nanoid";
+
+
+import ListDayStyle from "./Home.module.css";
+// names  import and ad for name className bla-bla.nameClasses from css
+// pay attention on name file module.css
 const Home = () => {
   const [dayHistory, setDayHistory] = useState([{}]);
 
@@ -24,10 +29,10 @@ const Home = () => {
     <>
       <Form />
 
-      <ol>
+      <ul className={ListDayStyle.listDay}>
         {dayHistory.map(
           ({ nameMyDay, ageMy, isСompleted, isLoginMy, comment }) => (
-            <li key={nanoid()}>
+            <li  className={ListDayStyle.listDayItem} key={nanoid()}>
               <Day
                 name={nameMyDay}
                 age={+ageMy}
@@ -38,7 +43,7 @@ const Home = () => {
             </li>
           )
         )}
-      </ol>
+      </ul>
     </>
   );
 };

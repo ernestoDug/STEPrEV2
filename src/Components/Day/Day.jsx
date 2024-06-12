@@ -16,9 +16,9 @@ const Day = ({
   comment ="",
 }) => {
   // example const for use in  render dom nodes
-  const logIned = <h1 className={DayStyle.Logined}>You Logined</h1>;
+  const logIned = <h1 className={DayStyle.Logined}>My mood is <span className={DayStyle.spanMood} >Fine</span> </h1>;
   // example const for use in  render dom nodes
-  const logIn = <h1 className={DayStyle.Login}>Please Login</h1>;
+  const logIn = <h1 className={DayStyle.Login}>My mood is</h1>;
 
   // handale for click as props for Button
   const handleClickStud = () => {
