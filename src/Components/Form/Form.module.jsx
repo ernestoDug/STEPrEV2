@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 // npm i @emotion/styled @emotion/reactn
 
 export const FormStyle = styled.form`
-  max-width: 350px;
   display: flex;
   flex-flow: column nowrap;
   gap: 12px;
-  margin: 0;
+  margin: 0 auto;
+
   padding: 20px;
   border-radius: 7px;
   /* градиенто стрички  */
@@ -78,8 +78,17 @@ export const DivInputStyle = styled.div`
   transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 `
 
+export const DivWrapStyle = styled.div`
+
+display: flex;
+justify-content: space-between;
+  box-shadow: 0px 4px 4px rgba(67, 66, 66, 0.04);
+  border: 1px solid grey;
+`
+
 
 FormStyle.displayName = "FormStyleStyle";
 InputStyle.displayName = "InputStyle";
 ButtonStyle.displayName = "ButtonStyle";
 TextAreaStyle.displayName = "TextAreaStyle";
+DivInputStyle.displayName ="DivInputStyle"

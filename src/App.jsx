@@ -15,8 +15,7 @@ import "normalize.css";
 import { lazy } from "react";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// npm install react-router-dom
-
+ 
 // *************************************************
 import { open } from "./utils/indexdb.js";
 import Loading from "./Components/Loading/Loading.jsx";

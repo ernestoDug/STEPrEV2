@@ -13,6 +13,7 @@ const Day = ({
   age = 0,
   isСompleted = "",
   isLogin = false,
+  comment ="",
 }) => {
   // example const for use in  render dom nodes
   const logIned = <h1 className={DayStyle.Logined}>You Logined</h1>;
@@ -44,6 +45,8 @@ const Day = ({
         ) : (
           <p className={DayStyle.isSucceededNo}> I succeeded: {isСompleted}</p>
         )}
+
+        <p className={DayStyle.name}> I think I have some unfinished business because...{comment}</p>
         <Button
           nameBtn="number of outstanding cases"
           classNameProps={DayStyle.btnStud}
@@ -51,7 +54,7 @@ const Day = ({
         />
         <Button
           nameBtn="all debts have been paid"
-          classNameProps={DayStyle.btnStud}
+          classNameProps={DayStyle.btnStudRes}
           clickProps={handleClickStudReset}
         />
         {/* conditional render wsth const 
@@ -67,6 +70,7 @@ Day.propTypes = {
   age: PropTypes.number,
   isСompleted: PropTypes.string,
   isLogin: PropTypes.string,
+  comment: PropTypes.string,
 };
 
 export default Day;
