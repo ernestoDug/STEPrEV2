@@ -16,9 +16,7 @@ const FormShedule = () => {
   const [lesson5, setLesson5] = useState("");
   const [lesson6, setLesson6] = useState("");
   const [lesson7, setLesson7] = useState("");
-  const [lesson8, setLesson8] = useState("");
-
-
+  
   const [numberLesson1, setNumberLesson1] = useState("");
   const [numberLesson2, setNumberLesson2] = useState("");
   const [numberLesson3, setNumberLesson3] = useState("");
