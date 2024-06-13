@@ -1,7 +1,8 @@
-import Header from './Components/Header/Header';
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import Loading from './Components/Loading/Loading';
+import Header from "./Components/Header/Header";
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import Loading from "./Components/Loading/Loading";
+import Footer from "./Components/Footer/Footer";
 
 const Layout = () => {
   return (
@@ -13,6 +14,7 @@ const Layout = () => {
         <Outlet />
         {/*  Outlet позволяет отображать вложенный пользовательский интерфейс  */}
       </Suspense>
+      <Footer />
     </>
   );
 };

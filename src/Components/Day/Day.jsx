@@ -13,12 +13,15 @@ const Day = ({
   numberUsThings = 0,
   isСompleted = "",
   isLogin = false,
-  comment ="",
-  }) => {
-
-    const [count = 0, setCount] = useState();
+  comment = "",
+}) => {
+  const [count = 0, setCount] = useState();
   // example const for use in  render dom nodes
-  const logIned = <h1 className={DayStyle.Logined}>My mood is <span className={DayStyle.spanMood} >Fine</span> </h1>;
+  const logIned = (
+    <h1 className={DayStyle.Logined}>
+      My mood is <span className={DayStyle.spanMood}>Fine</span>{" "}
+    </h1>
+  );
   // example const for use in  render dom nodes
   const logIn = <h1 className={DayStyle.Login}>My mood is</h1>;
 
@@ -33,12 +36,13 @@ const Day = ({
     setCount(0);
   };
 
-
   return (
     <>
       <div className={DayStyle.wrapStud}>
         <p className={DayStyle.name}>I called this day: {name}</p>
-        <p className={DayStyle.age}>the number of my useful things to do today: {numberUsThings}</p>
+        <p className={DayStyle.age}>
+          the number of my useful things to do today: {numberUsThings}
+        </p>
         <p className={DayStyle.age}>count: {count}</p>
         {/* conditional render */}
         {isСompleted === "yes" ? (
@@ -47,7 +51,10 @@ const Day = ({
           <p className={DayStyle.isSucceededNo}> I succeeded: {isСompleted}</p>
         )}
 
-        <p className={DayStyle.name}> I think I have some unfinished business because...{comment}</p>
+        <p className={DayStyle.name}>
+          {" "}
+          I think I have some unfinished business because...{comment}
+        </p>
         <Button
           nameBtn="number of outstanding cases"
           classNameProps={DayStyle.btnStud}

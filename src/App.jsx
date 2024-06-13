@@ -88,7 +88,7 @@ const App = () => {
                 <Route>
                   <Route path="/" element={<Layout />}>
                     <Route path="home" element={<Home />} />
-                   
+
                     <Route path="schedule" element={<Schedule />} />
 
                     {/* подстановочный путь */}

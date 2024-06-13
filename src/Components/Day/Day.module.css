@@ -1,113 +1,119 @@
 /* example module without external library */
 
 .name {
-    background-color: rgb(206, 234, 234);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: large;
-    font-weight: 800;
+  background-color: rgb(206, 234, 234);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  font-weight: 800;
 }
 
-.age{
-    background-color: rgb(182, 190, 229);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: medium;
-    font-weight: 500;
+.age {
+  background-color: rgb(182, 190, 229);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: medium;
+  font-weight: 500;
 }
 
-.isSucceeded{
-    background-color: rgb(60, 191, 143);
+.isSucceeded {
+  background-color: rgb(60, 191, 143);
 }
-    
-.isSucceededNo{
-    background-color: rgb(231, 139, 165);
+
+.isSucceededNo {
+  background-color: rgb(231, 139, 165);
 }
-    
-.wrapStud 
-{
-    max-width: 500px;
-    border: 1px solid gray;
-    border-radius: 8px;
-    margin: 10px auto;
-    padding: 20px;
+
+.wrapStud {
+  max-width: 500px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  margin: 10px auto;
+  padding: 20px;
 }
 
 .Login {
-    color: rgb(232, 36, 36);
+  color: rgb(232, 36, 36);
 }
 
 .Logined {
-    color: rgb(165, 42, 147);
+  color: rgb(165, 42, 147);
 }
-
-
 
 /* example module wsthout external library */
 
-.btnStud{
-
-    text-decoration: none;
-        display: inline-block;
-        color: white;
-        padding: 20px 30px;
-        margin: 10px 20px;
-        border-radius: 10px;
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        background-image: linear-gradient(to right, #ef9eef 0%, #6c9024 51%, #9EEFE1 100%);
-        background-size: 200% auto;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-        transition: .5s;
-        cursor: pointer;
-        }
-    
-    
-        .btnStud:hover, .btnStudRes:hover {
-        background-position: right center;
-    }
-    
-    .btnStudRes {
-        text-decoration: none;
-        display: inline-block;
-        color: white;
-        padding: 20px 30px;
-        margin: 10px 20px;
-        border-radius: 10px;
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        background-image: linear-gradient(to right, #811933 0%, #cdb43a 51%, #98910a 100%);
-        background-size: 200% auto;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-        transition: .5s;
-        cursor: pointer;
-        }
-    
-    
-        .btnStud:hover {
-        background-position: right center;
-    }
-    
-    /* animation----------------------------------------- */
-    @keyframes blink-smooth { 50% { color: transparent } 
-    0% {
-        color: rgb(112, 172, 95);
-      }
-    
-      50% {
-        color: rgb(255, 191, 0);
-      }
-    
-      100% {
-        color: rgb(252, 122, 163);
-      }
+.btnStud {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #ef9eef 0%,
+    #6c9024 51%,
+    #9eefe1 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
 }
-       
 
-    .spanMood {
-        background-color: #9EEFE1;
-        border-radius: 5px;
-        transition: all 0.5s ease;
-        animation: 7s blink-smooth infinite;
- 
-    }
+.btnStud:hover,
+.btnStudRes:hover {
+  background-position: right center;
+}
+
+.btnStudRes {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #811933 0%,
+    #cdb43a 51%,
+    #98910a 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.btnStud:hover {
+  background-position: right center;
+}
+
+/* animation----------------------------------------- */
+@keyframes blink-smooth {
+  50% {
+    color: transparent;
+  }
+  0% {
+    color: rgb(112, 172, 95);
+  }
+
+  50% {
+    color: rgb(255, 191, 0);
+  }
+
+  100% {
+    color: rgb(252, 122, 163);
+  }
+}
+
+.spanMood {
+  background-color: #9eefe1;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  animation: 7s blink-smooth infinite;
+}

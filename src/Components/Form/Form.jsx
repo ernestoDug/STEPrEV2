@@ -7,7 +7,7 @@ import { addItem } from "../../utils/indexdb";
 
 import Button from "../Button/Button";
 
-import formStyle  from "./Form.module.css";
+import formStyle from "./Form.module.css";
 
 const Form = () => {
   const [nameMyDay, setnameMyDay] = useState("");
@@ -81,9 +81,12 @@ const Form = () => {
 
   return (
     <>
-      < form className={formStyle.formStyles}  action="" onSubmit={submiter}>
-      <label className= {formStyle.labelSelect} htmlFor="nameMyDay">Name it a day</label>
-      <input className= {formStyle.inputStyle} 
+      <form className={formStyle.formStyles} action="" onSubmit={submiter}>
+        <label className={formStyle.labelSelect} htmlFor="nameMyDay">
+          Name it a day
+        </label>
+        <input
+          className={formStyle.inputStyle}
           type="string"
           maxLength={5}
           name="nameMyDay"
@@ -91,25 +94,37 @@ const Form = () => {
           value={nameMyDay}
           onChange={changerForm}
         />
-      <label className= {formStyle.labelSelect} htmlFor="numberUsThings">Number of useful things you plan to do</label>
-        <input className= {formStyle.inputStyle} 
+        <label className={formStyle.labelSelect} htmlFor="numberUsThings">
+          Number of useful things you plan to do
+        </label>
+        <input
+          className={formStyle.inputStyle}
           type="number"
           name="numberUsThings"
           placeholder="indicate  of useful things..."
           value={numberUsThings}
           onChange={changerForm}
         />
-<label className= {formStyle.labelSelect} htmlFor="date">Today:</label>
-<input className= {formStyle.inputStyle} 
+        <label className={formStyle.labelSelect} htmlFor="date">
+          Today:
+        </label>
+        <input
+          className={formStyle.inputStyle}
           type="date"
           name="date"
           placeholder="dd.мм.yy"
           value={date}
           onChange={changerForm}
         />
-        <div className= {formStyle.selectWrap}>
-        <label className= {formStyle.labelSelectChoiseStyle} htmlFor="isСompleted">I did it </label>
-          < select className= {formStyle.divSelectStyle}
+        <div className={formStyle.selectWrap}>
+          <label
+            className={formStyle.labelSelectChoiseStyle}
+            htmlFor="isСompleted"
+          >
+            I did it{" "}
+          </label>
+          <select
+            className={formStyle.divSelectStyle}
             onChange={changerForm}
             name="isСompleted"
             id=""
@@ -121,9 +136,13 @@ const Form = () => {
           </select>
         </div>
         {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
-        <div className= {formStyle.selectWrap}>
-
-        <label className= {formStyle.labelSelectChoiseStyle} htmlFor="isСompleted">Check mood </label>
+        <div className={formStyle.selectWrap}>
+          <label
+            className={formStyle.labelSelectChoiseStyle}
+            htmlFor="isСompleted"
+          >
+            My mood is FINE{" "}
+          </label>
 
           <input
             type="radio"
@@ -134,11 +153,13 @@ const Form = () => {
             // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
             onChange={changerForm}
           />
-          <label>My mood is FINE </label>
         </div>
 
-        <label className= {formStyle.labelSelect} htmlFor="date">Your comment</label>
-        <textarea className={formStyle.textAreaStyle}
+        <label className={formStyle.labelSelect} htmlFor="date">
+          Your comment
+        </label>
+        <textarea
+          className={formStyle.textAreaStyle}
           name="comment"
           id=""
           cols="30"
@@ -147,13 +168,9 @@ const Form = () => {
           onChange={changerForm}
         ></textarea>
         {/* <ButtonStyle type="submit">Save</ButtonStyle> */}
-        <Button nameBtn="Save" classNameProps={formStyle.buttonStyle}
-        
-        />
-        
+        <Button nameBtn="Save" classNameProps={formStyle.buttonStyle} />
       </form>
-
-        </>
+    </>
   );
 };
 

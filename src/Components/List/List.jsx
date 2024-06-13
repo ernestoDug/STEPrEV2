@@ -1,70 +1,107 @@
 import { nanoid } from "nanoid";
 // npm i nanoid
-import { UlStyle } from "./List.module";
+import {
+  UlStyle,
+  DivStyleList,
+  PeStyleList,
+  SpanStyleList,
+  LiStyle,
+} from "./List.module";
 
 import PropTypes from "prop-types";
 
-const List = ({ arrayProps = [], categories = "none" }) => {
-  // alphabetical sorting or reverse sort:
-
-  // check localeCompare allows comparison taking into account the rules of the language
-
-  // fruits.sort((a, b) => a.type.localeCompare(b.type));
-
-  // sorting calories
-  // fruits.sort((a, b) => a.callories - b.callories);
-
-  
-  const fruitItems = arrayProps.map((items) => (
-    <li key={nanoid()}>
+const List = ({ arrayProps = [] }) => {
+  const Items = arrayProps.map((items) => (
+    <LiStyle key={nanoid()}>
       <h2>{items.dayWeek}</h2>
       <h3>{items.dateSh}</h3>
-      <b>{items.numberLesson}</b>.
-            {items.lesson} 
-    </li>
-    
-    // &nbsp;
-    // Non-breaking space - not allowing
-    // display and print programs break the line at this point.
-    ));
-  // filter fruits ..
-  // const filtertFruts = fruits.filter((fruit) => fruit.callories < 88);
+      <DivStyleList>
+        <PeStyleList>
+          {" "}
+          <SpanStyleList>{items.numberLesson1}</SpanStyleList> {items.lesson1}
+        </PeStyleList>
+      </DivStyleList>
 
-  // const fruitItemsFilter = filtertFruts.map((filtertFruct) => (
-  //   <li key={nanoid()}>
-  //     {filtertFruct.type} &nbsp;
-  //     <b>{filtertFruct.callories}</b> <span>kcall</span>
-  //   </li>
-  // ));
+      <DivStyleList>
+        <PeStyleList>
+          {" "}
+          <SpanStyleList>{items.numberLesson2}</SpanStyleList> {items.lesson2}
+        </PeStyleList>
+      </DivStyleList>
+
+      <DivStyleList>
+        <PeStyleList>
+          {" "}
+          <SpanStyleList>{items.numberLesson3}</SpanStyleList> {items.lesson3}
+        </PeStyleList>
+      </DivStyleList>
+      <DivStyleList>
+        <PeStyleList>
+          {" "}
+          <SpanStyleList>{items.numberLesson4}</SpanStyleList> {items.lesson4}
+        </PeStyleList>
+      </DivStyleList>
+      <DivStyleList>
+        <PeStyleList>
+          {" "}
+          <SpanStyleList>{items.numberLesson5}</SpanStyleList> {items.lesson5}
+        </PeStyleList>
+      </DivStyleList>
+      <DivStyleList>
+        <PeStyleList>
+          {" "}
+          <SpanStyleList>{items.numberLesson6}</SpanStyleList> {items.lesson6}
+        </PeStyleList>
+      </DivStyleList>
+      <DivStyleList>
+        <PeStyleList>
+          {" "}
+          <SpanStyleList>{items.numberLesson7}</SpanStyleList> {items.lesson7}
+        </PeStyleList>
+      </DivStyleList>
+    </LiStyle>
+  ));
+
   return (
     <>
       {/* conditional rendering */}
       {arrayProps.length > 0 ? (
         <>
-          <h2>ALL {categories}: </h2>
-          <UlStyle>{fruitItems}</UlStyle>
+          <UlStyle>{Items}</UlStyle>
         </>
       ) : null}
-      ;{/* conditional rendering 
+      ;
+      {/* conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!BIGAN
       тут ми замість :  нал тобто нічого не повртай постаивли одраду два амперсанди без тенарника
       тобто тільи якщо довдин більше нуля інакше нічого 
       */}
-      {/* {fruits.length > 0 && (
+      {/* {arrayProps.length > 0 && (
         <>
-          <h2>filter on kcalories {categories}</h2>
-          <OlStyle> {fruitItemsFilter}</OlStyle>
-        </>
-      )} */}
+           <UlStyle> {fruitItemsFilter}</UlStyle>
+        </>conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!END*/}
     </>
   );
 };
 
 List.propTypes = {
-  arrayProps: PropTypes.arrayOf(PropTypes.shape({
-    type: PropTypes.string,
-    callories: PropTypes.number
-  })),
-  categories: PropTypes.string,
+  arrayProps: PropTypes.arrayOf(
+    PropTypes.shape({
+      lesson1: PropTypes.string,
+      numberLesson1: PropTypes.number,
+      lesson2: PropTypes.string,
+      numberLesson2: PropTypes.number,
+      lesson3: PropTypes.string,
+      numberLesson3: PropTypes.number,
+      lesson4: PropTypes.string,
+      numberLesson4: PropTypes.number,
+      lesson5: PropTypes.string,
+      numberLesson5: PropTypes.number,
+      lesson6: PropTypes.string,
+      numberLesson6: PropTypes.number,
+      lesson7: PropTypes.string,
+      numberLesson7: PropTypes.number,
+    })
+  ),
 };
 
 export default List;
