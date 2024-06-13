@@ -67,7 +67,7 @@ const FormShedule = () => {
         return;
     }
   };
-  // for randome bg ++++++++++++++++++++
+  // for randome border ++++++++++++++++++++
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
   let b = Math.floor(Math.random() * 256);
@@ -104,7 +104,7 @@ const FormShedule = () => {
           placeholder="№"
           value={numberLesson}
           onChange={changerFormShedule}
-          style={{ backgroundColor: "RGB(" + r + "," + g + "," + b + ")" }}
+          style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
         />
 
 
