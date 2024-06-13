@@ -4,69 +4,78 @@
 .formStyles {
   display: flex;
   flex-flow: column nowrap;
-  gap: 12px;
-  margin: 0 auto;
+  gap: 3px;
+    border-radius: 7px;
+  max-width: 350px;
+  margin: 50px auto 0;
   padding: 20px;
-  border-radius: 7px;
-  /* градиенто стрички  */
-  background: repeating-linear-gradient(
-    -30deg,
-    #fbf9f8,
-    #f7f5f5 8px,
-    #97dae6 10px,
-    #99c7d6 14px
-  );
-  max-width: 450px;
-  box-shadow: 0px 4px 4px rgba(67, 66, 66, 0.04);
-  font-family: "Oswald", sans-serif;
+  background: #fffdee;
+  border: 10px solid transparent;
+  border-image: 10 repeating-linear-gradient(135deg, #C42061, #f99d47 10px, transparent 10px, transparent 20px, #f4bdd1 20px, #FBCFDF 30px, transparent 30px, transparent 40px);
+  font-family: 'Playfair Display';
+  color: #605756;
+}
+
+.selectWrap
+{
+  margin: 10px;
+}
+
+
+.labelSelectChoiseStyle
+{
+  margin-right: 15px;
 }
 
 
 .inputStyle {
-  padding: 12px;
-  background-color: #abf1d5;
+  width: 95%;
+  border-radius: 3px;
+  padding: 0 10px;
+  line-height: 35px;
   border-width: 0;
-  text-transform: uppercase;
+  outline: none;
+  background: rgb(239, 218, 186) url(https://html5book.ru/wp-content/uploads/2016/12/bg-form.png) bottom left repeat-x;
+  background-size: 8px 35px;
+  font-family: 'Playfair Display';
   cursor: pointer;
-  border-radius: 7px;
   }
 
- .inputStyle:valid
- {
-    background-color: #79edbf;
-  }
-
-  .inputStyle:invalid {
-    background-color: #f66d6d;
-  }
 
 
 .buttonStyle {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #f4afc5;
+  background-color: rgb(239, 218, 186);
   margin-left: 12px;
   border-radius: 7px;
   box-shadow: 0px 4px 4px rgba(226, 102, 139, 0.04);
-
-  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-width: 0;
+  outline: none;
+    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 200ms cubic-bezier(0.6, 0, 0.4, 1);
   transition: border 200ms cubic-bezier(0.6, 0, 0.4, 1);
   transition: transform 200ms cubic-bezier(0.6, 0, 0.4, 1);
+  cursor: pointer;
+  font-family: 'Playfair Display';
+  letter-spacing: 1px;
+  width: 50%;
+  margin: 10px auto;
 }
   .buttonStyle:hover,
    .buttonStyle:focus {
-    color: #f3f2ed;
-    border: 2px dashed #aaef91;
+    color: #e65699;
     transform: scale(1.1);
-    background-image: none;
-    background-color: #ed3c9a;
+    background-color: #d7f0f3;
   }
 
 
 .textAreaStyle {
-  background-color: #bbedf3;
-  border-radius: 7px;
+  background-color: #d7f0f3;
+  background-attachment: local;
+  border-width: 0;
+  outline: none;
+    border-radius: 7px;
   box-shadow: 0px 4px 4px rgba(67, 66, 66, 0.04);
   resize: none;
   cursor: pointer;

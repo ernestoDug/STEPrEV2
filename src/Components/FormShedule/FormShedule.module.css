@@ -1,5 +1,38 @@
 
 
+form {
+  display: flex;
+  flex-flow: column nowrap;
+    gap: 3px;
+  max-width: 350px;
+  margin: 50px auto 0;
+  padding: 20px;
+  background: #eefff5;
+  border: 10px solid transparent;
+  border-image: 10 repeating-linear-gradient(135deg, #C42061, #C42061 10px, transparent 10px, transparent 20px, #FBCFDF 20px, #FBCFDF 30px, transparent 30px, transparent 40px);
+  font-family: 'Playfair Display';
+  color: #605756;
+}
+
+.wrapShedule{
+  display: flex;
+  gap: 5px;
+}
+
+
+
+.labelShedule
+{
+  display: inline-block;
+    background: #e4f8e0;
+width: auto;
+  border-radius: 10px;
+  padding: 3px;
+  padding-left: 12px;
+  
+}
+
+
 .inputShedule {
 
 font-weight: 900;
@@ -11,24 +44,22 @@ text-transform: uppercase;
 cursor: pointer;
 border-radius: 7px;
 width: 30px;
+border-width: 0;
+outline: none;
 }
 
 .inputSheduleDay {
-  font-weight: 900;
-  color: rgb(26, 27, 25);
-  padding: 15px;
-  background-color: #f7e89a;
+  width: 95%;
+  border-radius: 3px;
+  padding: 0 10px;
+  line-height: 35px;
   border-width: 0;
-  text-transform: uppercase;
+  outline: none;
+  background-color: rgb(247, 234, 162);
+  background-size: 8px 35px;
+  font-family: 'Playfair Display';
   cursor: pointer;
-  border-radius: px;
-  width: auto;
+  color: #C42061;
   }
  
 
-
-form {
-  display: flex;
-  flex-flow: column nowrap;
-  max-width: 500px;
-}

@@ -10,11 +10,13 @@ import DayStyle from "./Day.module.css";
 
 const Day = ({
   name = "Guest",
-  age = 0,
+  numberUsThings = 0,
   isСompleted = "",
   isLogin = false,
   comment ="",
-}) => {
+  }) => {
+
+    const [count = 0, setCount] = useState();
   // example const for use in  render dom nodes
   const logIned = <h1 className={DayStyle.Logined}>My mood is <span className={DayStyle.spanMood} >Fine</span> </h1>;
   // example const for use in  render dom nodes
@@ -31,13 +33,12 @@ const Day = ({
     setCount(0);
   };
 
-  const [count = 0, setCount] = useState();
 
   return (
     <>
       <div className={DayStyle.wrapStud}>
         <p className={DayStyle.name}>I called this day: {name}</p>
-        <p className={DayStyle.age}>the number of my useful things to do today: {age}</p>
+        <p className={DayStyle.age}>the number of my useful things to do today: {numberUsThings}</p>
         <p className={DayStyle.age}>count: {count}</p>
         {/* conditional render */}
         {isСompleted === "yes" ? (
@@ -67,7 +68,7 @@ const Day = ({
 
 Day.propTypes = {
   name: PropTypes.string,
-  age: PropTypes.number,
+  numberUsThings: PropTypes.number,
   isСompleted: PropTypes.string,
   isLogin: PropTypes.string,
   comment: PropTypes.string,

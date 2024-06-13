@@ -11,7 +11,7 @@ import formStyle  from "./Form.module.css";
 
 const Form = () => {
   const [nameMyDay, setnameMyDay] = useState("");
-  const [ageMy, setAge] = useState("");
+  const [numberUsThings, setNumberUsThings] = useState("");
   const [date, setDate] = useState(new Date().toISOString().substring(0, 10));
   const [comment, setComment] = useState("");
   const [isСompleted, setIsСompleted] = useState("");
@@ -23,7 +23,7 @@ const Form = () => {
     // id використовується я ключ до бази глянь в утилсах индекс дб**
     const day = {
       nameMyDay,
-      ageMy: +ageMy,
+      numberUsThings: +numberUsThings,
       date,
       isСompleted,
       isLoginMy,
@@ -36,7 +36,7 @@ const Form = () => {
     console.log(day, 999);
     setnameMyDay("");
     setComment("");
-    setAge("");
+    setNumberUsThings("");
   };
 
   // universall handle
@@ -70,8 +70,8 @@ const Form = () => {
         break;
       }
 
-      case "ageMy": {
-        setAge(+value);
+      case "numberUsThings": {
+        setNumberUsThings(+value);
         break;
       }
       default:
@@ -82,6 +82,7 @@ const Form = () => {
   return (
     <>
       < form className={formStyle.formStyles}  action="" onSubmit={submiter}>
+      <label className= {formStyle.labelSelect} htmlFor="nameMyDay">Name it a day</label>
       <input className= {formStyle.inputStyle} 
           type="string"
           maxLength={5}
@@ -90,15 +91,15 @@ const Form = () => {
           value={nameMyDay}
           onChange={changerForm}
         />
-
+      <label className= {formStyle.labelSelect} htmlFor="numberUsThings">Number of useful things you plan to do</label>
         <input className= {formStyle.inputStyle} 
           type="number"
-          name="ageMy"
-          placeholder="number of useful things you plan to do"
-          value={ageMy}
+          name="numberUsThings"
+          placeholder="indicate  of useful things..."
+          value={numberUsThings}
           onChange={changerForm}
         />
-
+<label className= {formStyle.labelSelect} htmlFor="date">Today:</label>
 <input className= {formStyle.inputStyle} 
           type="date"
           name="date"
@@ -106,20 +107,24 @@ const Form = () => {
           value={date}
           onChange={changerForm}
         />
-        <div>
+        <div className= {formStyle.selectWrap}>
+        <label className= {formStyle.labelSelectChoiseStyle} htmlFor="isСompleted">I did it </label>
           < select className= {formStyle.divSelectStyle}
             onChange={changerForm}
             name="isСompleted"
             id=""
             value={isСompleted}
           >
-            <option value="">check mark</option>
+            <option value="">make a choice</option>
             <option value="yes">yes</option>
             <option value="No">No I have unfinished business</option>
           </select>
         </div>
         {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
-        <div>
+        <div className= {formStyle.selectWrap}>
+
+        <label className= {formStyle.labelSelectChoiseStyle} htmlFor="isСompleted">Check mood </label>
+
           <input
             type="radio"
             id="stud"
@@ -132,6 +137,7 @@ const Form = () => {
           <label>My mood is FINE </label>
         </div>
 
+        <label className= {formStyle.labelSelect} htmlFor="date">Your comment</label>
         <textarea className={formStyle.textAreaStyle}
           name="comment"
           id=""
