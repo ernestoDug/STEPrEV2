@@ -18,7 +18,7 @@ const Home = () => {
     getItems()
       .then((items) => {
         setDayHistory(items);
-        console.log(items, 555);
+        console.log(items, 888);
       })
       .catch(() => {
         console.log(Error);

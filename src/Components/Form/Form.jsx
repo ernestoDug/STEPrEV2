@@ -5,18 +5,9 @@ import { useState } from "react";
 
 import { addItem } from "../../utils/indexdb";
 
+import Button from "../Button/Button";
 
-import {
-  FormStyle,
-  InputStyle,
-  ButtonStyle,
-  TextAreaStyle,
-  DivSelectStyle,
-} from "./Form.module";
-// npx storybook@latest init
-// npm run storybook
-// краще компонент там створити протестувати а потім вже вставити собі
-// зразок в навва сторис джиек икс тільки воно ніхрена не працює
+import formStyle  from "./Form.module.css";
 
 const Form = () => {
   const [nameMyDay, setnameMyDay] = useState("");
@@ -28,29 +19,27 @@ const Form = () => {
 
   const submiter = (e) => {
     e.preventDefault();
-   
-      // id використовується я ключ до бази глянь в утилсах индекс дб**
-      const day = {
-        nameMyDay,
-        ageMy: +ageMy,
-        date,
-        isСompleted,
-        isLoginMy,
-        id: nanoid(),
-        comment,
-      };
 
-      // до бази
-      addItem(day);
-      console.log(day, 999);
-    setnameMyDay("");
- setComment("");
- setAge("");
+    // id використовується я ключ до бази глянь в утилсах индекс дб**
+    const day = {
+      nameMyDay,
+      ageMy: +ageMy,
+      date,
+      isСompleted,
+      isLoginMy,
+      id: nanoid(),
+      comment,
     };
 
-  
+    // до бази
+    addItem(day);
+    console.log(day, 999);
+    setnameMyDay("");
+    setComment("");
+    setAge("");
+  };
 
-  // universall hadl
+  // universall handle
   const changerForm = (e) => {
     const { value, name } = e.target;
 
@@ -92,72 +81,73 @@ const Form = () => {
 
   return (
     <>
+      < form className={formStyle.formStyles}  action="" onSubmit={submiter}>
+      <input className= {formStyle.inputStyle} 
+          type="string"
+          maxLength={5}
+          name="nameMyDay"
+          placeholder="name this day"
+          value={nameMyDay}
+          onChange={changerForm}
+        />
 
-        <FormStyle action="" onSubmit={submiter}>
-          <InputStyle
-            type="string"
-            name="nameMyDay"
-            placeholder="name this day"
-            value={nameMyDay}
+        <input className= {formStyle.inputStyle} 
+          type="number"
+          name="ageMy"
+          placeholder="number of useful things you plan to do"
+          value={ageMy}
+          onChange={changerForm}
+        />
+
+<input className= {formStyle.inputStyle} 
+          type="date"
+          name="date"
+          placeholder="dd.мм.yy"
+          value={date}
+          onChange={changerForm}
+        />
+        <div>
+          < select className= {formStyle.divSelectStyle}
             onChange={changerForm}
-          />
-
-          <InputStyle
-            type="number"
-            name="ageMy"
-            placeholder="number of useful things you plan to do"
-            value={ageMy}
-            onChange={changerForm}
-          />
-
-          <InputStyle
-            type="date"
-            name="date"
-            placeholder="чч.мм.рр"
-            value={date}
-            onChange={changerForm}
-          />
-          <div>
-            <DivSelectStyle
-              onChange={changerForm}
-              name="isСompleted"
-              id=""
-              value={isСompleted}
-            >
-              <option value="">check mark</option>
-              <option value="yes">yes</option>
-              <option value="No">No I have unfinished business</option>
-            </DivSelectStyle>
-          </div>
-          {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
-          <div>
-            <input
-              type="radio"
-              id="stud"
-              name="isLoginMy"
-              value="Fine"
-              checked={isLoginMy === "Fine"}
-              // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
-              onChange={changerForm}
-            />
-            <label>My mood is</label>
-          </div>
-
-          <TextAreaStyle
-            name="comment"
+            name="isСompleted"
             id=""
-            cols="30"
-            rows="10"
-            placeholder="Why do you think you have unfinished business?"
+            value={isСompleted}
+          >
+            <option value="">check mark</option>
+            <option value="yes">yes</option>
+            <option value="No">No I have unfinished business</option>
+          </select>
+        </div>
+        {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
+        <div>
+          <input
+            type="radio"
+            id="stud"
+            name="isLoginMy"
+            value="Fine"
+            checked={isLoginMy === "Fine"}
+            // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
             onChange={changerForm}
-          ></TextAreaStyle>
-          <ButtonStyle type="submit">Save</ButtonStyle>
-        </FormStyle>
+          />
+          <label>My mood is FINE </label>
+        </div>
 
-        {/* // ************************************************st */}
+        <textarea className={formStyle.textAreaStyle}
+          name="comment"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Why do you think you have unfinished business?"
+          onChange={changerForm}
+        ></textarea>
+        {/* <ButtonStyle type="submit">Save</ButtonStyle> */}
+        <Button nameBtn="Save" classNameProps={formStyle.buttonStyle}
+        
+        />
+        
+      </form>
 
-      
-       </>
+        </>
   );
 };
 

@@ -1,26 +1,3 @@
-// const for props for List
-const fruits = [
-  { type: "aple", callories: 6 },
-  { type: "banane", callories: 50 },
-  { type: "tomato", callories: 88 },
-  { type: "peach", callories: 100 },
-
-  // for demonstration sort on  forein language
-  //  { type: "яблоко", callories: 6 },
-  // { type: "банан", callories: 50 },
-  // { type: "помидор", callories: 88 },
-  // { type: "персик", callories: 100 },
-];
-
-const vegatables = [
-  { type: "carrot", callories: 63 },
-  { type: "cucumber", callories: 500 },
-  { type: "brokkoly", callories: 88 },
-];
-
-
-
-
 
 // handler  for cards button ***************************1
 const showerDouble = (e) => {

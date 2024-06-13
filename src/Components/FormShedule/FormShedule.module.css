@@ -1,0 +1,34 @@
+
+
+.inputShedule {
+
+font-weight: 900;
+color: rgb(88, 97, 223);
+padding: 12px;
+background-color: #abf1d5;
+border-width: 0;
+text-transform: uppercase;
+cursor: pointer;
+border-radius: 7px;
+width: 30px;
+}
+
+.inputSheduleDay {
+  font-weight: 900;
+  color: rgb(26, 27, 25);
+  padding: 15px;
+  background-color: #f7e89a;
+  border-width: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: px;
+  width: auto;
+  }
+ 
+
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 500px;
+}

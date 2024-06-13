@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 // npm i @emotion/styled @emotion/react
 
 
-export const OlStyle = styled.ol`
+export const UlStyle = styled.ul`
   max-width: 500px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
   margin: 10px auto;
@@ -16,4 +16,4 @@ export const OlStyle = styled.ol`
   }
 `;
 
-OlStyle.displayName = "OlStyle";
+UlStyle.displayName = "UlStyle";
