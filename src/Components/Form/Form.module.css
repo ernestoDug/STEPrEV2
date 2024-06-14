@@ -50,29 +50,35 @@
 }
 
 .buttonStyle {
+  text-decoration: none;
   display: inline-block;
-  padding: 5px 10px;
-  background-color: rgb(239, 218, 186);
-  margin-left: 12px;
   border-radius: 7px;
-  box-shadow: 0px 4px 4px rgba(226, 102, 139, 0.04);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #9eefe1 0%,
+    #4830f0 51%,
+    #9eefe1 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-width: 0;
   outline: none;
-  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 200ms cubic-bezier(0.6, 0, 0.4, 1);
-  transition: border 200ms cubic-bezier(0.6, 0, 0.4, 1);
-  transition: transform 200ms cubic-bezier(0.6, 0, 0.4, 1);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  font-family: "Playfair Display";
-  letter-spacing: 1px;
   width: 50%;
   margin: 10px auto;
+  padding:5px;
+
 }
+
 .buttonStyle:hover,
 .buttonStyle:focus {
-  color: #e65699;
-  transform: scale(1.1);
-  background-color: #d7f0f3;
+  background-position: right center;
+  color: #210741;
 }
 
 .textAreaStyle {
@@ -108,9 +114,6 @@
   background-color: #ffdddd;
 }
 
-.divWrapStyle {
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0px 4px 4px rgba(67, 66, 66, 0.04);
-  border: 1px solid grey;
+.labelSelect {
+  font-weight: 800;
 }

@@ -1,3 +1,7 @@
+body {
+    background-color: antiquewhite;
+}
+
 .listDay {
     max-width: 500px;
     margin: 10px auto;

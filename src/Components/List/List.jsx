@@ -10,9 +10,11 @@ import {
 
 import PropTypes from "prop-types";
 
-const List = ({ arrayProps = [] }) => {
+// colorProps for change bg
+const List = ({ arrayProps = [], colorProps }) => {
   const Items = arrayProps.map((items) => (
-    <LiStyle key={nanoid()}>
+    // we used color props fo BG
+    <LiStyle style={{ backgroundColor: colorProps } } key={nanoid()}>
       <h2>{items.dayWeek}</h2>
       <h3>{items.dateSh}</h3>
       <DivStyleList>
@@ -102,6 +104,7 @@ List.propTypes = {
       numberLesson7: PropTypes.number,
     })
   ),
+  colorProps: PropTypes.string,
 };
 
 export default List;

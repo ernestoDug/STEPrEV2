@@ -1,10 +1,13 @@
-import { H_1_Style } from "./Header.module";
+import headerStyle from "./Header.module.css";
 
 import Navigation from "../Navigation/Navigation";
 
 const Header = () => (
   <>
-    <H_1_Style> My SUPER habits</H_1_Style>
+    <div className={headerStyle.h1WrapHeder}>
+      <span className={headerStyle.spanHeder}>💚</span>
+      <h1 className={headerStyle.h1Style}>Тут я зростаю</h1>
+    </div>
     <Navigation />
   </>
 );

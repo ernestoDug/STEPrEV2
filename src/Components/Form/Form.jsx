@@ -15,7 +15,8 @@ const Form = () => {
   const [date, setDate] = useState(new Date().toISOString().substring(0, 10));
   const [comment, setComment] = useState("");
   const [isСompleted, setIsСompleted] = useState("");
-  const [isLoginMy, setIsLogin] = useState("");
+  const [moodGood, setMoodGood] = useState("");
+  const [moodBad, setMoodBad] = useState("");
 
   const submiter = (e) => {
     e.preventDefault();
@@ -26,14 +27,15 @@ const Form = () => {
       numberUsThings: +numberUsThings,
       date,
       isСompleted,
-      isLoginMy,
+      moodGood,
+      moodBad,
       id: nanoid(),
       comment,
     };
 
     // до бази
     addItem(day);
-    console.log(day, 999);
+    // console.log(day, 999);
     setnameMyDay("");
     setComment("");
     setNumberUsThings("");
@@ -54,11 +56,18 @@ const Form = () => {
         break;
       }
 
-      case "isLoginMy": {
-        setIsLogin(value);
-        console.log(value, 9999999999);
+      case "moodGood": {
+        setMoodGood(value);
+        // console.log(value, 9999999999);
         break;
       }
+
+      case "moodBad": {
+        setMoodBad(value);
+        // console.log(value, 9999999999);
+        break;
+      }
+      
 
       case "date": {
         setDate(value);
@@ -82,41 +91,46 @@ const Form = () => {
   return (
     <>
       <form className={formStyle.formStyles} action="" onSubmit={submiter}>
-        <label className={formStyle.labelSelect} htmlFor="nameMyDay">
-          Name it a day
-        </label>
-        <input
-          className={formStyle.inputStyle}
-          type="string"
-          maxLength={5}
-          name="nameMyDay"
-          placeholder="name this day"
-          value={nameMyDay}
-          onChange={changerForm}
-        />
-        <label className={formStyle.labelSelect} htmlFor="numberUsThings">
-          Number of useful things you plan to do
-        </label>
-        <input
-          className={formStyle.inputStyle}
-          type="number"
-          name="numberUsThings"
-          placeholder="indicate  of useful things..."
-          value={numberUsThings}
-          onChange={changerForm}
-        />
-        <label className={formStyle.labelSelect} htmlFor="date">
-          Today:
+        <label className={formStyle.labelSelect} htmlFor="dateID">
+          Сьогодні:
         </label>
         <input
           className={formStyle.inputStyle}
           type="date"
           name="date"
-          placeholder="dd.мм.yy"
+          id="dateID"
+          placeholder="дд.мм.рр"
           value={date}
           onChange={changerForm}
         />
-        <div className={formStyle.selectWrap}>
+
+        <label className={formStyle.labelSelect} htmlFor="nameMyDayID">
+          Цей день я назову:
+        </label>
+        <input
+          className={formStyle.inputStyle}
+          type="text"
+          maxLength="25"
+          name="nameMyDay"
+          id="nameMyDayID"
+          placeholder="я називаю цей день..."
+          value={nameMyDay}
+          onChange={changerForm}
+        />
+        <label className={formStyle.labelSelect} htmlFor="numberUsThings">
+          Сьогодні я планую стільки корисних справ:
+        </label>
+        <input
+          className={formStyle.inputStyle}
+          type="number"
+          name="numberUsThings"
+          id="numberUsThings"
+          placeholder="кількість корисних справ на сьогодні"
+          value={numberUsThings}
+          onChange={changerForm}
+        />
+
+        {/* <div className={formStyle.selectWrap}>
           <label
             className={formStyle.labelSelectChoiseStyle}
             htmlFor="isСompleted"
@@ -134,29 +148,49 @@ const Form = () => {
             <option value="yes">yes</option>
             <option value="No">No I have unfinished business</option>
           </select>
-        </div>
+        </div> */}
+
         {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
         <div className={formStyle.selectWrap}>
           <label
             className={formStyle.labelSelectChoiseStyle}
-            htmlFor="isСompleted"
+            htmlFor="moodGoodID"
           >
-            My mood is FINE{" "}
+        Мій настрій: <span>👍</span>
           </label>
 
           <input
             type="radio"
-            id="stud"
-            name="isLoginMy"
+            id="moodGoodID"
+            name="moodGood"
             value="Fine"
-            checked={isLoginMy === "Fine"}
+            checked={moodGood === "Fine"}
+            // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
+            onChange={changerForm}
+          />
+        </div>
+{/* **************************************************** */}
+        <div className={formStyle.selectWrap}>
+          <label
+            className={formStyle.labelSelectChoiseStyle}
+            htmlFor="moodBadID"
+          >
+        Мій настрій: <span>👎</span>
+          </label>
+
+          <input
+            type="radio"
+            id="moodBadID"
+            name="moodBadm"
+            value="Bad"
+            checked={moodBad === "Bad"}
             // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
             onChange={changerForm}
           />
         </div>
 
         <label className={formStyle.labelSelect} htmlFor="date">
-          Your comment
+       Мій настрій такий тому що...
         </label>
         <textarea
           className={formStyle.textAreaStyle}

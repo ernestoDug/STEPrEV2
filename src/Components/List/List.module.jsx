@@ -22,9 +22,10 @@ flex-direction: column;
 max-width: 25%;
 justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-  background-color: #b6f8ec;
   border-radius: 8px;
   padding: 5px;
+  transition: all 5s ease-in 5s;
+
  `;
 
 

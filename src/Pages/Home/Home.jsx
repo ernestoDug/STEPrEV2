@@ -18,7 +18,7 @@ const Home = () => {
     getItems()
       .then((items) => {
         setDayHistory(items);
-        console.log(items, 888);
+        // console.log(items, 888);
       })
       .catch(() => {
         console.log(Error);
@@ -31,13 +31,12 @@ const Home = () => {
 
       <ul className={ListDayStyle.listDay}>
         {dayHistory.map(
-          ({ nameMyDay, ageMy, isСompleted, isLoginMy, comment }) => (
+          ({ nameMyDay,  isСompleted, moodGood, comment }) => (
             <li  className={ListDayStyle.listDayItem} key={nanoid()}>
               <Day
                 name={nameMyDay}
-                age={+ageMy}
-                isСompleted={isСompleted}
-                isLogin={isLoginMy}
+                               isСompleted={isСompleted}
+                               moodGood={moodGood}
                 comment={comment}
               />
             </li>

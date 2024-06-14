@@ -22,7 +22,7 @@ const Navigation = () => {
       <ul className={NavStyle.ulNavigateStyle}>
         <li>
           <Button
-            nameBtn="Home"
+            nameBtn="Мої плани"
             classNameProps={NavStyle.btnNavStyle}
             clickProps={() => navigate("home", { replace: false })}
           />

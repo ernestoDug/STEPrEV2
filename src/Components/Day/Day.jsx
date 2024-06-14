@@ -12,18 +12,19 @@ const Day = ({
   name = "Guest",
   numberUsThings = 0,
   isСompleted = "",
-  isLogin = false,
+  moodGood = false,
   comment = "",
 }) => {
   const [count = 0, setCount] = useState();
   // example const for use in  render dom nodes
-  const logIned = (
+  const goodMood = (
     <h1 className={DayStyle.Logined}>
-      My mood is <span className={DayStyle.spanMood}>Fine</span>{" "}
+     Мій настрій: <span className={DayStyle.spanMood}>Чудовий👍</span>{" "}
     </h1>
   );
   // example const for use in  render dom nodes
-  const logIn = <h1 className={DayStyle.Login}>My mood is</h1>;
+  const badMood = (<h1 className={DayStyle.Login}>
+     Мій настрій: <span className={DayStyle.spanMood}> Так собі👎 </span></h1>);
 
   // handale for click as props for Button
   const handleClickStud = () => {
@@ -39,9 +40,9 @@ const Day = ({
   return (
     <>
       <div className={DayStyle.wrapStud}>
-        <p className={DayStyle.name}>I called this day: {name}</p>
+        <p className={DayStyle.name}>Цей день називається: <span className={DayStyle.spanDay}>{name}</span></p>
         <p className={DayStyle.age}>
-          the number of my useful things to do today: {numberUsThings}
+         Моя кількість корисних справ на сьогодні: {numberUsThings}
         </p>
         <p className={DayStyle.age}>count: {count}</p>
         {/* conditional render */}
@@ -67,7 +68,7 @@ const Day = ({
         />
         {/* conditional render wsth const 
           For the truth, we accepted the expression in the form in !*!*!*!*  */}
-        {isLogin ? logIned : logIn}
+        {moodGood ? goodMood : badMood}
       </div>
     </>
   );
@@ -77,7 +78,7 @@ Day.propTypes = {
   name: PropTypes.string,
   numberUsThings: PropTypes.number,
   isСompleted: PropTypes.string,
-  isLogin: PropTypes.string,
+  moodGood: PropTypes.string,
   comment: PropTypes.string,
 };
 
