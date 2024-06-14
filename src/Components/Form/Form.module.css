@@ -28,10 +28,13 @@
 
 .selectWrap {
   margin: 10px;
+  margin-left: auto;
 }
 
 .labelSelectChoiseStyle {
   margin-right: 15px;
+  font-weight: 800;
+
 }
 
 .inputStyle {
@@ -97,22 +100,37 @@
   background-color: #eadec8;
 }
 
-.divSelectStyle {
+.selectStyle {
+  background-color: #d7f0f3;
   border-radius: 7px;
   box-shadow: 0px 4px 4px rgba(67, 66, 66, 0.04);
   cursor: pointer;
   transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
+  margin-top: 10px;
 }
 
-.divSelectStyle:hover,
-.divSelectStyle:valid {
-  background-color: #a1f8c5;
+.optionYes{
+background-color: #5cb89b;
+padding: 5px;
+font-size: large;
+
 }
 
-.divSelectStyle:invalid {
-  background-color: #ffdddd;
+.optionNo{
+  background-color: #c1a5c5;
+  padding: 5px;
+  font-size: large;
+
+
 }
+
+
+.selectStyle:hover {
+  background-color: #eadec8;
+}
+
+
 
 .labelSelect {
   font-weight: 800;

@@ -8,37 +8,33 @@ import { addItem } from "../../utils/indexdb";
 import Button from "../Button/Button";
 
 import formStyle from "./Form.module.css";
+import Counter from "../Counter/Counter";
 
 const Form = () => {
   const [nameMyDay, setnameMyDay] = useState("");
-  const [numberUsThings, setNumberUsThings] = useState("");
   const [date, setDate] = useState(new Date().toISOString().substring(0, 10));
   const [comment, setComment] = useState("");
   const [isСompleted, setIsСompleted] = useState("");
   const [moodGood, setMoodGood] = useState("");
-  const [moodBad, setMoodBad] = useState("");
-
   const submiter = (e) => {
     e.preventDefault();
 
     // id використовується я ключ до бази глянь в утилсах индекс дб**
     const day = {
       nameMyDay,
-      numberUsThings: +numberUsThings,
       date,
       isСompleted,
       moodGood,
-      moodBad,
       id: nanoid(),
       comment,
     };
 
     // до бази
     addItem(day);
+
     // console.log(day, 999);
     setnameMyDay("");
     setComment("");
-    setNumberUsThings("");
   };
 
   // universall handle
@@ -62,12 +58,7 @@ const Form = () => {
         break;
       }
 
-      case "moodBad": {
-        setMoodBad(value);
-        // console.log(value, 9999999999);
-        break;
-      }
-      
+    
 
       case "date": {
         setDate(value);
@@ -79,10 +70,6 @@ const Form = () => {
         break;
       }
 
-      case "numberUsThings": {
-        setNumberUsThings(+value);
-        break;
-      }
       default:
         return;
     }
@@ -117,38 +104,26 @@ const Form = () => {
           value={nameMyDay}
           onChange={changerForm}
         />
-        <label className={formStyle.labelSelect} htmlFor="numberUsThings">
-          Сьогодні я планую стільки корисних справ:
-        </label>
-        <input
-          className={formStyle.inputStyle}
-          type="number"
-          name="numberUsThings"
-          id="numberUsThings"
-          placeholder="кількість корисних справ на сьогодні"
-          value={numberUsThings}
-          onChange={changerForm}
-        />
 
-        {/* <div className={formStyle.selectWrap}>
+        <div className={formStyle.selectWrap}>
           <label
             className={formStyle.labelSelectChoiseStyle}
             htmlFor="isСompleted"
           >
-            I did it{" "}
+            Чи приходила  сьогодні до мене  посмішка?{" "}
           </label>
           <select
-            className={formStyle.divSelectStyle}
+            className={formStyle.selectStyle}
             onChange={changerForm}
             name="isСompleted"
             id=""
             value={isСompleted}
           >
-            <option value="">make a choice</option>
-            <option value="yes">yes</option>
-            <option value="No">No I have unfinished business</option>
+            <option value="">обирай-КA</option>
+            <option className={formStyle.optionYes} value="yes">А якже</option>
+            <option className={formStyle.optionNo} value="No">Можливо...</option>
           </select>
-        </div> */}
+        </div>
 
         {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
         <div className={formStyle.selectWrap}>
@@ -156,7 +131,7 @@ const Form = () => {
             className={formStyle.labelSelectChoiseStyle}
             htmlFor="moodGoodID"
           >
-        Мій настрій: <span>👍</span>
+            Мій настрій: <span>👍</span>
           </label>
 
           <input
@@ -169,28 +144,13 @@ const Form = () => {
             onChange={changerForm}
           />
         </div>
-{/* **************************************************** */}
-        <div className={formStyle.selectWrap}>
-          <label
-            className={formStyle.labelSelectChoiseStyle}
-            htmlFor="moodBadID"
-          >
-        Мій настрій: <span>👎</span>
-          </label>
-
-          <input
-            type="radio"
-            id="moodBadID"
-            name="moodBadm"
-            value="Bad"
-            checked={moodBad === "Bad"}
-            // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
-            onChange={changerForm}
-          />
-        </div>
-
+       
+        <Counter>
+          {/* for e[amle used props children ] */}
+          <p>😺</p>
+        </Counter>
         <label className={formStyle.labelSelect} htmlFor="date">
-       Мій настрій такий тому що...
+          Мій настрій такий тому що...
         </label>
         <textarea
           className={formStyle.textAreaStyle}
@@ -198,10 +158,10 @@ const Form = () => {
           id=""
           cols="30"
           rows="10"
-          placeholder="Why do you think you have unfinished business?"
+          placeholder="Як ти вважаєш чому сьогодні у тебе саме такий настрій?"
           onChange={changerForm}
         ></textarea>
-        {/* <ButtonStyle type="submit">Save</ButtonStyle> */}
+
         <Button nameBtn="Save" classNameProps={formStyle.buttonStyle} />
       </form>
     </>

@@ -1,0 +1,50 @@
+.btn, .btnSumit
+ {
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 7px;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background-image: linear-gradient(
+          to right,
+          #35ecce 0%,
+          #4830f0 51%,
+          #1c6b5e 100%
+        );
+        background-size: 200% auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-width: 0;
+        outline: none;
+        transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        width: 50%;
+        margin: 10px auto;
+        padding:5px;
+            }
+
+            .btnSumit{
+                background-image: linear-gradient(
+                    to right,
+                    #51dbc4 0%,
+                    #d034d0 51%,
+                    #31ac97 100%
+                  );
+                  color: #151616;
+            }
+
+
+            .count {
+                width: 95%;
+                border-radius: 3px;
+                padding: 0 10px;
+                line-height: 35px;
+                border-width: 0;
+                outline: none;
+                background: rgb(236, 195, 133);
+                font-family: "Playfair Display";
+                cursor: pointer;
+                color: #4830f0;
+                font-weight: 500;
+            }
