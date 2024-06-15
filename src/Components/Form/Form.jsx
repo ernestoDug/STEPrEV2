@@ -82,6 +82,7 @@ const Form = () => {
           Сьогодні:
         </label>
         <input
+
           className={formStyle.inputStyle}
           type="date"
           name="date"
@@ -95,6 +96,7 @@ const Form = () => {
           Цей день я назову:
         </label>
         <input
+           
           className={formStyle.inputStyle}
           type="text"
           maxLength="25"
@@ -102,6 +104,7 @@ const Form = () => {
           id="nameMyDayID"
           placeholder="я називаю цей день..."
           value={nameMyDay}
+          required
           onChange={changerForm}
         />
 
@@ -118,10 +121,11 @@ const Form = () => {
             name="isСompleted"
             id=""
             value={isСompleted}
+            required
           >
             <option value="">обирай-КA</option>
-            <option className={formStyle.optionYes} value="yes">А якже</option>
-            <option className={formStyle.optionNo} value="No">Можливо...</option>
+            <option className={formStyle.optionYes} value="Завітала">А якже</option>
+            <option className={formStyle.optionNo} value="Нажаль ні...">Можливо...</option>
           </select>
         </div>
 
@@ -139,6 +143,7 @@ const Form = () => {
             id="moodGoodID"
             name="moodGood"
             value="Fine"
+            required
             checked={moodGood === "Fine"}
             // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
             onChange={changerForm}
@@ -160,6 +165,7 @@ const Form = () => {
           rows="10"
           placeholder="Як ти вважаєш чому сьогодні у тебе саме такий настрій?"
           onChange={changerForm}
+          required
         ></textarea>
 
         <Button nameBtn="Save" classNameProps={formStyle.buttonStyle} />

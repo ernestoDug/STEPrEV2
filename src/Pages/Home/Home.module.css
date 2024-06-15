@@ -1,13 +1,30 @@
+/* for old brauzers support */
+
+@supports (display: grid) {
+    .grid {
+        display: grid;
+    }
+}
+
+
+
 body {
     background-color: antiquewhite;
 }
 
 .listDay {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
     max-width: 500px;
     margin: 10px auto;
     border-radius: 8px;
     list-style: none;
     padding: 0;
+
 }
 
 
@@ -15,6 +32,9 @@ body {
 {
     background-color: #c3e7f3;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    border-radius: 9px 35px 9px 9px;
+
+
 
 
 }

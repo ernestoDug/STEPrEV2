@@ -9,6 +9,7 @@ import DayStyle from "./Day.module.css";
 // pay attention on name file module.css
 
 const Day = ({
+  date,
   name = "",
 count = 0,
   isСompleted = "",
@@ -35,9 +36,11 @@ count = 0,
   return (
     <>
       <div className={DayStyle.wrapStud}>
+      <p className={DayStyle.name}>Сьогодні: <span className={DayStyle.spanDay}>{date}</span></p>
+
         <p className={DayStyle.name}>Цей день називається: <span className={DayStyle.spanDay}>{name}</span></p>
-        <p className={DayStyle.age}>
-         Моя кількість корисних справ на сьогодні: {count}
+        <p className={DayStyle.name}>
+        Заплановано стільки справ: {count}
         </p>
     
         {/* conditional render */}
@@ -49,7 +52,7 @@ count = 0,
 
         <p className={DayStyle.name}>
           {" "}
-          I think I have some unfinished business because...{comment}
+          Мій настрій сьогодні такий тому що...{comment}
         </p>
         
                {/* conditional render wsth const 
@@ -69,6 +72,7 @@ Day.propTypes = {
   moodGood: PropTypes.string,
   count:PropTypes.number,
   comment: PropTypes.string,
+  date: PropTypes.string,
 };
 
 export default Day;

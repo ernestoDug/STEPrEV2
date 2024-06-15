@@ -31,13 +31,15 @@ const Home = () => {
 
       <ul className={ListDayStyle.listDay}>
         {dayHistory.map(
-          ({ nameMyDay,  isСompleted, moodGood, comment, }) => (
+          ({ nameMyDay,  isСompleted, moodGood, comment, date, coutDb}) => (
             <li  className={ListDayStyle.listDayItem} key={nanoid()}>
               <Day
                 name={nameMyDay}
                                isСompleted={isСompleted}
                                moodGood={moodGood}
                                             comment={comment}
+                                            date={date}
+                                            count={coutDb}
               />
             </li>
           )
