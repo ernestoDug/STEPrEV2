@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { nanoid } from "nanoid/non-secure";
+import PropTypes from "prop-types";
 
 import { addItem } from "../../utils/indexdb";
 import Button from "../Button/Button";
@@ -8,7 +9,8 @@ import formSheduleStyle from "./FormShedule.module.css";
 // FOR STYLE BUTTON IN THIS FORM = AS IN FORM and input style
 import formStyle from "../../Components/Form/Form.module.css";
 
-const FormShedule = () => {
+const FormShedule = ({ colorProps }) => {
+  // lesson
   const [lesson1, setLesson1] = useState("");
   const [lesson2, setLesson2] = useState("");
   const [lesson3, setLesson3] = useState("");
@@ -16,7 +18,7 @@ const FormShedule = () => {
   const [lesson5, setLesson5] = useState("");
   const [lesson6, setLesson6] = useState("");
   const [lesson7, setLesson7] = useState("");
-  
+// number lesson 
   const [numberLesson1, setNumberLesson1] = useState("");
   const [numberLesson2, setNumberLesson2] = useState("");
   const [numberLesson3, setNumberLesson3] = useState("");
@@ -29,6 +31,15 @@ const FormShedule = () => {
     new Date().toISOString().substring(0, 10)
   );
   const [dayWeek, setDayWeek] = useState("");
+
+  // icons 
+  const [animalIcon1, setAnimalIcon1]= useState('🦜');
+  const [animalIcon2, setAnimalIcon2]= useState('🦩');
+  const [animalIcon3, setAnimalIcon3]= useState('🦚');
+  const [animalIcon4, setAnimalIcon4]= useState('🐦‍⬛');
+  const [animalIcon5, setAnimalIcon5]= useState('🐧');
+  const [animalIcon6, setAnimalIcon6]= useState('🐓');
+  const [animalIcon7, setAnimalIcon7]= useState('🪿');
 
   const submiterSheduleForm = (e) => {
     e.preventDefault();
@@ -49,6 +60,14 @@ const FormShedule = () => {
       numberLesson5: +numberLesson5,
       numberLesson6: +numberLesson6,
       numberLesson7: +numberLesson7,
+      animalIcon1,
+      animalIcon2,
+      animalIcon3,
+      animalIcon4,
+      animalIcon5,
+      animalIcon6,
+      animalIcon7,
+      colorProps,
 
       // id використовується я ключ до бази глянь в утилсах индекс дб**
       id: nanoid(),
@@ -59,7 +78,7 @@ const FormShedule = () => {
     // до бази
     addItem(dayShedule);
 
-    console.log(dayShedule, 666);
+    // console.log(dayShedule, 666);
     // чистка
     setLesson1("");
     setLesson2("");
@@ -76,14 +95,20 @@ const FormShedule = () => {
     setNumberLesson6("");
     setNumberLesson7("");
     setDayWeek("");
-  };
+    setAnimalIcon1('');
+    setAnimalIcon2('');
+    setAnimalIcon3('');
+    setAnimalIcon4('');
+    setAnimalIcon5('');
+    setAnimalIcon6('');
+    setAnimalIcon7('');
+  }
 
   // universall handl input
   const changerFormShedule = (e) => {
     const { value, name } = e.target;
 
     switch (name) {
-
       case "numberLesson1": {
         setNumberLesson1(value);
         break;
@@ -118,42 +143,60 @@ const FormShedule = () => {
         break;
       }
 
-     
-
-
       case "lesson1": {
         setLesson1(value);
+        const animals = ["🦍", "🐕", "🐈", "🐅", "🐆", "🐎", "🦓", "🦬", "🐫" , "🦌", "🐀", "🦣", "🦆"];
+
+        setAnimalIcon1(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
 
       case "lesson2": {
         setLesson2(value);
+        const animals = ["🦍", "🐕", "🐈", "🐅", "🐆", "🐎", "🦓", "🦬", "🐫" , "🦌", "🐀", "🦣", "🦆"];
+
+        setAnimalIcon2(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
 
       case "lesson3": {
         setLesson3(value);
+        const animals = ["🦍", "🐕", "🐈", "🐅", "🐆", "🐎", "🦓", "🦬", "🐫" , "🦌", "🐀", "🦣", "🦆"];
+
+        setAnimalIcon3(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
       case "lesson4": {
         setLesson4(value);
+        const animals = ["🦍", "🐕", "🐈", "🐅", "🐆", "🐎", "🦓", "🦬", "🐫" , "🦌", "🐀", "🦣", "🦆"];
+
+        setAnimalIcon4(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
 
       case "lesson5": {
         setLesson5(value);
+        const animals = ["🦍", "🐕", "🐈", "🐅", "🐆", "🐎", "🦓", "🦬", "🐫" , "🦌", "🐀", "🦣", "🦆"];
+
+        setAnimalIcon5(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
       case "lesson6": {
         setLesson6(value);
+        const animals = ["🦍", "🐕", "🐈", "🐅", "🐆", "🐎", "🦓", "🦬", "🐫" , "🦌", "🐀", "🦣", "🦆"];
+
+        setAnimalIcon6(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
 
       case "lesson7": {
         setLesson7(value);
+        const animals = ["🦍", "🐕", "🐈", "🐅", "🐆", "🐎", "🦓", "🦬", "🐫" , "🦌", "🐀", "🦣", "🦆"];
+
+        setAnimalIcon7(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
-     
+
       case "dayWeek": {
         setDayWeek(value);
         break;
@@ -164,36 +207,35 @@ const FormShedule = () => {
         break;
       }
 
-     
-
       default:
         return;
     }
   };
-  // for randome border ++++++++++++++++++++
+  // for randome color ++++++++++++++++++++
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
   let b = Math.floor(Math.random() * 256);
 
   // +++++++++++++++++++++++++++++++++++++++
 
+ 
   return (
     <>
       <form action="" onSubmit={submiterSheduleForm}>
         <label className={formSheduleStyle.labelShedule} htmlFor="date">
-          Today{" "}
+          Сьогодні{" "}
         </label>
         <input
           className={formSheduleStyle.inputSheduleDay}
           type="date"
           name="date"
-          placeholder="dd.мм.yy"
+          placeholder="ДД.ММ.РР"
           value={dateSh}
           onChange={changerFormShedule}
         />
 
         <label className={formSheduleStyle.labelShedule} htmlFor="dayWeek">
-          Day of the week{" "}
+          День тижня{" "}
         </label>
 
         <input
@@ -201,11 +243,11 @@ const FormShedule = () => {
           type="string"
           maxLength="13"
           name="dayWeek"
-          placeholder="day of the week"
+          placeholder="  День тижня"
           value={dayWeek}
           onChange={changerFormShedule}
         />
-
+{/* 1 */}
         <div className={formSheduleStyle.wrapShedule}>
           <input
             className={formSheduleStyle.inputShedule}
@@ -215,15 +257,30 @@ const FormShedule = () => {
             placeholder="№"
             value={numberLesson1}
             onChange={changerFormShedule}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
+                style={{ color: colorProps }}
           />
+          {!animalIcon1 ? (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              🦕
+            </p>
+          ) : (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {animalIcon1}
+            </p>
+          )}
 
           <input
             className={formStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson1"
-            placeholder="lesson title"
+            placeholder="Назва предмету"
             value={lesson1}
             onChange={changerFormShedule}
           />
@@ -238,14 +295,27 @@ const FormShedule = () => {
             placeholder="№"
             value={numberLesson2}
             onChange={changerFormShedule}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
-          />
+            style={{ color: colorProps }}          />
+          {!animalIcon2 ? (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ color: colorProps }}            >
+              🦕
+            </p>
+          ) : (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {animalIcon2}
+            </p>
+          )}
           <input
             className={formStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson2"
-            placeholder="lesson title"
+            placeholder="Назва предмету"
             value={lesson2}
             onChange={changerFormShedule}
           />
@@ -261,15 +331,28 @@ const FormShedule = () => {
             placeholder="№"
             value={numberLesson3}
             onChange={changerFormShedule}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
-          />
-
+            style={{ color: colorProps }}          />
+{!animalIcon3 ? (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              🦕
+            </p>
+          ) : (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {animalIcon3}
+            </p>
+          )}
           <input
             className={formStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson3"
-            placeholder="lesson title"
+            placeholder="Назва предмету"
             value={lesson3}
             onChange={changerFormShedule}
           />
@@ -284,15 +367,28 @@ const FormShedule = () => {
             placeholder="№"
             value={numberLesson4}
             onChange={changerFormShedule}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
-          />
-
+            style={{ color: colorProps }}          />
+{!animalIcon4 ? (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              🦕
+            </p>
+          ) : (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {animalIcon4}
+            </p>
+          )}
           <input
             className={formStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson4"
-            placeholder="lesson title"
+            placeholder="Назва предмету"
             value={lesson4}
             onChange={changerFormShedule}
           />
@@ -307,15 +403,28 @@ const FormShedule = () => {
             placeholder="№"
             value={numberLesson5}
             onChange={changerFormShedule}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
-          />
-
+            style={{ color: colorProps }}          />
+{!animalIcon5 ? (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              🦕
+            </p>
+          ) : (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {animalIcon5}
+            </p>
+          )}
           <input
             className={formStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson5"
-            placeholder="lesson title"
+            placeholder="Назва предмету"
             value={lesson5}
             onChange={changerFormShedule}
           />
@@ -330,15 +439,29 @@ const FormShedule = () => {
             placeholder="№"
             value={numberLesson6}
             onChange={changerFormShedule}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
-          />
+            style={{ color: colorProps }}          />
+          {!animalIcon6 ? (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              🦕
+            </p>
+          ) : (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {animalIcon6}
+            </p>
+          )}
 
           <input
             className={formStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson6"
-            placeholder="lesson title"
+            placeholder="Назва предмету"
             value={lesson6}
             onChange={changerFormShedule}
           />
@@ -354,24 +477,41 @@ const FormShedule = () => {
             placeholder="№"
             value={numberLesson7}
             onChange={changerFormShedule}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")3px solid" }}
-          />
-
+            style={{ color: colorProps }}          />
+{!animalIcon7 ? (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              🦕
+            </p>
+          ) : (
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {animalIcon7}
+            </p>
+          )}
           <input
             className={formStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson7"
-            placeholder="lesson title"
+            placeholder="Назва предмету"
             value={lesson7}
             onChange={changerFormShedule}
           />
         </div>
-       
-        <Button nameBtn="Save" classNameProps={formStyle.buttonStyle} />
+
+        <Button nameBtn="Зберегти" classNameProps={formStyle.buttonStyle} />
       </form>
     </>
   );
+};
+
+FormShedule.propTypes = {
+  colorProps: PropTypes.string,
 };
 
 export default FormShedule;

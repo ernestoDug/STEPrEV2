@@ -18,7 +18,7 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 export const LiStyle = styled.li`
 display: flex;
-flex-direction: column;
+flex-flow: column nowrap;
 max-width: 25%;
 justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
@@ -38,6 +38,8 @@ border: 1px solid rgb(199, 203, 201);;
 margin: 5px auto;
 `
 export const PeStyleList = styled.p`
+display: flex;
+align-items: center;
   width: 95%;
   border-radius: 3px;
   padding: 0 10px;

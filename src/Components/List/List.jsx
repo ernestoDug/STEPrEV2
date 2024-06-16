@@ -11,54 +11,69 @@ import {
 import PropTypes from "prop-types";
 
 // colorProps for change bg
-const List = ({ arrayProps = [], colorProps }) => {
+const List = ({ arrayProps = [] }) => {
   const Items = arrayProps.map((items) => (
     // we used color props fo BG
-    <LiStyle style={{ backgroundColor: colorProps } } key={nanoid()}>
+    // items.colorProps це в базу даних той пропс закинули 
+    <LiStyle style={{ backgroundColor: items.colorProps } } key={nanoid()}>
       <h2>{items.dayWeek}</h2>
       <h3>{items.dateSh}</h3>
       <DivStyleList>
         <PeStyleList>
           {" "}
-          <SpanStyleList>{items.numberLesson1}</SpanStyleList> {items.lesson1}
+          <SpanStyleList>{items.numberLesson1}</SpanStyleList> 
+          <p>{items.animalIcon1}</p>
+          {items.lesson1}
         </PeStyleList>
       </DivStyleList>
 
       <DivStyleList>
         <PeStyleList>
           {" "}
-          <SpanStyleList>{items.numberLesson2}</SpanStyleList> {items.lesson2}
+          <SpanStyleList>{items.numberLesson2}</SpanStyleList> 
+          <p>{items.animalIcon2}</p>
+          {items.lesson2}
         </PeStyleList>
       </DivStyleList>
 
       <DivStyleList>
         <PeStyleList>
           {" "}
-          <SpanStyleList>{items.numberLesson3}</SpanStyleList> {items.lesson3}
+          <SpanStyleList>{items.numberLesson3}</SpanStyleList> 
+          <p>{items.animalIcon3}</p>
+          {items.lesson3}
         </PeStyleList>
       </DivStyleList>
       <DivStyleList>
         <PeStyleList>
           {" "}
-          <SpanStyleList>{items.numberLesson4}</SpanStyleList> {items.lesson4}
+          <SpanStyleList>{items.numberLesson4}</SpanStyleList> 
+          <p>{items.animalIcon4}</p>
+          {items.lesson4}
         </PeStyleList>
       </DivStyleList>
       <DivStyleList>
         <PeStyleList>
           {" "}
-          <SpanStyleList>{items.numberLesson5}</SpanStyleList> {items.lesson5}
+          <SpanStyleList>{items.numberLesson5}</SpanStyleList>
+          <p>{items.animalIcon5}</p>
+           {items.lesson5}
         </PeStyleList>
       </DivStyleList>
       <DivStyleList>
         <PeStyleList>
           {" "}
-          <SpanStyleList>{items.numberLesson6}</SpanStyleList> {items.lesson6}
+          <SpanStyleList>{items.numberLesson6}</SpanStyleList> 
+          <p>{items.animalIcon6}</p>
+          {items.lesson6}
         </PeStyleList>
       </DivStyleList>
       <DivStyleList>
         <PeStyleList>
           {" "}
-          <SpanStyleList>{items.numberLesson7}</SpanStyleList> {items.lesson7}
+          <SpanStyleList>{items.numberLesson7}</SpanStyleList> 
+          <p>{items.animalIcon7}</p>
+          {items.lesson7}
         </PeStyleList>
       </DivStyleList>
     </LiStyle>

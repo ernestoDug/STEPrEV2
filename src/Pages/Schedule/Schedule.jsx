@@ -30,8 +30,11 @@ const Shedule = () => {
 
   return (
     <>
-      <FormShedule />
-      <label className={sheduleStyle.colorLabel} htmlFor="colorInput">Select a color for day card</label>
+      <FormShedule 
+      // for change border si input number 
+      colorProps = {colorInput}
+      />
+      <label className={sheduleStyle.colorLabel} htmlFor="colorInput">Обери колір розкладу</label>
       <input
         className={sheduleStyle.colorInput}
         type="color"

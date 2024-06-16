@@ -41,7 +41,7 @@ form {
   font-weight: 900;
   color: rgb(88, 97, 223);
   padding: 12px;
-  background-color: #abf1d5;
+  background-color: #aeb0af;
   border-width: 0;
   text-transform: uppercase;
   cursor: pointer;
@@ -63,4 +63,9 @@ form {
   font-family: "Playfair Display";
   cursor: pointer;
   color: #c42061;
+}
+
+
+.iconAnimals{
+border-radius: 5px;
 }
