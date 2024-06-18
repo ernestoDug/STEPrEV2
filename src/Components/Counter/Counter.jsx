@@ -41,7 +41,7 @@ return (
       clickProps={handleClickCount}
       // this props only get here and get in form from data-Atribute 
       dbPropsFromCount = {count}
-      id = '655'
+      idProps = 'btnInCount'
 
     />
     {children}

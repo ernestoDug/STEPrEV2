@@ -18,10 +18,8 @@ const Form = () => {
   const [moodGood, setMoodGood] = useState("");
   const submiter = (e) => {
     e.preventDefault();
-    // отрима. елемент по аді для зручності це айді співпадає з 
-    // пропсом класу
-    let getElOnId = document.getElementById("_btn_m25tv_1");
-
+    // отрима. елемент по аді 
+    let getElOnId = document.getElementById("btnInCount");
 
     // console.log(getElOnId.attributes["data-dbPropsFromCountAtr"].value, "po id dataAtr99");
 
@@ -34,7 +32,7 @@ const Form = () => {
       id: nanoid(),
       comment,
       // закиндаю до базии значення дейта атрибуту що передав пропсом з каунтера 
-      // витазу його в дее 
+      // витащу його в дей
       coutDb: getElOnId.attributes["data-dbpropsfromcountatr"].value,
     };
 
@@ -129,10 +127,10 @@ const Form = () => {
             required
           >
             <option value="">обирай-КA</option>
-            <option className={formStyle.optionYes} value="Завітала">
+            <option className={formStyle.optionYes} value="завітала">
               А якже
             </option>
-            <option className={formStyle.optionNo} value="Нажаль ні...">
+            <option className={formStyle.optionNo} value="забула...">
               Можливо...
             </option>
           </select>
@@ -152,7 +150,6 @@ const Form = () => {
             id="moodGoodID"
             name="moodGood"
             value="Fine"
-            required
             checked={moodGood === "Fine"}
             // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
             onChange={changerForm}
@@ -179,6 +176,7 @@ const Form = () => {
 
         <Button nameBtn="Зберегти"
          classNameProps={formStyle.buttonStyle}
+         idProps={"btnInForm"}
          
           />
       </form>

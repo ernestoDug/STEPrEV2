@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 
 // colorProps for change bg
 const List = ({ arrayProps = [] }) => {
+  // const for render
   const Items = arrayProps.map((items) => (
     // we used color props fo BG
     // items.colorProps це в базу даних той пропс закинули 
@@ -86,8 +87,7 @@ const List = ({ arrayProps = [] }) => {
         <>
           <UlStyle>{Items}</UlStyle>
         </>
-      ) : null}
-      ;
+      ) : null};
       {/* conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!BIGAN
       тут ми замість :  нал тобто нічого не повртай постаивли одраду два амперсанди без тенарника
       тобто тільи якщо довдин більше нуля інакше нічого 

@@ -18,12 +18,27 @@
 }
 
 
-.isSucceeded {
+.isSucceededYes {
   background-color: rgb(60, 191, 143);
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+   font-size: 16px;
+   font-weight: 600;
+  border-radius: 3px;
+  padding-left: 10px;
+  color: rgb(7, 79, 50);
+
+  
 }
 
 .isSucceededNo {
-  background-color: rgb(231, 139, 165);
+  background-color: rgb(231, 139, 219);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3px;
+  padding-left: 10px;
+  color: #6e056e;
+
 }
 
 .wrapStud {
@@ -33,12 +48,15 @@
   padding: 20px;
 }
 
-.Login {
-  color: rgb(232, 36, 36);
+.goodMoodCls, .badMoodCls {
+  color: rgb(32, 148, 80);
+  font-size: 15px;
+  font-weight: 600;
 }
-
-.Logined {
+.badMoodCls
+ {
   color: rgb(165, 42, 147);
+ 
 }
 
 /* example module wsthout external library */
@@ -96,8 +114,8 @@
   background-position: right center;
 }
 
-/* animation----------------------------------------- */
-@keyframes blink-smooth {
+/* animation-1---------------------------------------- */
+@keyframes blink-smooth-1 {
   50% {
     color: transparent;
   }
@@ -106,17 +124,40 @@
   }
 
   50% {
-    color: rgb(255, 191, 0);
+    color: rgb(174, 133, 9);
   }
 
   100% {
-    color: rgb(252, 122, 163);
+    color: rgb(244, 63, 120);
   }
 }
 
-.spanMood {
+/* animation-2---------------------------------------- */
+@keyframes blink-smooth-2 {
+  50% {
+    color: transparent;
+  }
+  0% {
+    color: rgb(207, 71, 182);
+  }
+
+  50% {
+    color: rgb(169, 169, 17);
+  }
+
+  100% {
+    color: rgb(144, 90, 244);
+  }
+}
+.spanMood, .spanMoodBad {
   background-color: #9eefe1;
   border-radius: 5px;
   transition: all 0.5s ease;
-  animation: 7s blink-smooth infinite;
+  animation: 7s blink-smooth-1 infinite;
+}
+
+.spanMoodBad {
+  animation: 7s blink-smooth-2 infinite;
+
+
 }

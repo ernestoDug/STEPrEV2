@@ -507,6 +507,7 @@ const FormShedule = ({ colorProps }) => {
 
         <Button nameBtn="Зберегти"
          classNameProps={formStyle.buttonStyle} 
+         idProps={'btnInFormShedule'}
          />
       </form>
     </>

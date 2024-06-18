@@ -41,8 +41,9 @@ const Shedule = () => {
         value={colorInput}
         onChange={changerColor}
       />
-      <List arrayProps={dayShedule} colorProps={colorInput} 
-      />
+      {dayShedule ? (<List arrayProps={dayShedule} colorProps={colorInput}  />):null}
+      
+     
     </>
   );
 };

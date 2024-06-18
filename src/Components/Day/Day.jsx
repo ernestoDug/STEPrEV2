@@ -19,20 +19,15 @@ count = 0,
 }) => {
   // example const for use in  render dom nodes
   const goodMood = (
-    <h1 className={DayStyle.Logined}>
+    <p className={DayStyle.goodMoodCls}>
      Мій настрій: <span className={DayStyle.spanMood}>Чудовий👍</span>{" "}
-    </h1>
+    </p>
   );
   // example const for use in  render dom nodes
-  const badMood = (<h1 className={DayStyle.Login}>
-     Мій настрій: <span className={DayStyle.spanMood}> Так собі👎 </span></h1>);
+  const badMood = (<p className={DayStyle.badMoodCls}>
+     Мій настрій: <span className={DayStyle.spanMoodBad}> Так собі👎 </span></p>);
 
   
-
-  // handale for click as props for Button
-  // const handleClickStudReset = () => {
-  //   setCount(0);
-  // };
 
   return (
     <>
@@ -45,10 +40,10 @@ count = 0,
         </p>
     
         {/* conditional render */}
-        {isСompleted === "yes" ? (
-          <p className={DayStyle.isSucceeded}> Посмішка до мене сьогодні{isСompleted}</p>
+        {isСompleted === "завітала" ? (
+          <p className={DayStyle.isSucceededYes}> Посмішка до мене сьогодні {isСompleted}</p>
         ) : (
-          <p className={DayStyle.isSucceededNo}> Посмішка до мене сьогодні  {isСompleted}</p>
+          <p className={DayStyle.isSucceededNo}> Посмішка про мене сьогодні  {isСompleted}</p>
         )}
 
         <p className={DayStyle.name}>

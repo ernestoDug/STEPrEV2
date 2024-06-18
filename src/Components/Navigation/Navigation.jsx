@@ -25,12 +25,15 @@ const Navigation = () => {
             nameBtn="Мої плани"
             classNameProps={NavStyle.btnNavStyle}
             clickProps={() => navigate("home", { replace: false })}
+            idProps={'btnMyPlane'}
           />
 
           <Button
-            nameBtn="Schedule"
+            nameBtn="Мій розклад"
             classNameProps={NavStyle.btnNavStyle}
             clickProps={() => navigate("schedule", { replace: false })}
+            idProps={'btnMySchedule'}
+
           />
 
           {/* <Button
