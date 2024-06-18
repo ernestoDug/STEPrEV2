@@ -11,6 +11,7 @@ import DayStyle from "./Day.module.css";
 const Day = ({
   date,
   name = "",
+  // ось пропс куди запишемо каунтдБ дей рендерим на хомі
 count = 0,
   isСompleted = "",
   moodGood = false,

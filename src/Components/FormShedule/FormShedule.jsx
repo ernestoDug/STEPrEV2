@@ -44,6 +44,7 @@ const FormShedule = ({ colorProps }) => {
   const submiterSheduleForm = (e) => {
     e.preventDefault();
 
+
     // this obj for db ++++++++++++++++++
     const dayShedule = {
       lesson1,
@@ -68,11 +69,11 @@ const FormShedule = ({ colorProps }) => {
       animalIcon6,
       animalIcon7,
       colorProps,
-
       // id використовується я ключ до бази глянь в утилсах индекс дб**
       id: nanoid(),
       dateSh,
       dayWeek,
+
       //++++++++++++++++++++++++++++
     };
     // до бази
@@ -504,7 +505,9 @@ const FormShedule = ({ colorProps }) => {
           />
         </div>
 
-        <Button nameBtn="Зберегти" classNameProps={formStyle.buttonStyle} />
+        <Button nameBtn="Зберегти"
+         classNameProps={formStyle.buttonStyle} 
+         />
       </form>
     </>
   );

@@ -7,8 +7,11 @@ import Button from "../Button/Button";
 // import { addItem } from "../../utils/indexdb";
 // import { nanoid } from "nanoid";
 
+// import useDebounce from "../../utils/customHooks/useDebounse";
+
 
 import counterStyle from "./Counter.module.css";
+// const debCustomHook =  useDebounce;
 
 const Counter = ({ children }) => {
   const [count = 0, setCount] = useState();
@@ -20,8 +23,10 @@ const Counter = ({ children }) => {
     // console.log(e.target, 666);
     e.preventDefault();
     setCount(count + 1);
-    // addItem(coutDb);
-    // console.log(coutDb, 55555555);
+  
+    // debCustomHook(addItem(coutDb), 10000);
+
+    
   };
 
 
@@ -34,6 +39,10 @@ return (
       nameBtn="Cправи на сьогодні"
       classNameProps={counterStyle.btn}
       clickProps={handleClickCount}
+      // this props only get here and get in form from data-Atribute 
+      dbPropsFromCount = {count}
+      id = '655'
+
     />
     {children}
   </>

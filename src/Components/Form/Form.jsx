@@ -18,6 +18,12 @@ const Form = () => {
   const [moodGood, setMoodGood] = useState("");
   const submiter = (e) => {
     e.preventDefault();
+    // отрима. елемент по аді для зручності це айді співпадає з 
+    // пропсом класу
+    let getElOnId = document.getElementById("_btn_m25tv_1");
+
+
+    // console.log(getElOnId.attributes["data-dbPropsFromCountAtr"].value, "po id dataAtr99");
 
     // id використовується я ключ до бази глянь в утилсах индекс дб**
     const day = {
@@ -27,6 +33,9 @@ const Form = () => {
       moodGood,
       id: nanoid(),
       comment,
+      // закиндаю до базии значення дейта атрибуту що передав пропсом з каунтера 
+      // витазу його в дее 
+      coutDb: getElOnId.attributes["data-dbpropsfromcountatr"].value,
     };
 
     // до бази
@@ -58,8 +67,6 @@ const Form = () => {
         break;
       }
 
-    
-
       case "date": {
         setDate(value);
         break;
@@ -82,7 +89,6 @@ const Form = () => {
           Сьогодні:
         </label>
         <input
-
           className={formStyle.inputStyle}
           type="date"
           name="date"
@@ -96,7 +102,6 @@ const Form = () => {
           Цей день я назову:
         </label>
         <input
-           
           className={formStyle.inputStyle}
           type="text"
           maxLength="25"
@@ -113,7 +118,7 @@ const Form = () => {
             className={formStyle.labelSelectChoiseStyle}
             htmlFor="isСompleted"
           >
-            Чи приходила  сьогодні до мене  посмішка?{" "}
+            Чи приходила сьогодні до мене посмішка?{" "}
           </label>
           <select
             className={formStyle.selectStyle}
@@ -124,8 +129,12 @@ const Form = () => {
             required
           >
             <option value="">обирай-КA</option>
-            <option className={formStyle.optionYes} value="Завітала">А якже</option>
-            <option className={formStyle.optionNo} value="Нажаль ні...">Можливо...</option>
+            <option className={formStyle.optionYes} value="Завітала">
+              А якже
+            </option>
+            <option className={formStyle.optionNo} value="Нажаль ні...">
+              Можливо...
+            </option>
           </select>
         </div>
 
@@ -149,7 +158,7 @@ const Form = () => {
             onChange={changerForm}
           />
         </div>
-       
+
         <Counter>
           {/* for e[amle used props children ] */}
           <p>😺</p>
@@ -168,7 +177,10 @@ const Form = () => {
           required
         ></textarea>
 
-        <Button nameBtn="Save" classNameProps={formStyle.buttonStyle} />
+        <Button nameBtn="Зберегти"
+         classNameProps={formStyle.buttonStyle}
+         
+          />
       </form>
     </>
   );

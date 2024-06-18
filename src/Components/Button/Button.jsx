@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
 
-// names  import and ad for name className bla-bla.nameClasses from css +++++++1
+const Button = ({ nameBtn, clickProps, classNameProps, dbPropsFromCount }) => {
 
-// pay attention on name file module.css
-// import ButtonCardStyle from "./Button.module.css";
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// this css we import in App  for props for name clasess
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++1
 
-const Button = ({ nameBtn, clickProps, doubleClickProps, classNameProps }) => {
+  console.log(dbPropsFromCount, 789);
+
   return (
     <>
       <button
+      // зробив щоб айдишка так клас спіпадали щоб був унікальний айді кожної кнопки
+      //  але зоб можна було достукатися до кнопкий каунтера якій передали в 
+      //  дата атрбіут знаяення стану каунта щоб в базу закинути 
+        id={classNameProps}
+        data-dbpropsfromcountatr={dbPropsFromCount}
         onClick={clickProps}
-        onDoubleClick={doubleClickProps}
+        // onDoubleClick={doubleClickProps}
         className={classNameProps}
       >
         {" "}
@@ -26,8 +26,9 @@ const Button = ({ nameBtn, clickProps, doubleClickProps, classNameProps }) => {
 Button.propTypes = {
   nameBtn: PropTypes.string,
   clickProps: PropTypes.func,
-  doubleClickProps: PropTypes.func,
-  classNameProps:PropTypes.string,
-  };
+  // doubleClickProps: PropTypes.func,
+  classNameProps: PropTypes.string,
+  dbPropsFromCount: PropTypes.number,
+};
 
 export default Button;

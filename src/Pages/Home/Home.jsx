@@ -39,7 +39,9 @@ const Home = () => {
                                moodGood={moodGood}
                                             comment={comment}
                                             date={date}
-                                            count={coutDb}
+                                            // багатостраждальний пропс який вдалося передати 
+                                            // через дейта атрибут та витащити у форми
+                                            count={+coutDb}
               />
             </li>
           )
