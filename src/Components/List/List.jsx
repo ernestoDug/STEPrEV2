@@ -23,7 +23,7 @@ const List = ({ arrayProps = [] }) => {
         <PeStyleList>
           {" "}
           <SpanStyleList>{items.numberLesson1}</SpanStyleList> 
-          <p>{items.animalIcon1}</p>
+          <span>{items.animalIcon1}</span>
           {items.lesson1}
         </PeStyleList>
       </DivStyleList>
@@ -32,7 +32,7 @@ const List = ({ arrayProps = [] }) => {
         <PeStyleList>
           {" "}
           <SpanStyleList>{items.numberLesson2}</SpanStyleList> 
-          <p>{items.animalIcon2}</p>
+          <span>{items.animalIcon2}</span>
           {items.lesson2}
         </PeStyleList>
       </DivStyleList>
@@ -41,7 +41,7 @@ const List = ({ arrayProps = [] }) => {
         <PeStyleList>
           {" "}
           <SpanStyleList>{items.numberLesson3}</SpanStyleList> 
-          <p>{items.animalIcon3}</p>
+          <span>{items.animalIcon3}</span>
           {items.lesson3}
         </PeStyleList>
       </DivStyleList>
@@ -49,7 +49,7 @@ const List = ({ arrayProps = [] }) => {
         <PeStyleList>
           {" "}
           <SpanStyleList>{items.numberLesson4}</SpanStyleList> 
-          <p>{items.animalIcon4}</p>
+          <span>{items.animalIcon4}</span>
           {items.lesson4}
         </PeStyleList>
       </DivStyleList>
@@ -57,7 +57,7 @@ const List = ({ arrayProps = [] }) => {
         <PeStyleList>
           {" "}
           <SpanStyleList>{items.numberLesson5}</SpanStyleList>
-          <p>{items.animalIcon5}</p>
+          <span>{items.animalIcon5}</span>
            {items.lesson5}
         </PeStyleList>
       </DivStyleList>
@@ -65,7 +65,7 @@ const List = ({ arrayProps = [] }) => {
         <PeStyleList>
           {" "}
           <SpanStyleList>{items.numberLesson6}</SpanStyleList> 
-          <p>{items.animalIcon6}</p>
+          <span>{items.animalIcon6}</span>
           {items.lesson6}
         </PeStyleList>
       </DivStyleList>
@@ -73,7 +73,7 @@ const List = ({ arrayProps = [] }) => {
         <PeStyleList>
           {" "}
           <SpanStyleList>{items.numberLesson7}</SpanStyleList> 
-          <p>{items.animalIcon7}</p>
+          <span>{items.animalIcon7}</span>
           {items.lesson7}
         </PeStyleList>
       </DivStyleList>
