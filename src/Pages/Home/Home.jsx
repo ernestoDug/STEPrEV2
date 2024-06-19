@@ -17,8 +17,8 @@ const Home = () => {
   useEffect(() => {
     getItems()
       .then((items) => {
-        setDayHistory(items);
-        // console.log(items, 888);
+setDayHistory(items);
+        console.log(items[0]['nameMyDay'], 888);
       })
       .catch(() => {
         console.log(Error);
@@ -28,8 +28,7 @@ const Home = () => {
   return (
     <>
       <Form />
-
-      <ul className={ListDayStyle.listDay}>
+  <ul className={ListDayStyle.listDay}>
         {dayHistory.map(
           ({ nameMyDay,  isСompleted, moodGood, comment, date, coutDb}) => (
             <li  className={ListDayStyle.listDayItem} key={nanoid()}>
@@ -47,6 +46,7 @@ const Home = () => {
           )
         )}
       </ul>
+    
     </>
   );
 };

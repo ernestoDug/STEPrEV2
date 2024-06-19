@@ -41,7 +41,7 @@ const Form = () => {
 
     // console.log(day, 999);
     setnameMyDay("");
-    setComment("");
+    setComment(" ");
   };
 
   // universall handle
@@ -50,7 +50,7 @@ const Form = () => {
 
     switch (name) {
       case "nameMyDay": {
-        setnameMyDay(value);
+        setnameMyDay( value);
         break;
       }
 

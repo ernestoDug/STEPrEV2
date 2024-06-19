@@ -1,0 +1,23 @@
+.wrapGifLoading {
+    margin: 0 auto;
+    max-width: 300px;
+    border-radius: 9px;
+    border: 10px solid transparent;
+    border-image: 10
+    repeating-linear-gradient(
+      135deg,
+      #c4b620,
+      #c42061 10px,
+      transparent 10px,
+      transparent 20px,
+      #fbcfdf 20px,
+      #fbcfdf 30px,
+      transparent 30px,
+      transparent 40px
+    );}
+
+.wrapGifLoading img {
+    width: 100%;
+    border-radius: 9px;
+
+}

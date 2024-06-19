@@ -16,6 +16,14 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 5px;
  `;
 
+export const DivStyleList = styled.div`
+display: flex;
+gap: 5px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+border-radius: 7px;
+border: 1px solid rgb(199, 203, 201);;
+margin: 5px auto;
+`
 export const LiStyle = styled.li`
 display: flex;
 flex-flow: column nowrap;
@@ -29,14 +37,6 @@ justify-content: space-between;
  `;
 
 
-export const DivStyleList = styled.div`
-display: flex;
-gap: 5px;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-border-radius: 7px;
-border: 1px solid rgb(199, 203, 201);;
-margin: 5px auto;
-`
 export const PeStyleList = styled.p`
 display: flex;
 align-items: center;

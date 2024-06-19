@@ -14,7 +14,7 @@ import counterStyle from "./Counter.module.css";
 // const debCustomHook =  useDebounce;
 
 const Counter = ({ children }) => {
-  const [count = 0, setCount] = useState();
+  const [count, setCount] = useState(0);
 
   // const coutDb = {count,     id: nanoid(),}
 
@@ -22,11 +22,14 @@ const Counter = ({ children }) => {
   const handleClickCount = (e) => {
     // console.log(e.target, 666);
     e.preventDefault();
-    setCount(count + 1);
-  
-    // debCustomHook(addItem(coutDb), 10000);
-
-    
+    // ++++++++++++++++++++++++++++++++++++++++++++++++++++
+    // use a similar state update when you want to change many times
+    // prevStatecount just for convenience, the name can be anything
+    setCount(prevStatecount => prevStatecount + 1);
+    setCount(prevStatecount => prevStatecount + 4);
+    // ++++++++++++++++++++++++++++++++++++++ виходить воно оновить стан одразу на 5 
+ 
+   
   };
 
 
