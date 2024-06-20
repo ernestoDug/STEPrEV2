@@ -10,53 +10,32 @@ import formSheduleStyle from "./FormShedule.module.css";
 import formStyle from "../../Components/Form/Form.module.css";
 
 const FormShedule = ({ colorProps }) => {
-  // lesson
+  // obj for state
   const [lessons, setLessons] = useState({
+    dateSh: new Date().toISOString().substring(0, 10),
+    dayWeek: "",
     numberLesson1: "",
     lesson1: "",
+    animalIcon1: "🦜",
     numberLesson2: "",
+    animalIcon2: "🦩",
     lesson2: "",
     numberLesson3: "",
     lesson3: "",
+    animalIcon3: "🦚",
     numberLesson4: "",
     lesson4: "",
+    animalIcon4: "🐦‍⬛",
     numberLesson5: "",
     lesson5: "",
+    animalIcon5: "🐧",
     numberLesson6: "",
     lesson6: "",
+    animalIcon6: "🐓",
     numberLesson7: "",
+    animalIcon7: "🪿",
     lesson7: "",
   });
-
-  // const [lesson1, setLesson1] = useState("");
-  // const [lesson2, setLesson2] = useState("");
-  // const [lesson3, setLesson3] = useState("");
-  // const [lesson4, setLesson4] = useState("");
-  // const [lesson5, setLesson5] = useState("");
-  // const [lesson6, setLesson6] = useState("");
-  // const [lesson7, setLesson7] = useState("");
-  // number lesson
-  // const [numberLesson1, setNumberLesson1] = useState("");
-  // const [numberLesson2, setNumberLesson2] = useState("");
-  // const [numberLesson3, setNumberLesson3] = useState("");
-  // const [numberLesson4, setNumberLesson4] = useState("");
-  // const [numberLesson5, setNumberLesson5] = useState("");
-  // const [numberLesson6, setNumberLesson6] = useState("");
-  // const [numberLesson7, setNumberLesson7] = useState("");
-
-  const [dateSh, setDateSh] = useState(
-    new Date().toISOString().substring(0, 10)
-  );
-  const [dayWeek, setDayWeek] = useState("");
-
-  // icons
-  const [animalIcon1, setAnimalIcon1] = useState("🦜");
-  const [animalIcon2, setAnimalIcon2] = useState("🦩");
-  const [animalIcon3, setAnimalIcon3] = useState("🦚");
-  const [animalIcon4, setAnimalIcon4] = useState("🐦‍⬛");
-  const [animalIcon5, setAnimalIcon5] = useState("🐧");
-  const [animalIcon6, setAnimalIcon6] = useState("🐓");
-  const [animalIcon7, setAnimalIcon7] = useState("🪿");
 
   const submiterSheduleForm = (e) => {
     e.preventDefault();
@@ -70,6 +49,7 @@ const FormShedule = ({ colorProps }) => {
       lesson5: lessons.lesson5,
       lesson6: lessons.lesson6,
       lesson7: lessons.lesson7,
+      // number
       numberLesson1: +lessons.numberLesson1,
       numberLesson2: +lessons.numberLesson2,
       numberLesson3: +lessons.numberLesson3,
@@ -77,18 +57,20 @@ const FormShedule = ({ colorProps }) => {
       numberLesson5: +lessons.numberLesson5,
       numberLesson6: +lessons.numberLesson6,
       numberLesson7: +lessons.numberLesson7,
-      animalIcon1,
-      animalIcon2,
-      animalIcon3,
-      animalIcon4,
-      animalIcon5,
-      animalIcon6,
-      animalIcon7,
+      // icon
+      animalIcon1: lessons.animalIcon1,
+      animalIcon2: lessons.animalIcon2,
+      animalIcon3: lessons.animalIcon3,
+      animalIcon4: lessons.animalIcon4,
+      animalIcon5: lessons.animalIcon5,
+      animalIcon6: lessons.animalIcon6,
+      animalIcon7: lessons.animalIcon7,
+
       colorProps,
       // id використовується я ключ до бази глянь в утилсах индекс дб**
       id: nanoid(),
-      dateSh,
-      dayWeek,
+      dateSh: lessons.dateSh,
+      dayWeek: lessons.dayWeek,
 
       //++++++++++++++++++++++++++++
     };
@@ -98,30 +80,29 @@ const FormShedule = ({ colorProps }) => {
     // console.log(dayShedule, 666);
     // чистка
     setLessons({
+      dayWeek: "",
       numberLesson1: "",
       lesson1: "",
+      animalIcon1: "",
       numberLesson2: "",
+      animalIcon2: "",
       lesson2: "",
       numberLesson3: "",
+      animalIcon3: "",
       lesson3: "",
       numberLesson4: "",
+      animalIcon4: "",
       lesson4: "",
       numberLesson5: "",
+      animalIcon5: "",
       lesson5: "",
       numberLesson6: "",
+      animalIcon6: "",
       lesson6: "",
       numberLesson7: "",
+      animalIcon7: "",
       lesson7: "",
     });
-
-    setDayWeek("");
-    setAnimalIcon1("");
-    setAnimalIcon2("");
-    setAnimalIcon3("");
-    setAnimalIcon4("");
-    setAnimalIcon5("");
-    setAnimalIcon6("");
-    setAnimalIcon7("");
   };
 
   // universall handl input
@@ -130,48 +111,69 @@ const FormShedule = ({ colorProps }) => {
 
     switch (name) {
       case "numberLesson1": {
-        // setNumberLesson1(value);
-        setLessons((prevState) => ({ ...prevState, numberLesson1: value }));
+        if (value <= 7) {
+          // ususallu write on prevState **************************
+
+          setLessons((prevState) => ({ ...prevState, numberLesson1: value }));
+        }
         break;
       }
 
       case "numberLesson2": {
-        // setNumberLesson2(value);
-        setLessons((prevState) => ({ ...prevState, numberLesson2: value }));
+        if (value <= 7) {
+          // ususallu write on prevState **************************
+
+          setLessons((prevState) => ({ ...prevState, numberLesson2: value }));
+        }
         break;
       }
 
       case "numberLesson3": {
-        // setNumberLesson3(value);
-        setLessons((prevState) => ({ ...prevState, numberLesson3: value }));
+        if (value <= 7) {
+          // ususallu write on prevState **************************
+
+          setLessons((prevState) => ({ ...prevState, numberLesson3: value }));
+        }
         break;
       }
 
       case "numberLesson4": {
-        // setNumberLesson4(value);
-        setLessons((prevState) => ({ ...prevState, numberLesson4: value }));
+        if (value <= 7) {
+          // ususallu write on prevState **************************
+
+          setLessons((prevState) => ({ ...prevState, numberLesson4: value }));
+        }
         break;
       }
 
       case "numberLesson5": {
-        // setNumberLesson5(value);
-        setLessons((prevState) => ({ ...prevState, numberLesson5: value }));
+        if (value <= 7) {
+          // ususallu write on prevState **************************
+
+          setLessons((prevState) => ({ ...prevState, numberLesson5: value }));
+        }
         break;
       }
 
       case "numberLesson6": {
-        // setNumberLesson6(value);
-        setLessons((prevState) => ({ ...prevState, numberLesson6: value }));
+        if (value <= 7) {
+          // ususallu write on prevState **************************
+
+          setLessons((prevState) => ({ ...prevState, numberLesson6: value }));
+        }
         break;
       }
       case "numberLesson7": {
-        // setNumberLesson7(value);
-        setLessons((prevState) => ({ ...prevState, numberLesson7: value }));
+        if (value <= 7) {
+          // ususallu write on prevState **************************
+
+          setLessons((prevState) => ({ ...prevState, numberLesson7: value }));
+        }
         break;
       }
 
       case "lesson1": {
-        // setLesson1(value);
+        // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson1: value }));
         const animals = [
           "🦍",
@@ -188,13 +190,16 @@ const FormShedule = ({ colorProps }) => {
           "🦣",
           "🦆",
         ];
+        setLessons((prevState) => ({
+          ...prevState,
+          animalIcon1: animals[Math.floor(Math.random() * animals.length + 1)],
+        }));
 
-        setAnimalIcon1(animals[Math.floor(Math.random() * animals.length + 1)]);
         break;
       }
 
       case "lesson2": {
-        // setLesson2(value);
+        // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson2: value }));
 
         const animals = [
@@ -213,12 +218,17 @@ const FormShedule = ({ colorProps }) => {
           "🦆",
         ];
 
-        setAnimalIcon2(animals[Math.floor(Math.random() * animals.length + 1)]);
+        // ususallu write on prevState **************************
+        setLessons((prevState) => ({
+          ...prevState,
+          animalIcon2: animals[Math.floor(Math.random() * animals.length + 1)],
+        }));
+
         break;
       }
 
       case "lesson3": {
-        // setLesson3(value);
+        // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson3: value }));
 
         const animals = [
@@ -237,11 +247,16 @@ const FormShedule = ({ colorProps }) => {
           "🦆",
         ];
 
-        setAnimalIcon3(animals[Math.floor(Math.random() * animals.length + 1)]);
+        // ususallu write on prevState **************************
+        setLessons((prevState) => ({
+          ...prevState,
+          animalIcon3: animals[Math.floor(Math.random() * animals.length + 1)],
+        }));
+
         break;
       }
       case "lesson4": {
-        // setLesson4(value);
+        // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson4: value }));
 
         const animals = [
@@ -260,12 +275,17 @@ const FormShedule = ({ colorProps }) => {
           "🦆",
         ];
 
-        setAnimalIcon4(animals[Math.floor(Math.random() * animals.length + 1)]);
+        // ususallu write on prevState **************************
+        setLessons((prevState) => ({
+          ...prevState,
+          animalIcon4: animals[Math.floor(Math.random() * animals.length + 1)],
+        }));
+
         break;
       }
 
       case "lesson5": {
-        // setLesson5(value);
+        // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson5: value }));
 
         const animals = [
@@ -284,11 +304,16 @@ const FormShedule = ({ colorProps }) => {
           "🦆",
         ];
 
-        setAnimalIcon5(animals[Math.floor(Math.random() * animals.length + 1)]);
+        // ususallu write on prevState **************************
+        setLessons((prevState) => ({
+          ...prevState,
+          animalIcon5: animals[Math.floor(Math.random() * animals.length + 1)],
+        }));
+
         break;
       }
       case "lesson6": {
-        // setLesson6(value);
+        // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson6: value }));
 
         const animals = [
@@ -307,12 +332,17 @@ const FormShedule = ({ colorProps }) => {
           "🦆",
         ];
 
-        setAnimalIcon6(animals[Math.floor(Math.random() * animals.length + 1)]);
+        // ususallu write on prevState **************************
+        setLessons((prevState) => ({
+          ...prevState,
+          animalIcon6: animals[Math.floor(Math.random() * animals.length + 1)],
+        }));
+
         break;
       }
 
       case "lesson7": {
-        // setLesson7(value);
+        // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson7: value }));
 
         const animals = [
@@ -331,17 +361,25 @@ const FormShedule = ({ colorProps }) => {
           "🦆",
         ];
 
-        setAnimalIcon7(animals[Math.floor(Math.random() * animals.length + 1)]);
+        // ususallu write on prevState **************************
+        setLessons((prevState) => ({
+          ...prevState,
+          animalIcon7: animals[Math.floor(Math.random() * animals.length + 1)],
+        }));
+
         break;
       }
 
       case "dayWeek": {
-        setDayWeek(value);
+        setLessons((prevState) => ({
+          ...prevState, dayWeek: value}));
         break;
       }
 
       case "date": {
-        setDateSh(value);
+        setLessons((prevState) => ({
+          ...prevState, dateSh: value}));
+      
         break;
       }
 
@@ -367,7 +405,7 @@ const FormShedule = ({ colorProps }) => {
           type="date"
           name="date"
           placeholder="ДД.ММ.РР"
-          value={dateSh}
+          value={lessons.dateSh}
           onChange={changerFormShedule}
         />
 
@@ -381,7 +419,7 @@ const FormShedule = ({ colorProps }) => {
           maxLength="13"
           name="dayWeek"
           placeholder="  День тижня"
-          value={dayWeek}
+          value={lessons.dayWeek}
           onChange={changerFormShedule}
         />
         {/* 1 */}
@@ -397,7 +435,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {!animalIcon1 ? (
+          {!lessons.animalIcon1 ? (
             <p
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
@@ -409,7 +447,7 @@ const FormShedule = ({ colorProps }) => {
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
             >
-              {animalIcon1}
+              {lessons.animalIcon1}
             </p>
           )}
 
@@ -437,7 +475,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {!animalIcon2 ? (
+          {!lessons.animalIcon2 ? (
             <p
               className={formSheduleStyle.iconAnimals}
               style={{ color: colorProps }}
@@ -449,7 +487,7 @@ const FormShedule = ({ colorProps }) => {
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
             >
-              {animalIcon2}
+              {lessons.animalIcon2}
             </p>
           )}
           <input
@@ -477,7 +515,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {!animalIcon3 ? (
+          {!lessons.animalIcon3 ? (
             <p
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
@@ -489,7 +527,7 @@ const FormShedule = ({ colorProps }) => {
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
             >
-              {animalIcon3}
+              {lessons.animalIcon3}
             </p>
           )}
           <input
@@ -516,7 +554,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {!animalIcon4 ? (
+          {!lessons.animalIcon4 ? (
             <p
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
@@ -528,7 +566,7 @@ const FormShedule = ({ colorProps }) => {
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
             >
-              {animalIcon4}
+              {lessons.animalIcon4}
             </p>
           )}
           <input
@@ -555,7 +593,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {!animalIcon5 ? (
+          {!lessons.animalIcon5 ? (
             <p
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
@@ -567,7 +605,7 @@ const FormShedule = ({ colorProps }) => {
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
             >
-              {animalIcon5}
+              {lessons.animalIcon5}
             </p>
           )}
           <input
@@ -594,7 +632,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {!animalIcon6 ? (
+          {!lessons.animalIcon6 ? (
             <p
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
@@ -606,7 +644,7 @@ const FormShedule = ({ colorProps }) => {
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
             >
-              {animalIcon6}
+              {lessons.animalIcon6}
             </p>
           )}
 
@@ -635,7 +673,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {!animalIcon7 ? (
+          {!lessons.animalIcon7 ? (
             <p
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
@@ -647,7 +685,7 @@ const FormShedule = ({ colorProps }) => {
               className={formSheduleStyle.iconAnimals}
               style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
             >
-              {animalIcon7}
+              {lessons.animalIcon7}
             </p>
           )}
           <input

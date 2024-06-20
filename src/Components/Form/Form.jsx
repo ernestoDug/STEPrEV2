@@ -11,37 +11,45 @@ import formStyle from "./Form.module.css";
 import Counter from "../Counter/Counter";
 
 const Form = () => {
-  const [nameMyDay, setnameMyDay] = useState("");
-  const [date, setDate] = useState(new Date().toISOString().substring(0, 10));
-  const [comment, setComment] = useState("");
-  const [isСompleted, setIsСompleted] = useState("");
-  const [moodGood, setMoodGood] = useState("");
+  // const [nameMyDay, setnameMyDay] = useState("");
+  // const [date, setDate] = useState(new Date().toISOString().substring(0, 10));
+  // const [comment, setComment] = useState("");
+  // const [isСompleted, setIsСompleted] = useState("");
+  // const [moodGood, setMoodGood] = useState("");
+
+  // obj for state
+  const [myDay, setMyDay] = useState({
+    nameMyDay: "",
+    date: new Date().toISOString().substring(0, 10),
+    comment: "",
+    isСompleted: "",
+    moodGood: "",
+  });
+
   const submiter = (e) => {
     e.preventDefault();
-    // отрима. елемент по аді 
+    // отрима. елемент по аді
     let getElOnId = document.getElementById("btnInCount");
 
     // console.log(getElOnId.attributes["data-dbPropsFromCountAtr"].value, "po id dataAtr99");
 
     // id використовується я ключ до бази глянь в утилсах индекс дб**
     const day = {
-      nameMyDay,
-      date,
-      isСompleted,
-      moodGood,
+      nameMyDay: myDay.nameMyDay,
+      date: myDay.nameMyDay,
+      isСompleted: myDay.isСompleted,
+      moodGood: myDay.moodGood,
       id: nanoid(),
-      comment,
-      // закиндаю до базии значення дейта атрибуту що передав пропсом з каунтера 
+      comment: myDay.comment,
+      // закиндаю до базии значення дейта атрибуту що передав пропсом з каунтера
       // витащу його в дей
       coutDb: getElOnId.attributes["data-dbpropsfromcountatr"].value,
     };
 
     // до бази
     addItem(day);
-
     // console.log(day, 999);
-    setnameMyDay("");
-    setComment(" ");
+    setMyDay({ myDay: "", comment: " " });
   };
 
   // universall handle
@@ -50,28 +58,33 @@ const Form = () => {
 
     switch (name) {
       case "nameMyDay": {
-        setnameMyDay( value);
+        // ususallu write on prevState **************************
+        setMyDay((prevState) => ({ ...prevState, nameMyDay: value }));
         break;
       }
 
       case "isСompleted": {
-        setIsСompleted(value);
+        // ususallu write on prevState **************************
+        setMyDay((prevState) => ({ ...prevState, isСompleted: value }));
+
         break;
       }
 
       case "moodGood": {
-        setMoodGood(value);
+        setMyDay((prevState) => ({ ...prevState, moodGood: value }));
         // console.log(value, 9999999999);
         break;
       }
 
       case "date": {
-        setDate(value);
+        // ususallu write on prevState **************************
+        setMyDay((prevState) => ({ ...prevState, date: value }));
         break;
       }
 
       case "comment": {
-        setComment(value);
+        // ususallu write on prevState **************************
+        setMyDay((prevState) => ({ ...prevState, comment: value }));
         break;
       }
 
@@ -92,7 +105,7 @@ const Form = () => {
           name="date"
           id="dateID"
           placeholder="дд.мм.рр"
-          value={date}
+          value={myDay.date}
           onChange={changerForm}
         />
 
@@ -106,7 +119,7 @@ const Form = () => {
           name="nameMyDay"
           id="nameMyDayID"
           placeholder="я називаю цей день..."
-          value={nameMyDay}
+          value={myDay.nameMyDay}
           required
           onChange={changerForm}
         />
@@ -123,7 +136,7 @@ const Form = () => {
             onChange={changerForm}
             name="isСompleted"
             id=""
-            value={isСompleted}
+            value={myDay.isСompleted}
             required
           >
             <option value="">обирай-КA</option>
@@ -150,7 +163,7 @@ const Form = () => {
             id="moodGoodID"
             name="moodGood"
             value="Fine"
-            checked={moodGood === "Fine"}
+            checked={myDay.moodGood === "Fine"}
             // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
             onChange={changerForm}
           />
@@ -174,11 +187,11 @@ const Form = () => {
           required
         ></textarea>
 
-        <Button nameBtn="Зберегти"
-         classNameProps={formStyle.buttonStyle}
-         idProps={"btnInForm"}
-         
-          />
+        <Button
+          nameBtn="Зберегти"
+          classNameProps={formStyle.buttonStyle}
+          idProps={"btnInForm"}
+        />
       </form>
     </>
   );
