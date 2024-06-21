@@ -21,6 +21,7 @@ const Button = ({
         // onDoubleClick={doubleClickProps}
         className={classNameProps}
         id={idProps}
+        type="button"
       >
         {" "}
         {nameBtn}

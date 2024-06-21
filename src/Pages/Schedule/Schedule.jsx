@@ -18,9 +18,9 @@ const Shedule = () => {
   // з бази
   useEffect(() => {
     getItems()
-      .then((items) => {
+      .then((items ) => {
         setDayShedule(items);
-        //   console.log(dayShedule, 55665);
+  
         // console.log(items, 888888888);
       })
       .catch(() => {
