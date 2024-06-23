@@ -69,3 +69,14 @@ form {
 .iconAnimals{
 border-radius: 5px;
 }
+
+.selectStyle {
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+/* for select from import propsi */
+.selectWrap {
+  background-color: transparent;
+}
