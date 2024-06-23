@@ -17,24 +17,24 @@ const FormShedule = ({ colorProps }) => {
     dayWeek: "",
     numberLesson1: "",
     lesson1: "",
-    animalIcon1: "🦜",
+    animalIcon1: "",
     numberLesson2: "",
-    animalIcon2: "🦩",
+    animalIcon2: "",
     lesson2: "",
     numberLesson3: "",
     lesson3: "",
-    animalIcon3: "🦚",
+    animalIcon3: "",
     numberLesson4: "",
     lesson4: "",
-    animalIcon4: "🐦‍⬛",
+    animalIcon4: "",
     numberLesson5: "",
     lesson5: "",
-    animalIcon5: "🐧",
+    animalIcon5: "",
     numberLesson6: "",
     lesson6: "",
-    animalIcon6: "🐓",
+    animalIcon6: "",
     numberLesson7: "",
-    animalIcon7: "🪿",
+    animalIcon7: "",
     lesson7: "",
   });
 
@@ -176,8 +176,7 @@ const FormShedule = ({ colorProps }) => {
       case "lesson1": {
         // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson1: value }));
-       
-        
+
         break;
       }
 
@@ -485,11 +484,24 @@ const FormShedule = ({ colorProps }) => {
             </select>
           </div> */}
           <Select
-          wraperClassProps = {formSheduleStyle.selectWrap}
-          labelClassProps ={formSheduleStyle.labelSelectChoiseStyle}
-          labelTextProps = "Істотка"
-          selectClassProps = {formSheduleStyle.selectStyle}
-
+            wraperClassProps={formSheduleStyle.selectWrap}
+            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+            labelTextProps={"Істотка"}
+            selectClassProps={formSheduleStyle.selectStyle}
+            nameSelectProps={"animalIcon1"}
+            valueOptio1Props={"🦍"}
+            valueOptio2Props={"🐕"}
+            valueOptio3Props={"🐈"}
+            valueOptio4Props={"🐅"}
+            valueOptio5Props={"🐆"}
+            valueOptio6Props={"🐎"}
+            valueOptio7Props={"🦓"}
+            valueOptio8Props={"🦬"}
+            valueOptio9Props={"🐫"}
+            valueOptio10Props={"🦌"}
+            valueOptio11Props={"🐀"}
+            valueOptio12Props={"🦆"}
+            valueOptio13Props={"🦣"}
           />
 
           {/* ------------------------------------------------------  */}
