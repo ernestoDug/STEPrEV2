@@ -10,30 +10,30 @@ import formSheduleStyle from "./FormShedule.module.css";
 // FOR STYLE BUTTON IN THIS FORM = AS IN FORM and input style
 import formStyle from "../../Components/Form/Form.module.css";
 
-const FormShedule = ({ colorProps }) => {
+const FormShedule = ({ colorProps, children }) => {
   // obj for state
   const [lessons, setLessons] = useState({
     dateSh: new Date().toISOString().substring(0, 10),
     dayWeek: "",
-    numberLesson1: "",
+    numberLesson1: "1",
     lesson1: "",
     animalIcon1: "",
-    numberLesson2: "",
+    numberLesson2: "2",
     animalIcon2: "",
     lesson2: "",
-    numberLesson3: "",
+    numberLesson3: "3",
     lesson3: "",
     animalIcon3: "",
-    numberLesson4: "",
+    numberLesson4: "4",
     lesson4: "",
     animalIcon4: "",
-    numberLesson5: "",
+    numberLesson5: "5",
     lesson5: "",
     animalIcon5: "",
-    numberLesson6: "",
+    numberLesson6: "6",
     lesson6: "",
     animalIcon6: "",
-    numberLesson7: "",
+    numberLesson7: "7",
     animalIcon7: "",
     lesson7: "",
   });
@@ -82,25 +82,25 @@ const FormShedule = ({ colorProps }) => {
     // чистка
     setLessons({
       dayWeek: "",
-      numberLesson1: "",
+      numberLesson1: "1",
       lesson1: "",
       animalIcon1: "",
-      numberLesson2: "",
+      numberLesson2: "2",
       animalIcon2: "",
       lesson2: "",
-      numberLesson3: "",
+      numberLesson3: "3",
       animalIcon3: "",
       lesson3: "",
-      numberLesson4: "",
+      numberLesson4: "4",
       animalIcon4: "",
       lesson4: "",
-      numberLesson5: "",
+      numberLesson5: "5",
       animalIcon5: "",
       lesson5: "",
-      numberLesson6: "",
+      numberLesson6: "6",
       animalIcon6: "",
       lesson6: "",
-      numberLesson7: "",
+      numberLesson7: "7",
       animalIcon7: "",
       lesson7: "",
     });
@@ -114,6 +114,7 @@ const FormShedule = ({ colorProps }) => {
       case "numberLesson1": {
         if (value <= 7) {
           // ususallu write on prevState **************************
+          console.log(value, 55566)
 
           setLessons((prevState) => ({ ...prevState, numberLesson1: value }));
         }
@@ -184,28 +185,6 @@ const FormShedule = ({ colorProps }) => {
         // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson2: value }));
 
-        const animals = [
-          "🦍",
-          "🐕",
-          "🐈",
-          "🐅",
-          "🐆",
-          "🐎",
-          "🦓",
-          "🦬",
-          "🐫",
-          "🦌",
-          "🐀",
-          "🦣",
-          "🦆",
-        ];
-
-        // ususallu write on prevState **************************
-        setLessons((prevState) => ({
-          ...prevState,
-          animalIcon2: animals[Math.floor(Math.random() * animals.length + 1)],
-        }));
-
         break;
       }
 
@@ -213,55 +192,11 @@ const FormShedule = ({ colorProps }) => {
         // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson3: value }));
 
-        const animals = [
-          "🦍",
-          "🐕",
-          "🐈",
-          "🐅",
-          "🐆",
-          "🐎",
-          "🦓",
-          "🦬",
-          "🐫",
-          "🦌",
-          "🐀",
-          "🦣",
-          "🦆",
-        ];
-
-        // ususallu write on prevState **************************
-        setLessons((prevState) => ({
-          ...prevState,
-          animalIcon3: animals[Math.floor(Math.random() * animals.length + 1)],
-        }));
-
         break;
       }
       case "lesson4": {
         // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson4: value }));
-
-        const animals = [
-          "🦍",
-          "🐕",
-          "🐈",
-          "🐅",
-          "🐆",
-          "🐎",
-          "🦓",
-          "🦬",
-          "🐫",
-          "🦌",
-          "🐀",
-          "🦣",
-          "🦆",
-        ];
-
-        // ususallu write on prevState **************************
-        setLessons((prevState) => ({
-          ...prevState,
-          animalIcon4: animals[Math.floor(Math.random() * animals.length + 1)],
-        }));
 
         break;
       }
@@ -270,55 +205,11 @@ const FormShedule = ({ colorProps }) => {
         // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson5: value }));
 
-        const animals = [
-          "🦍",
-          "🐕",
-          "🐈",
-          "🐅",
-          "🐆",
-          "🐎",
-          "🦓",
-          "🦬",
-          "🐫",
-          "🦌",
-          "🐀",
-          "🦣",
-          "🦆",
-        ];
-
-        // ususallu write on prevState **************************
-        setLessons((prevState) => ({
-          ...prevState,
-          animalIcon5: animals[Math.floor(Math.random() * animals.length + 1)],
-        }));
-
         break;
       }
       case "lesson6": {
         // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson6: value }));
-
-        const animals = [
-          "🦍",
-          "🐕",
-          "🐈",
-          "🐅",
-          "🐆",
-          "🐎",
-          "🦓",
-          "🦬",
-          "🐫",
-          "🦌",
-          "🐀",
-          "🦣",
-          "🦆",
-        ];
-
-        // ususallu write on prevState **************************
-        setLessons((prevState) => ({
-          ...prevState,
-          animalIcon6: animals[Math.floor(Math.random() * animals.length + 1)],
-        }));
 
         break;
       }
@@ -326,28 +217,6 @@ const FormShedule = ({ colorProps }) => {
       case "lesson7": {
         // ususallu write on prevState **************************
         setLessons((prevState) => ({ ...prevState, lesson7: value }));
-
-        const animals = [
-          "🦍",
-          "🐕",
-          "🐈",
-          "🐅",
-          "🐆",
-          "🐎",
-          "🦓",
-          "🦬",
-          "🐫",
-          "🦌",
-          "🐀",
-          "🦣",
-          "🦆",
-        ];
-
-        // ususallu write on prevState **************************
-        setLessons((prevState) => ({
-          ...prevState,
-          animalIcon7: animals[Math.floor(Math.random() * animals.length + 1)],
-        }));
 
         break;
       }
@@ -371,8 +240,33 @@ const FormShedule = ({ colorProps }) => {
 
       case "animalIcon1": {
         setLessons((prevState) => ({ ...prevState, animalIcon1: value }));
+           break;
+      }
+      case "animalIcon2": {
+        setLessons((prevState) => ({ ...prevState, animalIcon2: value }));
         break;
       }
+      case "animalIcon3": {
+        setLessons((prevState) => ({ ...prevState, animalIcon3: value }));
+        break;
+      }
+      case "animalIcon4": {
+        setLessons((prevState) => ({ ...prevState, animalIcon4: value }));
+        break;
+      }
+      case "animalIcon5": {
+        setLessons((prevState) => ({ ...prevState, animalIcon5: value }));
+        break;
+      }
+      case "animalIcon6": {
+        setLessons((prevState) => ({ ...prevState, animalIcon6: value }));
+        break;
+      }
+      case "animalIcon7": {
+        setLessons((prevState) => ({ ...prevState, animalIcon7: value }));
+        break;
+      }
+
 
       default:
         return;
@@ -409,7 +303,7 @@ const FormShedule = ({ colorProps }) => {
           type="string"
           maxLength="13"
           name="dayWeek"
-          placeholder="  День тижня"
+          placeholder="День тижня"
           value={lessons.dayWeek}
           onChange={changerFormShedule}
         />
@@ -425,70 +319,15 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
-          {/* ----------------------------------------------   */}
-          {/* <div className={formSheduleStyle.selectWrap}>
-            <label
-              className={formSheduleStyle.labelSelectChoiseStyle}
-              htmlFor="aanimalIcon1ID"
-            >
-              Істотка{" "}
-            </label>
-            <select
-              className={formSheduleStyle.selectStyle}
-              onChange={changerFormShedule}
-              name="animalIcon1"
-              id="animalIcon1ID"
-              value={lessons.animalIcon1}
-              required
-            >
-              <option value="">Зоопарк</option>
-              <option className={formSheduleStyle.option} value="🦍">
-                🦍
-              </option>
-              <option className={formSheduleStyle.option} value="🐕">
-                🐕
-              </option>
-              <option className={formSheduleStyle.option} value="🐈">
-                🐈
-              </option>
-              <option className={formSheduleStyle.option} value="🐅">
-                🐅
-              </option>
-              <option className={formSheduleStyle.option} value="🐆">
-                🐆
-              </option>
-              <option className={formSheduleStyle.option} value="🐎">
-                🐎
-              </option>
-              <option className={formSheduleStyle.option} value="🦓">
-                🦓
-              </option>
-              <option className={formSheduleStyle.option} value="🦬">
-                🦬
-              </option>
-              <option className={formSheduleStyle.option} value="   🐫">
-                🐫
-              </option>
-              <option className={formSheduleStyle.option} value="🦌">
-                🦌
-              </option>
-              <option className={formSheduleStyle.option} value=" 🐀">
-                🐀
-              </option>
-              <option className={formSheduleStyle.option} value="🦆">
-                🦆
-              </option>
-              <option className={formSheduleStyle.option} value="🦣">
-                🦣
-              </option>
-            </select>
-          </div> */}
+
           <Select
             wraperClassProps={formSheduleStyle.selectWrap}
             labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
             labelTextProps={"Істотка"}
             selectClassProps={formSheduleStyle.selectStyle}
             nameSelectProps={"animalIcon1"}
+            optionTextProps={"Зоопарк"}
+            optionClassProps={formSheduleStyle.optionStyle}
             valueOptio1Props={"🦍"}
             valueOptio2Props={"🐕"}
             valueOptio3Props={"🐈"}
@@ -502,6 +341,8 @@ const FormShedule = ({ colorProps }) => {
             valueOptio11Props={"🐀"}
             valueOptio12Props={"🦆"}
             valueOptio13Props={"🦣"}
+            changerProps={changerFormShedule}
+            idSelectProps={"animalIcon1ID"}
           />
 
           {/* ------------------------------------------------------  */}
@@ -539,11 +380,37 @@ const FormShedule = ({ colorProps }) => {
             maxLength="2"
             name="numberLesson2"
             placeholder="№"
-            // value={numberLesson2}
             value={lessons.numberLesson2}
             onChange={changerFormShedule}
             style={{ color: colorProps }}
           />
+
+<Select
+            wraperClassProps={formSheduleStyle.selectWrap}
+            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+            labelTextProps={"Істотка"}
+            selectClassProps={formSheduleStyle.selectStyle}
+            nameSelectProps={"animalIcon2"}
+            optionTextProps={"Зоопарк"}
+            optionClassProps={formSheduleStyle.optionStyle}
+            valueOptio1Props={"🦍"}
+            valueOptio2Props={"🐕"}
+            valueOptio3Props={"🐈"}
+            valueOptio4Props={"🐅"}
+            valueOptio5Props={"🐆"}
+            valueOptio6Props={"🐎"}
+            valueOptio7Props={"🦓"}
+            valueOptio8Props={"🦬"}
+            valueOptio9Props={"🐫"}
+            valueOptio10Props={"🦌"}
+            valueOptio11Props={"🐀"}
+            valueOptio12Props={"🦆"}
+            valueOptio13Props={"🦣"}
+            changerProps={changerFormShedule}
+            idSelectProps={"animalIcon2ID"}
+          />
+
+
           {!lessons.animalIcon2 ? (
             <p
               className={formSheduleStyle.iconAnimals}
@@ -579,10 +446,34 @@ const FormShedule = ({ colorProps }) => {
             maxLength="2"
             name="numberLesson3"
             placeholder="№"
-            // value={numberLesson3}
-            value={lessons.numberLesson3}
+                     value={lessons.numberLesson3}
             onChange={changerFormShedule}
             style={{ color: colorProps }}
+          />
+
+<Select
+            wraperClassProps={formSheduleStyle.selectWrap}
+            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+            labelTextProps={"Істотка"}
+            selectClassProps={formSheduleStyle.selectStyle}
+            nameSelectProps={"animalIcon3"}
+            optionTextProps={"Зоопарк"}
+            optionClassProps={formSheduleStyle.optionStyle}
+            valueOptio1Props={"🦍"}
+            valueOptio2Props={"🐕"}
+            valueOptio3Props={"🐈"}
+            valueOptio4Props={"🐅"}
+            valueOptio5Props={"🐆"}
+            valueOptio6Props={"🐎"}
+            valueOptio7Props={"🦓"}
+            valueOptio8Props={"🦬"}
+            valueOptio9Props={"🐫"}
+            valueOptio10Props={"🦌"}
+            valueOptio11Props={"🐀"}
+            valueOptio12Props={"🦆"}
+            valueOptio13Props={"🦣"}
+            changerProps={changerFormShedule}
+            idSelectProps={"animalIcon3ID"}
           />
           {!lessons.animalIcon3 ? (
             <p
@@ -605,8 +496,7 @@ const FormShedule = ({ colorProps }) => {
             maxLength="25"
             name="lesson3"
             placeholder="Назва предмету"
-            // value={lesson3}
-            value={lessons.lesson3}
+              value={lessons.lesson3}
             onChange={changerFormShedule}
           />
         </div>
@@ -618,10 +508,33 @@ const FormShedule = ({ colorProps }) => {
             maxLength="2"
             name="numberLesson4"
             placeholder="№"
-            // value={numberLesson4}
-            value={lessons.numberLesson4}
+               value={lessons.numberLesson4}
             onChange={changerFormShedule}
             style={{ color: colorProps }}
+          />
+           <Select
+            wraperClassProps={formSheduleStyle.selectWrap}
+            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+            labelTextProps={"Істотка"}
+            selectClassProps={formSheduleStyle.selectStyle}
+            nameSelectProps={"animalIcon4"}
+            optionTextProps={"Зоопарк"}
+            optionClassProps={formSheduleStyle.optionStyle}
+            valueOptio1Props={"🦍"}
+            valueOptio2Props={"🐕"}
+            valueOptio3Props={"🐈"}
+            valueOptio4Props={"🐅"}
+            valueOptio5Props={"🐆"}
+            valueOptio6Props={"🐎"}
+            valueOptio7Props={"🦓"}
+            valueOptio8Props={"🦬"}
+            valueOptio9Props={"🐫"}
+            valueOptio10Props={"🦌"}
+            valueOptio11Props={"🐀"}
+            valueOptio12Props={"🦆"}
+            valueOptio13Props={"🦣"}
+            changerProps={changerFormShedule}
+            idSelectProps={"animalIcon4ID"}
           />
           {!lessons.animalIcon4 ? (
             <p
@@ -644,8 +557,7 @@ const FormShedule = ({ colorProps }) => {
             maxLength="25"
             name="lesson4"
             placeholder="Назва предмету"
-            // value={lesson4}
-            value={lessons.lesson4}
+                      value={lessons.lesson4}
             onChange={changerFormShedule}
           />
         </div>
@@ -657,10 +569,33 @@ const FormShedule = ({ colorProps }) => {
             maxLength="2"
             name="numberLesson5"
             placeholder="№"
-            // value={numberLesson5}
             value={lessons.numberLesson5}
             onChange={changerFormShedule}
             style={{ color: colorProps }}
+          />
+           <Select
+            wraperClassProps={formSheduleStyle.selectWrap}
+            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+            labelTextProps={"Істотка"}
+            selectClassProps={formSheduleStyle.selectStyle}
+            nameSelectProps={"animalIcon5"}
+            optionTextProps={"Зоопарк"}
+            optionClassProps={formSheduleStyle.optionStyle}
+            valueOptio1Props={"🦍"}
+            valueOptio2Props={"🐕"}
+            valueOptio3Props={"🐈"}
+            valueOptio4Props={"🐅"}
+            valueOptio5Props={"🐆"}
+            valueOptio6Props={"🐎"}
+            valueOptio7Props={"🦓"}
+            valueOptio8Props={"🦬"}
+            valueOptio9Props={"🐫"}
+            valueOptio10Props={"🦌"}
+            valueOptio11Props={"🐀"}
+            valueOptio12Props={"🦆"}
+            valueOptio13Props={"🦣"}
+            changerProps={changerFormShedule}
+            idSelectProps={"animalIcon5ID"}
           />
           {!lessons.animalIcon5 ? (
             <p
@@ -683,7 +618,6 @@ const FormShedule = ({ colorProps }) => {
             maxLength="25"
             name="lesson5"
             placeholder="Назва предмету"
-            // value={lesson5}
             value={lessons.lesson5}
             onChange={changerFormShedule}
           />
@@ -696,10 +630,33 @@ const FormShedule = ({ colorProps }) => {
             maxLength="2"
             name="numberLesson6"
             placeholder="№"
-            // value={numberLesson6}
             value={lessons.numberLesson6}
             onChange={changerFormShedule}
             style={{ color: colorProps }}
+          />
+           <Select
+            wraperClassProps={formSheduleStyle.selectWrap}
+            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+            labelTextProps={"Істотка"}
+            selectClassProps={formSheduleStyle.selectStyle}
+            nameSelectProps={"animalIcon6"}
+            optionTextProps={"Зоопарк"}
+            optionClassProps={formSheduleStyle.optionStyle}
+            valueOptio1Props={"🦍"}
+            valueOptio2Props={"🐕"}
+            valueOptio3Props={"🐈"}
+            valueOptio4Props={"🐅"}
+            valueOptio5Props={"🐆"}
+            valueOptio6Props={"🐎"}
+            valueOptio7Props={"🦓"}
+            valueOptio8Props={"🦬"}
+            valueOptio9Props={"🐫"}
+            valueOptio10Props={"🦌"}
+            valueOptio11Props={"🐀"}
+            valueOptio12Props={"🦆"}
+            valueOptio13Props={"🦣"}
+            changerProps={changerFormShedule}
+            idSelectProps={"animalIcon6ID"}
           />
           {!lessons.animalIcon6 ? (
             <p
@@ -723,7 +680,6 @@ const FormShedule = ({ colorProps }) => {
             maxLength="25"
             name="lesson6"
             placeholder="Назва предмету"
-            // value={lesson6}
             value={lessons.lesson6}
             onChange={changerFormShedule}
           />
@@ -737,10 +693,33 @@ const FormShedule = ({ colorProps }) => {
             maxLength="2"
             name="numberLesson7"
             placeholder="№"
-            // value={numberLesson7}
             value={lessons.numberLesson7}
             onChange={changerFormShedule}
             style={{ color: colorProps }}
+          />
+           <Select
+            wraperClassProps={formSheduleStyle.selectWrap}
+            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+            labelTextProps={"Істотка"}
+            selectClassProps={formSheduleStyle.selectStyle}
+            nameSelectProps={"animalIcon7"}
+            optionTextProps={"Зоопарк"}
+            optionClassProps={formSheduleStyle.optionStyle}
+            valueOptio1Props={"🦍"}
+            valueOptio2Props={"🐕"}
+            valueOptio3Props={"🐈"}
+            valueOptio4Props={"🐅"}
+            valueOptio5Props={"🐆"}
+            valueOptio6Props={"🐎"}
+            valueOptio7Props={"🦓"}
+            valueOptio8Props={"🦬"}
+            valueOptio9Props={"🐫"}
+            valueOptio10Props={"🦌"}
+            valueOptio11Props={"🐀"}
+            valueOptio12Props={"🦆"}
+            valueOptio13Props={"🦣"}
+            changerProps={changerFormShedule}
+            idSelectProps={"animalIcon7ID"}
           />
           {!lessons.animalIcon7 ? (
             <p
@@ -768,6 +747,7 @@ const FormShedule = ({ colorProps }) => {
             onChange={changerFormShedule}
           />
         </div>
+        {children}
 
         <Button
           nameBtn="Зберегти"
@@ -781,6 +761,7 @@ const FormShedule = ({ colorProps }) => {
 
 FormShedule.propTypes = {
   colorProps: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default FormShedule;

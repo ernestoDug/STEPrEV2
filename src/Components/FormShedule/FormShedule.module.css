@@ -39,9 +39,9 @@ form {
 
 .inputShedule {
   font-weight: 900;
-  color: rgb(88, 97, 223);
+  color: rgb(35, 48, 230);
   padding: 12px;
-  background-color: #aeb0af;
+  background-color: #b7d5c6;
   border-width: 0;
   text-transform: uppercase;
   cursor: pointer;
@@ -65,18 +65,24 @@ form {
   color: #c42061;
 }
 
-
-.iconAnimals{
-border-radius: 5px;
+/* for select from import Clfss-propsi */
+.selectWrap {
+  background-color: transparent;
 }
+  .iconAnimals {
+    border-radius: 5px;
+  }
 
 .selectStyle {
   border-radius: 5px;
   background-color: transparent;
   outline: none;
   border: none;
+  color: #09b935;
+
 }
-/* for select from import propsi */
-.selectWrap {
-  background-color: transparent;
+.labelSelectChoiseStyle,
+.optionStyle {
+  color: #89888c;
+  border-radius: 5px;
 }

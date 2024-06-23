@@ -8,6 +8,7 @@ const Select = ({
   selectClassProps,
   nameSelectProps,
   optionClassProps,
+  optionTextProps,
   valueSelectProps,
   valueOptio1Props,
   valueOptio2Props,
@@ -23,23 +24,23 @@ const Select = ({
   valueOptio12Props,
   valueOptio13Props,
   changerProps,
-  optionTextProps,
+  idSelectProps,
 }) => {
   return (
     <>
       <div className={wraperClassProps}>
-        <label className={labelClassProps} htmlFor="aanimalIcon1ID">
+        <label className={labelClassProps} htmlFor={idSelectProps}>
         {labelTextProps}
         </label>
         <select
           className={selectClassProps}
           onChange={changerProps}
           name={nameSelectProps}
-          id="animalIcon1ID"
+          id={idSelectProps}
           value={valueSelectProps}
           required
         >
-          <option value="">{optionTextProps}</option>
+          <option className={optionClassProps} value="">{optionTextProps}</option>
           <option className={optionClassProps} value={valueOptio1Props}>
           {valueOptio1Props}
           </option>
@@ -108,6 +109,7 @@ Select.propTypes = {
   changerProps: PropTypes.func,
   labelTextProps: PropTypes.string,
   optionTextProps: PropTypes.string,
+  idSelectProps: PropTypes.string,
 };
 
 export default Select;
