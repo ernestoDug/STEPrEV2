@@ -127,7 +127,7 @@ const Form = () => {
         <div className={formStyle.selectWrap}>
           <label
             className={formStyle.labelSelectChoiseStyle}
-            htmlFor="isСompleted"
+            htmlFor="isСompletedID"
           >
             Чи приходила сьогодні до мене посмішка?{" "}
           </label>
@@ -135,7 +135,7 @@ const Form = () => {
             className={formStyle.selectStyle}
             onChange={changerForm}
             name="isСompleted"
-            id=""
+            id="isСompletedID"
             value={myDay.isСompleted}
             required
           >

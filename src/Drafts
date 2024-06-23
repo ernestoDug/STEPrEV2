@@ -1,3 +1,65 @@
+{/* ----------------------------------------------   */}
+          {/* <div className={formSheduleStyle.selectWrap}>
+            <label
+              className={formSheduleStyle.labelSelectChoiseStyle}
+              htmlFor="aanimalIcon1ID"
+            >
+              Істотка{" "}
+            </label>
+            <select
+              className={formSheduleStyle.selectStyle}
+              onChange={changerFormShedule}
+              name="animalIcon1"
+              id="animalIcon1ID"
+              value={lessons.animalIcon1}
+              required
+            >
+              <option value="">Зоопарк</option>
+              <option className={formSheduleStyle.option} value="🦍">
+                🦍
+              </option>
+              <option className={formSheduleStyle.option} value="🐕">
+                🐕
+              </option>
+              <option className={formSheduleStyle.option} value="🐈">
+                🐈
+              </option>
+              <option className={formSheduleStyle.option} value="🐅">
+                🐅
+              </option>
+              <option className={formSheduleStyle.option} value="🐆">
+                🐆
+              </option>
+              <option className={formSheduleStyle.option} value="🐎">
+                🐎
+              </option>
+              <option className={formSheduleStyle.option} value="🦓">
+                🦓
+              </option>
+              <option className={formSheduleStyle.option} value="🦬">
+                🦬
+              </option>
+              <option className={formSheduleStyle.option} value="   🐫">
+                🐫
+              </option>
+              <option className={formSheduleStyle.option} value="🦌">
+                🦌
+              </option>
+              <option className={formSheduleStyle.option} value=" 🐀">
+                🐀
+              </option>
+              <option className={formSheduleStyle.option} value="🦆">
+                🦆
+              </option>
+              <option className={formSheduleStyle.option} value="🦣">
+                🦣
+              </option>
+            </select>
+          </div> */}
+
+
+
+
 
 // handler  for cards button ***************************1
 const showerDouble = (e) => {

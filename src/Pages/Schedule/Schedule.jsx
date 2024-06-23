@@ -9,7 +9,7 @@ import sheduleStyle from "./Schedule.module.css";
 const Shedule = () => {
   const [dayShedule, setDayShedule] = useState([{}]);
   // state for color from snpun for props fo List
-  const [colorInput, setColotInput] = useState("blanchedalmond");
+  const [colorInput, setColotInput] = useState("#b5d56a");
 
   const changerColor = (e) => {
     setColotInput(e.target.value);
@@ -18,9 +18,9 @@ const Shedule = () => {
   // з бази
   useEffect(() => {
     getItems()
-      .then((items ) => {
+      .then((items) => {
         setDayShedule(items);
-  
+
         // console.log(items, 888888888);
       })
       .catch(() => {
@@ -30,20 +30,37 @@ const Shedule = () => {
 
   return (
     <>
-      <FormShedule 
-      // for change border si input number 
-      colorProps = {colorInput}
-      />
-      <label className={sheduleStyle.colorLabel} htmlFor="colorInput">Обери колір розкладу</label>
       <input
-        className={sheduleStyle.colorInput}
-        type="color"
-        value={colorInput}
-        onChange={changerColor}
+        className={sheduleStyle.open}
+        id="top-box"
+        type="checkbox"
+        hidden
       />
-      {dayShedule ? (<List arrayProps={dayShedule} colorProps={colorInput}  />):null}
-      
+      {/* стрілка  */}
+      <label className={sheduleStyle.btn} htmlFor="top-box"></label>
+      <div className={sheduleStyle.topPanel}>
      
+          <FormShedule      colorProps={colorInput}>
+
+     {/* as chliren  */}
+                         <label className={sheduleStyle.colorLabel} htmlFor="colorInput">
+            Пофарбуй день
+          </label>
+          <input
+            className={sheduleStyle.colorInput}
+            type="color"
+            value={colorInput}
+            onChange={changerColor}
+          />
+          </FormShedule>
+ 
+      </div>
+
+      {/* ------------------------- */}
+
+      {dayShedule ? (
+        <List arrayProps={dayShedule} colorProps={colorInput} />
+      ) : null}
     </>
   );
 };
