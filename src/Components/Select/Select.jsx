@@ -38,7 +38,7 @@ const Select = ({
           name={nameSelectProps}
           id={idSelectProps}
           value={valueSelectProps}
-          required
+          
         >
           <option className={optionClassProps} value="">{optionTextProps}</option>
           <option className={optionClassProps} value={valueOptio1Props}>

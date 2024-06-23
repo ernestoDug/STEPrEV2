@@ -20,7 +20,7 @@ form {
       transparent 40px
     );
   font-family: "Playfair Display";
-  color: #605756;
+  color: #3d19be;
 }
 
 .wrapShedule {
@@ -83,6 +83,6 @@ form {
 }
 .labelSelectChoiseStyle,
 .optionStyle {
-  color: #89888c;
+  color: #3b13b4;
   border-radius: 5px;
 }

@@ -114,7 +114,7 @@ const FormShedule = ({ colorProps, children }) => {
       case "numberLesson1": {
         if (value <= 7) {
           // ususallu write on prevState **************************
-          console.log(value, 55566)
+          // console.log(value, 55566)
 
           setLessons((prevState) => ({ ...prevState, numberLesson1: value }));
         }
@@ -317,7 +317,7 @@ const FormShedule = ({ colorProps, children }) => {
             placeholder="№"
             value={lessons.numberLesson1}
             onChange={changerFormShedule}
-            style={{ color: colorProps }}
+       
           />
 
           <Select
@@ -382,7 +382,6 @@ const FormShedule = ({ colorProps, children }) => {
             placeholder="№"
             value={lessons.numberLesson2}
             onChange={changerFormShedule}
-            style={{ color: colorProps }}
           />
 
 <Select
@@ -414,8 +413,7 @@ const FormShedule = ({ colorProps, children }) => {
           {!lessons.animalIcon2 ? (
             <p
               className={formSheduleStyle.iconAnimals}
-              style={{ color: colorProps }}
-            >
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}            >
               🦕
             </p>
           ) : (
@@ -448,7 +446,6 @@ const FormShedule = ({ colorProps, children }) => {
             placeholder="№"
                      value={lessons.numberLesson3}
             onChange={changerFormShedule}
-            style={{ color: colorProps }}
           />
 
 <Select
@@ -510,7 +507,6 @@ const FormShedule = ({ colorProps, children }) => {
             placeholder="№"
                value={lessons.numberLesson4}
             onChange={changerFormShedule}
-            style={{ color: colorProps }}
           />
            <Select
             wraperClassProps={formSheduleStyle.selectWrap}
@@ -571,7 +567,6 @@ const FormShedule = ({ colorProps, children }) => {
             placeholder="№"
             value={lessons.numberLesson5}
             onChange={changerFormShedule}
-            style={{ color: colorProps }}
           />
            <Select
             wraperClassProps={formSheduleStyle.selectWrap}
@@ -632,7 +627,6 @@ const FormShedule = ({ colorProps, children }) => {
             placeholder="№"
             value={lessons.numberLesson6}
             onChange={changerFormShedule}
-            style={{ color: colorProps }}
           />
            <Select
             wraperClassProps={formSheduleStyle.selectWrap}
@@ -695,7 +689,6 @@ const FormShedule = ({ colorProps, children }) => {
             placeholder="№"
             value={lessons.numberLesson7}
             onChange={changerFormShedule}
-            style={{ color: colorProps }}
           />
            <Select
             wraperClassProps={formSheduleStyle.selectWrap}
