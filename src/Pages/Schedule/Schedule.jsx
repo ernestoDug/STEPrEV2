@@ -30,13 +30,13 @@ const Shedule = () => {
 
   return (
     <>
+        {/* стрілка  */}
       <input
         className={sheduleStyle.open}
         id="top-box"
         type="checkbox"
         hidden
       />
-      {/* стрілка  */}
       <label className={sheduleStyle.btn} htmlFor="top-box"></label>
       <div className={sheduleStyle.topPanel}>
      

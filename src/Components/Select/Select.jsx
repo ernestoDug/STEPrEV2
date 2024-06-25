@@ -1,5 +1,12 @@
 // import SelectStyles from "./Select.module.css";
+import classNames from "classnames/bind";
 import PropTypes from "prop-types";
+
+
+// npm i classnames 
+// A simple JavaScript utility for conditionally joining classNames together.
+
+
 
 const Select = ({
   wraperClassProps,
@@ -8,6 +15,7 @@ const Select = ({
   selectClassProps,
   nameSelectProps,
   optionClassProps,
+  optionClassProps2,
   optionTextProps,
   valueSelectProps,
   valueOptio1Props,
@@ -41,7 +49,7 @@ const Select = ({
           
         >
           <option className={optionClassProps} value="">{optionTextProps}</option>
-          <option className={optionClassProps} value={valueOptio1Props}>
+          <option className={classNames(optionClassProps, optionClassProps2)} value={valueOptio1Props}>
           {valueOptio1Props}
           </option>
           <option className={optionClassProps} value={valueOptio2Props}>
@@ -91,6 +99,7 @@ Select.propTypes = {
   labelClassProps: PropTypes.string,
   selectClassProps: PropTypes.string,
   optionClassProps: PropTypes.string,
+  optionClassProps2:PropTypes.string,
   valueSelectProps: PropTypes.string,
   nameSelectProps: PropTypes.string,
   valueOptio1Props: PropTypes.string,

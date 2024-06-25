@@ -9,6 +9,7 @@ import Button from "../Button/Button";
 
 import formStyle from "./Form.module.css";
 import Counter from "../Counter/Counter";
+import Select from "../Select/Select";
 
 const Form = () => {
   // const [nameMyDay, setnameMyDay] = useState("");
@@ -124,30 +125,20 @@ const Form = () => {
           onChange={changerForm}
         />
 
-        <div className={formStyle.selectWrap}>
-          <label
-            className={formStyle.labelSelectChoiseStyle}
-            htmlFor="isСompletedID"
-          >
-            Чи приходила сьогодні до мене посмішка?{" "}
-          </label>
-          <select
-            className={formStyle.selectStyle}
-            onChange={changerForm}
-            name="isСompleted"
-            id="isСompletedID"
-            value={myDay.isСompleted}
-            required
-          >
-            <option value="">обирай-КA</option>
-            <option className={formStyle.optionYes} value="завітала">
-              А якже
-            </option>
-            <option className={formStyle.optionNo} value="забула...">
-              Можливо...
-            </option>
-          </select>
-        </div>
+        <Select
+          wraperClassProps={formStyle.selectWrap}
+          labelClassProps={formStyle.labelSelectChoiseStyle}
+          labelTextProps={"Чи завітала сьогодні до мене посмішка?"}
+          selectClassProps={formStyle.selectStyle}
+          nameSelectProps={"animalIcon1"}
+          optionTextProps={"обирай-КA"}
+          optionClassProps={formStyle.optionYes}
+          optionClassProps2={formStyle.optionNo}
+          valueOptio1Props={"завітала"}
+          valueOptio2Props={"забула..."}
+          changerProps={changerForm}
+          idSelectProps={"moodGoodID"}
+        />
 
         {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
         <div className={formStyle.selectWrap}>

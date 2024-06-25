@@ -18,7 +18,7 @@ const Home = () => {
     getItems()
       .then((items) => {
 setDayHistory(items);
-        console.log(items[0]['nameMyDay'], 888);
+        // console.log(items[0]['nameMyDay'], 888);
       })
       .catch(() => {
         console.log(Error);
@@ -27,7 +27,18 @@ setDayHistory(items);
 
   return (
     <>
+      {/* стрілка  */}
+      <input
+        className={ListDayStyle.open}
+        id="top-box"
+        type="checkbox"
+        hidden
+      />
+      <label className={ListDayStyle.btn} htmlFor="top-box"></label>
+      <div className={ListDayStyle.topPanel}>
+     
       <Form />
+      </div>
   <ul className={ListDayStyle.listDay}>
         {dayHistory.map(
           ({ nameMyDay,  isСompleted, moodGood, comment, date, coutDb}) => (
