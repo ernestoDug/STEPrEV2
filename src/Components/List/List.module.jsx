@@ -25,6 +25,8 @@ border: 1px solid rgb(199, 203, 201);;
 margin: 5px auto;
 `
 export const LiStyle = styled.li`
+position: relative;
+
 display: flex;
 flex-flow: column nowrap;
 max-width: 25%;

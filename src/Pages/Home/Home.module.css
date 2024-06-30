@@ -25,6 +25,7 @@ body {
 }
 
 .listDayItem {
+  position: relative;
   background-color: #c3e7f3;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 9px 35px 9px 9px;

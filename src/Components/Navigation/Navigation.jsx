@@ -36,11 +36,13 @@ const Navigation = () => {
 
           />
 
-          {/* <Button
-            nameBtn="Home"
+          <Button
+            nameBtn="Іграшки"
             classNameProps={NavStyle.btnNavStyle}
-            clickProps={() => navigate("home", { replace: false })}
-          /> */}
+            clickProps={() => navigate("games", { replace: false })}
+            idProps={'btnMyGames'}
+
+          />
         </li>
 
         {/* у лапках в навигейт пишемо те що у пошук адресі будемо бачити 

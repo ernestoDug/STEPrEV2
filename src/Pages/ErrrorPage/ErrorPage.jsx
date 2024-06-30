@@ -5,8 +5,8 @@ function ErrorPage() {
     // console.error(error);
   
     return (
-      <div id="error-page">
-        <h1>Try again!</h1>
+      <div id="error-page" >
+        <h1>Прикро, але сторінка загубилася</h1>
         
       <img src={MyErrorPicture} alt="sad bear on a swing" />
       </div>

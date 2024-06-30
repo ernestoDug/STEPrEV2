@@ -1,0 +1,24 @@
+
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #edb555 0%, #f06630 51%, #d83971 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    cursor: pointer;
+    position: absolute;
+right: 0;
+}
+
+.btn:hover{
+   
+        background-position: right center;
+        background-image: linear-gradient(to right,  #d83971 0%, #f06630 51%, #edb555 100%);
+
+}

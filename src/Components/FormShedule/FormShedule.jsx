@@ -76,7 +76,7 @@ const FormShedule = ({ colorProps, children }) => {
       //++++++++++++++++++++++++++++
     };
     // до бази
-    addItem(dayShedule);
+    addItem( dayShedule);
 
     // console.log(dayShedule, 666);
     // чистка
@@ -309,6 +309,7 @@ const FormShedule = ({ colorProps, children }) => {
         />
         {/* 1 */}
         <div className={formSheduleStyle.wrapShedule}>
+          
           <input
             className={formSheduleStyle.inputShedule}
             type="number"

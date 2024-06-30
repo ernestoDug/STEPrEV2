@@ -1,8 +1,5 @@
-// import { useState } from "react";
-
 import PropTypes from "prop-types";
 
-// import Button from "../Button/Button";
 
 import DayStyle from "./Day.module.css";
 // names  import and ad for name className bla-bla.nameClasses from css
@@ -29,6 +26,7 @@ count = 0,
 
   // example 2 const for use in  render dom nodes on conditional
 const contentInCarddDay = <div className={DayStyle.wrapStud}>
+  
 <p className={DayStyle.name}>Сьогодні: <span className={DayStyle.spanDay}>{date}</span></p>
 
   <p className={DayStyle.name}>Цей день називається: <span className={DayStyle.spanDay}>{name}</span></p>

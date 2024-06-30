@@ -12,12 +12,7 @@ import Counter from "../Counter/Counter";
 import Select from "../Select/Select";
 
 const Form = () => {
-  // const [nameMyDay, setnameMyDay] = useState("");
-  // const [date, setDate] = useState(new Date().toISOString().substring(0, 10));
-  // const [comment, setComment] = useState("");
-  // const [isСompleted, setIsСompleted] = useState("");
-  // const [moodGood, setMoodGood] = useState("");
-
+ 
   // obj for state
   const [myDay, setMyDay] = useState({
     nameMyDay: "",

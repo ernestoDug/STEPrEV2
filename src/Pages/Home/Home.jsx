@@ -1,11 +1,11 @@
 import Form from "../../Components/Form/Form";
+import Deliter from "../../Components/Deliter/Deliter";
 import { useState, useEffect } from "react";
 
 import { getItems } from "../../utils/indexdb";
 
 import Day from "../../Components/Day/Day";
 import { nanoid } from "nanoid";
-
 
 import ListDayStyle from "./Home.module.css";
 // names  import and ad for name className bla-bla.nameClasses from css
@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     getItems()
       .then((items) => {
-setDayHistory(items);
+        setDayHistory(items);
         // console.log(items[0]['nameMyDay'], 888);
       })
       .catch(() => {
@@ -36,28 +36,29 @@ setDayHistory(items);
       />
       <label className={ListDayStyle.btn} htmlFor="top-box"></label>
       <div className={ListDayStyle.topPanel}>
-     
-      <Form />
+        <Form />
       </div>
-  <ul className={ListDayStyle.listDay}>
+      <ul className={ListDayStyle.listDay}>
         {dayHistory.map(
-          ({ nameMyDay,  isСompleted, moodGood, comment, date, coutDb}) => (
-            <li  className={ListDayStyle.listDayItem} key={nanoid()}>
+          ({ nameMyDay, isСompleted, moodGood, comment, date, coutDb, id }) => (
+            <li className={ListDayStyle.listDayItem} key={nanoid()}>
+
+              <Deliter idPropsFromDbForDelite={id} />
+
               <Day
                 name={nameMyDay}
-                               isСompleted={isСompleted}
-                               moodGood={moodGood}
-                                            comment={comment}
-                                            date={date}
-                                            // багатостраждальний пропс який вдалося передати 
-                                            // через дейта атрибут та витащити у форми
-                                            count={+coutDb}
+                isСompleted={isСompleted}
+                moodGood={moodGood}
+                comment={comment}
+                date={date}
+                // багатостраждальний пропс який вдалося передати
+                // через дейта атрибут та витащити у форми
+                count={+coutDb}
               />
             </li>
           )
         )}
       </ul>
-    
     </>
   );
 };

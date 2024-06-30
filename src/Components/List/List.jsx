@@ -1,5 +1,7 @@
 import { nanoid } from "nanoid";
 // npm i nanoid
+import Deliter from "../Deliter/Deliter";
+
 import {
   UlStyle,
   DivStyleList,
@@ -17,13 +19,16 @@ const List = ({ arrayProps = [] }) => {
     // we used color props fo BG
     // items.colorProps це в базу даних той пропс закинули
     <LiStyle style={{ backgroundColor: items.colorProps }} key={nanoid()}>
+      <Deliter
+      idPropsFromDbForDelite = {items.id}
+      />
       <h2>{items.dayWeek}</h2>
       <h3>{items.dateSh}</h3>
       {/* conditional */}
       {items.lesson1 ? (
         <>
           <DivStyleList>
-            <PeStyleList>
+                   <PeStyleList>
               {" "}
               <SpanStyleList>{items.numberLesson1}</SpanStyleList>
               <span>{items.animalIcon1}</span>
@@ -111,8 +116,11 @@ const List = ({ arrayProps = [] }) => {
       {/* conditional rendering */}
       {Items ? (
         <>
-          <UlStyle>{Items}</UlStyle>
-        </>
+          <UlStyle>
+        
+            {Items}
+          </UlStyle>
+          </>
       ) : null}
       ;
       {/* conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!BIGAN

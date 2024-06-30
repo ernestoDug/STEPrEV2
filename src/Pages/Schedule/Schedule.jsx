@@ -59,7 +59,10 @@ const Shedule = () => {
       {/* ------------------------- */}
 
       {dayShedule ? (
-        <List arrayProps={dayShedule} colorProps={colorInput} />
+        <List arrayProps={dayShedule} 
+        colorProps={colorInput} 
+               
+        />
       ) : null}
     </>
   );
