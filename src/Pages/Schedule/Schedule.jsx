@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { getItems } from "../../utils/indexdb";
-import List from "../../Components/List/List";
+import ListSheduale from "../../Components/ListSheduale/ListSheduale";
 
 import FormShedule from "../../Components/FormShedule/FormShedule";
 import sheduleStyle from "./Schedule.module.css";
@@ -21,7 +21,7 @@ const Shedule = () => {
       .then((items) => {
         setDayShedule(items);
 
-        // console.log(items, 888888888);
+        console.log(items, "shed");
       })
       .catch(() => {
         console.log(Error);
@@ -59,7 +59,7 @@ const Shedule = () => {
       {/* ------------------------- */}
 
       {dayShedule ? (
-        <List arrayProps={dayShedule} 
+        <ListSheduale arrayProps={dayShedule} 
         colorProps={colorInput} 
                
         />

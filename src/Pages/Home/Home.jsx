@@ -18,7 +18,7 @@ const Home = () => {
     getItems()
       .then((items) => {
         setDayHistory(items);
-        // console.log(items[0]['nameMyDay'], 888);
+        console.log(items, "home");
       })
       .catch(() => {
         console.log(Error);
@@ -42,8 +42,8 @@ const Home = () => {
         {dayHistory.map(
           ({ nameMyDay, isСompleted, moodGood, comment, date, coutDb, id }) => (
             <li className={ListDayStyle.listDayItem} key={nanoid()}>
-
-              <Deliter idPropsFromDbForDelite={id} />
+{nameMyDay?  ( <Deliter idPropsFromDbForDelite={id} />): null }
+            
 
               <Day
                 name={nameMyDay}

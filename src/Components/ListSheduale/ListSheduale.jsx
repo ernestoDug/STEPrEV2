@@ -8,134 +8,114 @@ import {
   PeStyleList,
   SpanStyleList,
   LiStyle,
-} from "./List.module";
+} from "./ListSheduale.module";
 
 import PropTypes from "prop-types";
 
 // colorProps for change bg
-const List = ({ arrayProps = [] }) => {
+const ListSheduale = ({ arrayProps = [] }) => {
   // const for render
   const Items = arrayProps.map((items) => (
     // we used color props fo BG
     // items.colorProps це в базу даних той пропс закинули
-    <LiStyle style={{ backgroundColor: items.colorProps }} key={nanoid()}>
-      <Deliter
-      idPropsFromDbForDelite = {items.id}
-      />
-      <h2>{items.dayWeek}</h2>
-      <h3>{items.dateSh}</h3>
-      {/* conditional */}
-      {items.lesson1 ? (
-        <>
-          <DivStyleList>
-                   <PeStyleList>
-              {" "}
-              <SpanStyleList>{items.numberLesson1}</SpanStyleList>
-              <span>{items.animalIcon1}</span>
-              {items.lesson1}
-            </PeStyleList>
-          </DivStyleList>
-        </>
-      ) : null}
-      {/* conditional */}
-      {items.lesson2 ? (
-        <>
-          <DivStyleList>
-            <PeStyleList>
-              {" "}
-              <SpanStyleList>{items.numberLesson2}</SpanStyleList>
-              <span>{items.animalIcon2}</span>
-              {items.lesson2}
-            </PeStyleList>
-          </DivStyleList>
-        </>
-      ) : null}
-      {/* conditional */}
-      {items.lesson3 ? (
-        <>
-          <DivStyleList>
-            <PeStyleList>
-              {" "}
-              <SpanStyleList>{items.numberLesson3}</SpanStyleList>
-              <span>{items.animalIcon3}</span>
-              {items.lesson3}
-            </PeStyleList>
-          </DivStyleList>
-        </>
-      ) : null}
-      {/* conditional */}
-      {items.lesson4 ? (
+
+    <>
+      <LiStyle style={{ backgroundColor: items.colorProps }} key={nanoid()}>
+        <Deliter idPropsFromDbForDelite={items.id} />
+        <h2>{items.dayWeek}</h2>
+        <h3>{items.dateSh}</h3>
+
+        <DivStyleList>
+          <PeStyleList>
+            {" "}
+            <SpanStyleList>{items.numberLesson1}</SpanStyleList>
+            <span>{items.animalIcon1}</span>
+            {/* conditional  */}
+            {items.lesson1 ? items.lesson1 : "Урок не вказано"}
+          </PeStyleList>
+        </DivStyleList>
+
+        <DivStyleList>
+          <PeStyleList>
+            {" "}
+            <SpanStyleList>{items.numberLesson2}</SpanStyleList>
+            <span>{items.animalIcon2}</span>
+            {/* conditional  */}
+            {items.lesson2 ? items.lesson2 : "Урок не вказано"}
+          </PeStyleList>
+        </DivStyleList>
+
+        <DivStyleList>
+          <PeStyleList>
+            {" "}
+            <SpanStyleList>{items.numberLesson3}</SpanStyleList>
+            <span>{items.animalIcon3}</span>
+            {/* conditional  */}
+            {items.lesson3 ? items.lesson3 : "Урок не вказано"}
+          </PeStyleList>
+        </DivStyleList>
+
         <DivStyleList>
           <PeStyleList>
             {" "}
             <SpanStyleList>{items.numberLesson4}</SpanStyleList>
             <span>{items.animalIcon4}</span>
-            {items.lesson4}
+            {/* conditional  */}
+            {items.lesson4 ? items.lesson4 : "Урок не вказано"}
           </PeStyleList>
         </DivStyleList>
-      ) : null}{" "}
-      {/* conditional */}
-      {items.lesson5 ? (
+
         <DivStyleList>
           <PeStyleList>
             {" "}
             <SpanStyleList>{items.numberLesson5}</SpanStyleList>
             <span>{items.animalIcon5}</span>
-            {items.lesson5}
+            {/* conditional  */}
+            {items.lesson5 ? items.lesson5 : "Урок не вказано"}
           </PeStyleList>
         </DivStyleList>
-      ) : null}{" "}
-      {/* conditional */}
-      {items.lesson6 ? (
+
         <DivStyleList>
           <PeStyleList>
             {" "}
             <SpanStyleList>{items.numberLesson6}</SpanStyleList>
             <span>{items.animalIcon6}</span>
-            {items.lesson6}
+            {/* conditional  */}
+            {items.lesson6 ? items.lesson6 : "Урок не вказано"}
           </PeStyleList>
         </DivStyleList>
-      ) : null}{" "}
-      {/* conditional */}
-      {items.lesson7 ? (
+
         <DivStyleList>
           <PeStyleList>
             {" "}
             <SpanStyleList>{items.numberLesson7}</SpanStyleList>
             <span>{items.animalIcon7}</span>
-            {items.lesson7}
+            {/* conditional  */}
+            {items.lesson7 ? items.lesson7 : "Урок не вказано"}{" "}
           </PeStyleList>
         </DivStyleList>
-      ) : null}{" "}
-    </LiStyle>
-  ));
-  // console.log(Items, 999999)
-
-  return (
-    <>
-      {/* conditional rendering */}
-      {Items ? (
-        <>
-          <UlStyle>
-        
-            {Items}
-          </UlStyle>
-          </>
-      ) : null}
-      ;
-      {/* conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!BIGAN
-      тут ми замість :  нал тобто нічого не повртай постаивли одраду два амперсанди без тенарника
-      тобто тільи якщо довдин більше нуля інакше нічого 
-      */}
-      {/* {arrayProps.length > 0 && (
-        <>
-           <UlStyle> {fruitItemsFilter}</UlStyle>
-        </>conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!END*/}
+      </LiStyle>
     </>
-  );
+  ));
+  console.log(arrayProps, 999999);
+
+  return <UlStyle>{Items}</UlStyle>;
 };
 
-List.propTypes = {
+{
+  /* conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!BIGAN
+      тут ми замість :  нал тобто нічого не повртай постаивли одраду два амперсанди без тенарника
+      тобто тільи якщо довдин більше нуля інакше нічого 
+      */
+}
+{
+  /* {arrayProps.length > 0 && (
+        <>
+           <UlStyle> {fruitItemsFilter}</UlStyle>
+        </>conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!END*/
+}
+
+ListSheduale.propTypes = {
   arrayProps: PropTypes.arrayOf(
     PropTypes.shape({
       lesson1: PropTypes.string,
@@ -157,4 +137,4 @@ List.propTypes = {
   colorProps: PropTypes.string,
 };
 
-export default List;
+export default ListSheduale;
