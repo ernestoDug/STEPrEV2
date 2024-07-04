@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
+import MyBriksPicture from "../../assets/imgs/bricks.jpg";
 
-const List = ({ classNamePropsGames }) => {
+
+const List = ({ classNamePropsGames, classNamePropsGamesIMGThumb }) => {
   return (
     <>
       <ul>
-        <li className={classNamePropsGames}>******</li>
+        <li className={classNamePropsGames}>
+        <div className={classNamePropsGamesIMGThumb}>
+        <img src={MyBriksPicture} alt="briks wall" />
+        </div>
+        </li>
       </ul>
     </>
   );
@@ -12,6 +18,7 @@ const List = ({ classNamePropsGames }) => {
 
 List.propTypes = {
   classNamePropsGames: PropTypes.string,
+  classNamePropsGamesIMGThumb: PropTypes.string,
 };
 
 

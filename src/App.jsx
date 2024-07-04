@@ -26,7 +26,7 @@ import Layout from "./Layout";
 
 // Щоб відкласти завантаження коду цього компонента до його першого відтворення
 //важлливо щоб відкладений компонент, який ви імпортуєте, був експортований як defaultекспорт.
-const Home = lazy(() => import("./Pages/Home/Home"));
+const Plane = lazy(() => import("./Pages/Plane/Plane"));
 const Schedule = lazy(() => import("./Pages/Schedule/Schedule"));
 const Games = lazy(() => import("./Pages/Games/Games"));
 
@@ -84,7 +84,7 @@ const App = () => {
               <Routes>
                 <Route>
                   <Route path="/" element={<Layout />}>
-                    <Route path="home" element={<Home />} />
+                    <Route path="myPlane" element={<Plane />} />
 
                     <Route path="schedule" element={<Schedule />} />
 

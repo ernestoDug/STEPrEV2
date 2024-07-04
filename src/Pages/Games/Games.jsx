@@ -1,12 +1,24 @@
 import Button from "../../Components/Button/Button";
 import List from "../../Components/List/List";
 
+
 import gamesStyles from "./Games.module.css"
 
 const Games =  ()=> 
     {
         return (
             <>
+                <div className={gamesStyles.container}>  
+
+
+
+            <h2>Я граюсь</h2>
+            <List
+            classNamePropsGames = {gamesStyles.itemListGame}
+            classNamePropsGamesIMGThumb = {gamesStyles.imgThumb}
+            />
+            
+            <div className={gamesStyles.btnBlock} > 
 <Button
  nameBtn="Додати"
  classNameProps={gamesStyles.btnGamesADD}
@@ -19,14 +31,9 @@ const Games =  ()=>
  classNameProps={gamesStyles.btnGamesDELL}
 //  clickProps={}
  idProps={'btnGamesDelite'}
-/>
-
-
-
-            <h2>Я граюсь</h2>
-            <List
-            classNamePropsGames = {gamesStyles.itemListGame}
-            />
+ />
+ </div>
+            </div>
             </>
         )
     }

@@ -1,52 +1,76 @@
-.btnGamesADD,
-.btnGamesDELL
-{
-    text-decoration: none;
-    display: inline-block;
-    color: white;
-    padding: 10px 10px;
-    margin: 10px;
-    border-radius: 7px;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    background-image: linear-gradient(
-      to right,
-      #9eefe1 0%,
-      #f030b3 51%,
-      #8ef4e3 100%
-    );
-    background-size: 200% auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: 0.5s;
-    cursor: pointer;
-   
+.container {
+  max-width:1184px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 100%;
   }
-  
-    :hover {
-      background-position: right center;
-    }
-
-    .btnGamesDELL{
-        background-image: linear-gradient(
-            to right,
-            #f17142 0%,
-            #305df0 51%,
-            #e43cc6 100%
-          );
-
-    }
 
 
-    .itemListGame {
-        text-decoration: none;
-        display: inline-block;
-        color: transparent;
-        padding: 10px 10px;
-        margin: 10px;
-        border-radius: 7px;
-                background-color: #f17142;
-        background-image: url("src/assets/imgs/bricks.jpg");
-        background-size: 200% auto;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            }
+  .btnBlock {
+    margin: 20px 0;
+    margin-top: 40px;
+
+  }
+
+.btnGamesADD,
+.btnGamesDELL {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 10px 10px;
+  margin: 10px;
+  border-radius: 7px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #9eefe1 0%,
+    #f030b3 51%,
+    #8ef4e3 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+:hover {
+  background-position: right center;
+}
+
+.btnGamesDELL {
+  background-image: linear-gradient(
+    to right,
+    #f17142 0%,
+    #305df0 51%,
+    #e43cc6 100%
+  );
+}
+
+.itemListGame {
+  text-decoration: none;
+  display: inline-block;
+  color: transparent;
+  padding: 0;
+  margin: 10px;
+  border-radius: 7px;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.imgThumb  
+{
+width: 100px;
+height: 50px;
+
+}
+
+.imgThumb img 
+{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

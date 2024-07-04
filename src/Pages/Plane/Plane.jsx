@@ -7,10 +7,10 @@ import { getItems } from "../../utils/indexdb";
 import Day from "../../Components/Day/Day";
 import { nanoid } from "nanoid";
 
-import ListDayStyle from "./Home.module.css";
+import ListDayStyle from "./Plane.module.css";
 // names  import and ad for name className bla-bla.nameClasses from css
 // pay attention on name file module.css
-const Home = () => {
+const MyPlane = () => {
   const [dayHistory, setDayHistory] = useState([{}]);
 
   // з бази
@@ -27,6 +27,7 @@ const Home = () => {
 
   return (
     <>
+    <div className= {ListDayStyle.container}> 
       {/* стрілка  */}
       <input
         className={ListDayStyle.open}
@@ -59,8 +60,9 @@ const Home = () => {
           )
         )}
       </ul>
+      </div>
     </>
   );
 };
 
-export default Home;
+export default MyPlane;

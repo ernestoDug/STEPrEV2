@@ -1,3 +1,14 @@
+
+.container {
+  max-width:1184px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 100%;
+
+  }
+
+
+
 /* for old brauzers support */
 
 @supports (display: grid) {

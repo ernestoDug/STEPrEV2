@@ -24,7 +24,7 @@ const Navigation = () => {
           <Button
             nameBtn="Мої плани"
             classNameProps={NavStyle.btnNavStyle}
-            clickProps={() => navigate("home", { replace: false })}
+            clickProps={() => navigate("myPlane", { replace: false })}
             idProps={'btnMyPlane'}
           />
 
