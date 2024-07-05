@@ -2,6 +2,7 @@ import { useState } from "react";
 import { nanoid } from "nanoid/non-secure";
 import PropTypes from "prop-types";
 
+import Counter from "../Counter/Counter";
 import { addItem } from "../../utils/indexdb";
 import Button from "../Button/Button";
 import Select from "../Select/Select";
@@ -15,6 +16,8 @@ const FormShedule = ({ colorProps, children }) => {
   const [lessons, setLessons] = useState({
     dateSh: new Date().toISOString().substring(0, 10),
     dayWeek: "",
+    moodGood: "",
+    comment: "",
     numberLesson1: "1",
     lesson1: "",
     animalIcon1: "🦕",
@@ -40,6 +43,12 @@ const FormShedule = ({ colorProps, children }) => {
 
   const submiterSheduleForm = (e) => {
     e.preventDefault();
+     // отрима. елемент по аді
+     let getElOnId = document.getElementById("btnInCount");
+
+     // console.log(getElOnId.attributes["data-dbPropsFromCountAtr"].value, "po id dataAtr99");
+ 
+     // id використовується я ключ до бази глянь в утилсах индекс дб**
 
     // this obj for db ++++++++++++++++++
     const dayShedule = {
@@ -66,7 +75,11 @@ const FormShedule = ({ colorProps, children }) => {
       animalIcon5: lessons.animalIcon5,
       animalIcon6: lessons.animalIcon6,
       animalIcon7: lessons.animalIcon7,
-
+// закиндаю до базии значення дейта атрибуту що передав пропсом з каунтера
+      // витащу його в list sheduale
+      coutDb: getElOnId.attributes["data-dbpropsfromcountatr"].value,
+      comment: lessons.comment,
+      moodGood: lessons.moodGood,
       colorProps,
       // id використовується я ключ до бази глянь в утилсах индекс дб**
       id: nanoid(),
@@ -116,6 +129,12 @@ const FormShedule = ({ colorProps, children }) => {
         // console.log(value, 55566)
 
         setLessons((prevState) => ({ ...prevState, dayWeek: value }));
+        break;
+      }
+
+      case "moodGood": {
+        setLessons((prevState) => ({ ...prevState, moodGood: value }));
+        // console.log(value, 9999999999);
         break;
       }
 
@@ -229,8 +248,6 @@ const FormShedule = ({ colorProps, children }) => {
         break;
       }
 
-   
-
       case "date": {
         setLessons((prevState) => ({
           ...prevState,
@@ -269,6 +286,12 @@ const FormShedule = ({ colorProps, children }) => {
         break;
       }
 
+      case "comment": {
+        // ususallu write on prevState **************************
+        setLessons((prevState) => ({ ...prevState, comment: value }));
+        break;
+      }
+
       default:
         return;
     }
@@ -294,11 +317,10 @@ const FormShedule = ({ colorProps, children }) => {
           value={lessons.dateSh}
           onChange={changerFormShedule}
         />
-
-        <Select
+                <Select
           wraperClassProps={formSheduleStyle.selectWrap}
           labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-          labelTextProps={"Сьогодні"}
+          labelTextProps={"День тижня"}
           selectClassProps={formSheduleStyle.selectStyle}
           nameSelectProps={"dayWeek"}
           optionTextProps={""}
@@ -311,21 +333,46 @@ const FormShedule = ({ colorProps, children }) => {
           changerProps={changerFormShedule}
           idSelectProps={"animalIcon3ID"}
         />
+     
 
-        {/* <label className={formSheduleStyle.labelShedule} htmlFor="dayWeek">
-          День тижня{" "}
-        </label> */}
+                {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
+          <div className={formStyle.selectWrap}>
+          <label
+            className={formStyle.labelSelectChoiseStyle}
+            htmlFor="moodGoodID"
+          >
+            Мій настрій: <span>👍</span>
+          </label>
 
-        <input
-          className={formSheduleStyle.inputSheduleDay}
-          type="string"
-          maxLength="13"
-          name="dayWeek"
-          placeholder="День тижня"
-          value={lessons.dayWeek}
+          <input
+            type="radio"
+            id="moodGoodID"
+            name="moodGood"
+            value="Fine"
+            checked={lessons.moodGood === "Fine"}
+            // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
+            onChange={changerFormShedule}
+          />
+        </div>
+         <Counter>
+          {/* for e[amle used props children ] */}
+          <p>😺</p>
+        </Counter>
+        <label className={formStyle.labelSelect} htmlFor="date">
+          Мій настрій такий тому що...
+        </label>
+        <textarea
+          className={formStyle.textAreaStyle}
+          name="comment"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Як ти вважаєш чому сьогодні у тебе саме такий настрій?"
           onChange={changerFormShedule}
           required
-        />
+        ></textarea>
+
+<p>Мій розклад</p>
         {/* 1 */}
         <div className={formSheduleStyle.wrapShedule}>
           <input

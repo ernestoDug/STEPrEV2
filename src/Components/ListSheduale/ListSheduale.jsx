@@ -14,6 +14,16 @@ import PropTypes from "prop-types";
 
 // colorProps for change bg
 const ListSheduale = ({ arrayProps = [] }) => {
+  const goodMood = (
+    <SpanStyleList>
+     Мій настрій:   <SpanStyleList>Чудовий👍  </SpanStyleList>
+     </SpanStyleList>
+  );
+  // example1  const for use in  render dom nodes conditional
+  const badMood = (  <SpanStyleList>
+     Мій настрій:   <SpanStyleList> Так собі👎 </SpanStyleList>
+     </SpanStyleList>);
+
   // const for render
   const Items = arrayProps.map((items) => (
     // we used color props fo BG
@@ -94,17 +104,30 @@ const ListSheduale = ({ arrayProps = [] }) => {
             {items.lesson7 ? items.lesson7 : "Урок не вказано"}{" "}
           </PeStyleList>
         </DivStyleList>
+        <SpanStyleList>
+  Мої справи: {items.coutDb}
+  </SpanStyleList>
+
+ {/* conditional render wsth const 
+    For the truth, we accepted the expression in the form in !*!*!*!*  */}
+  {items.moodGood ? goodMood : badMood}
+
+  <PeStyleList>
+
+Мій настрій сьогодні такий тому що...{items.comment}
+</PeStyleList>
+
       </LiStyle>
     </>
   ));
-  console.log(arrayProps, 999999);
+  // console.log(arrayProps, 999999);
 
   return <UlStyle>{Items}</UlStyle>;
 };
 
 {
   /* conditional rendering WITH && !!!!!!!!!!!!!!!!!!!!!!!!!!!BIGAN
-      тут ми замість :  нал тобто нічого не повртай постаивли одраду два амперсанди без тенарника
+      тут ми замість :  нал тобто нічого не повртай постаивли одразу два амперсанди без тенарника
       тобто тільи якщо довдин більше нуля інакше нічого 
       */
 }
