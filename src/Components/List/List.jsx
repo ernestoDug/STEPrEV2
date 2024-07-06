@@ -1,32 +1,38 @@
 import PropTypes from "prop-types";
 import MyBriksPicture from "../../assets/imgs/bricks.jpg";
 
-
-
-const List = ({ classNamePropsGames, classNamePropsGamesIMGThumb, onClickProps, key }) => {
-  console.log(key, "bur")
+const List = ({
+  classNamePropsGames,
+  classNamePropsIMGThumb,
+  onClickProps,
+  key,
+  id,
+  
+}) => {
+  console.log(id, "bur");
   return (
     <>
-      
-        <li className={classNamePropsGames}
-        onClick={onClickProps}
- key = {key}
-        >
-        <div className={classNamePropsGamesIMGThumb}>
-        <img src={MyBriksPicture} alt="briks wall" />
+      <li className={classNamePropsGames} 
+key = {key}
+      onClick ={() => {onClickProps(id)}} 
+     >
+ 
+        <div className={classNamePropsIMGThumb}>
+          <img src={MyBriksPicture} alt="briks wall" />
         </div>
-        </li>
-
-    </>
+        {id}
+      </li>
+     </>
   );
 };
 
 List.propTypes = {
   classNamePropsGames: PropTypes.string,
-  classNamePropsGamesIMGThumb: PropTypes.string,
+  classNamePropsIMGThumb: PropTypes.string,
   key: PropTypes.string,
+  id: PropTypes.string,
+
   onClickProps: PropTypes.func,
 };
-
 
 export default List;
