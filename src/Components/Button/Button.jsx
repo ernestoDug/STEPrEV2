@@ -12,10 +12,7 @@ const Button = ({
   return (
     <>
       <button
-        // зробив щоб айдишка так клас спіпадали щоб був унікальний айді кожної кнопки
-        //  але щоб можна було достукатися до кнопкий каунтера якій передали в
-        //  дата атрбіут знаяення стану каунта щоб в базу закинути
-
+        
         data-dbpropsfromcountatr={dbPropsFromCount}
         onClick={clickProps}
         // onDoubleClick={doubleClickProps}

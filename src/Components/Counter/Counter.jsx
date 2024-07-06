@@ -36,7 +36,7 @@ const Counter = ({ children }) => {
         nameBtn="Cправи на сьогодні"
         classNameProps={counterStyle.btn}
         clickProps={handleClickCount}
-        // this props only get here and get in form from data-Atribute
+        // this props only get here and get in form.шедуал from data-Atribute
         dbPropsFromCount={count}
         idProps="btnInCount"
       />

@@ -1,3 +1,10 @@
+.container {
+  max-width: 1184px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 100%;
+  /* border: #2bbbad 1px solid; */
+}
 
 .colorInput {
   border-radius: 5px;

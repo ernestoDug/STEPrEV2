@@ -30,6 +30,7 @@ const Shedule = () => {
 
   return (
     <>
+
         {/* стрілка  */}
       <input
         className={sheduleStyle.open}

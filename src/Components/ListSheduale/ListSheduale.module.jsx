@@ -2,17 +2,25 @@ import styled from "@emotion/styled";
 // npm i @emotion/react
 // npm i @emotion/styled @emotion/react
 
+/* for old brauzers support */
+
+// @supports (display: grid) {
+//   .grid {
+//     display: grid;
+//   }
+// }
 
 export const UlStyle = styled.ul`
-display: flex;
+display: grid;
+  grid-template-columns: repeat(3, 450px);
+  grid-gap: 15px;
+  align-items: center;
+  justify-content: center;
+
 width: auto;
-flex-flow: row wrap;
-justify-content: center;
-gap: 15px;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
   margin: 0 auto;
   background-color: #f7f1f8;
-  border-radius: 8px;
   padding: 5px;
  `;
 
@@ -29,10 +37,10 @@ position: relative;
 
 display: flex;
 flex-flow: column nowrap;
-max-width: 25%;
+max-width: 60%;
 justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-  border-radius: 8px;
+  border-radius: 9px 35px 9px 9px;
   padding: 5px;
   transition: all 5s ease-in 5s;
 
@@ -42,9 +50,10 @@ justify-content: space-between;
 export const PeStyleList = styled.p`
 display: flex;
 align-items: center;
-  width: 95%;
+  width: 90%;
   border-radius: 3px;
-  padding: 0 10px;
+  text-align: center;
+  padding: 2px;
   line-height: 35px;
   border-width: 0;
   outline: none;

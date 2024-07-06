@@ -46,7 +46,7 @@ const FormShedule = ({ colorProps, children }) => {
      // отрима. елемент по аді
      let getElOnId = document.getElementById("btnInCount");
 
-     // console.log(getElOnId.attributes["data-dbPropsFromCountAtr"].value, "po id dataAtr99");
+    //  console.log(getElOnId.attributes["data-dbPropsFromCountAtr"].value, "po id dataAtr99");
  
      // id використовується я ключ до бази глянь в утилсах индекс дб**
 
@@ -75,7 +75,7 @@ const FormShedule = ({ colorProps, children }) => {
       animalIcon5: lessons.animalIcon5,
       animalIcon6: lessons.animalIcon6,
       animalIcon7: lessons.animalIcon7,
-// закиндаю до базии значення дейта атрибуту що передав пропсом з каунтера
+// закиндаю до базии значення дейта атрибуту копки каунтера що передав пропсом з каунтера
       // витащу його в list sheduale
       coutDb: getElOnId.attributes["data-dbpropsfromcountatr"].value,
       comment: lessons.comment,
@@ -746,8 +746,7 @@ const FormShedule = ({ colorProps, children }) => {
             maxLength="25"
             name="lesson7"
             placeholder="Назва предмету"
-            // value={lesson7}
-            value={lessons.lesson7}
+                value={lessons.lesson7}
             onChange={changerFormShedule}
           />
         </div>
