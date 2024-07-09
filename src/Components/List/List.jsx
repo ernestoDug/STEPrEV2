@@ -1,26 +1,31 @@
 import PropTypes from "prop-types";
-import MyBriksPicture from "../../assets/imgs/bricks.jpg";
+import listStyle from "./List.module.css"
 
 const List = ({
   classNamePropsGames,
   classNamePropsIMGThumb,
   onClickProps,
-  key,
+  // key,
   id,
+  imgProps, 
+  imgProps2, 
   
 }) => {
-  console.log(id, "bur");
+  // console.log(id, "bur");
   return (
     <>
       <li className={classNamePropsGames} 
-key = {key}
+
       onClick ={() => {onClickProps(id)}} 
      >
- 
+ <div  className= {listStyle.superTh}> 
         <div className={classNamePropsIMGThumb}>
-          <img src={MyBriksPicture} alt="briks wall" />
+          <img src={imgProps} alt="briks wall" />
         </div>
-        {id}
+        <div className={classNamePropsIMGThumb}>
+          <img src={imgProps2} alt="windows" />
+        </div>
+        </div>
       </li>
      </>
   );
@@ -33,6 +38,8 @@ List.propTypes = {
   id: PropTypes.string,
 
   onClickProps: PropTypes.func,
+  imgProps: PropTypes.node,
+  imgProps2: PropTypes.node,
 };
 
 export default List;

@@ -12,7 +12,6 @@ import Counter from "../Counter/Counter";
 import Select from "../Select/Select";
 
 const Form = () => {
- 
   // obj for state
   const [myDay, setMyDay] = useState({
     nameMyDay: "",
