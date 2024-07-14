@@ -9,7 +9,7 @@ import Select from "../Select/Select";
 
 import formSheduleStyle from "./FormShedule.module.css";
 // FOR STYLE BUTTON IN THIS FORM = AS IN FORM and input style
-import formStyle from "../../Components/Form/Form.module.css";
+// import formStyle from "../../Components/Form/Form.module.css";
 
 const FormShedule = ({ colorProps, children }) => {
   // obj for state
@@ -336,9 +336,9 @@ const FormShedule = ({ colorProps, children }) => {
      
 
                 {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
-          <div className={formStyle.selectWrap}>
+          <div className={formSheduleStyle.selectWrap}>
           <label
-            className={formStyle.labelSelectChoiseStyle}
+            className={formSheduleStyle.labelSelectChoiseStyle}
             htmlFor="moodGoodID"
           >
             Мій настрій: <span>👍</span>
@@ -358,11 +358,11 @@ const FormShedule = ({ colorProps, children }) => {
           {/* for e[amle used props children ] */}
           <p>😺</p>
         </Counter>
-        <label className={formStyle.labelSelect} htmlFor="date">
+        <label className={formSheduleStyle.labelSelect} htmlFor="date">
           Мій настрій такий тому що...
         </label>
         <textarea
-          className={formStyle.textAreaStyle}
+          className={formSheduleStyle.textAreaStyle}
           name="comment"
           id=""
           cols="30"
@@ -420,7 +420,7 @@ const FormShedule = ({ colorProps, children }) => {
           </p>
 
           <input
-            className={formStyle.inputStyle}
+            className={formSheduleStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson1"
@@ -473,7 +473,7 @@ const FormShedule = ({ colorProps, children }) => {
             {lessons.animalIcon2}
           </p>
           <input
-            className={formStyle.inputStyle}
+            className={formSheduleStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson2"
@@ -528,7 +528,7 @@ const FormShedule = ({ colorProps, children }) => {
           </p>
 
           <input
-            className={formStyle.inputStyle}
+            className={formSheduleStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson3"
@@ -581,7 +581,7 @@ const FormShedule = ({ colorProps, children }) => {
           </p>
 
           <input
-            className={formStyle.inputStyle}
+            className={formSheduleStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson4"
@@ -634,7 +634,7 @@ const FormShedule = ({ colorProps, children }) => {
           </p>
 
           <input
-            className={formStyle.inputStyle}
+            className={formSheduleStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson5"
@@ -687,7 +687,7 @@ const FormShedule = ({ colorProps, children }) => {
           </p>
 
           <input
-            className={formStyle.inputStyle}
+            className={formSheduleStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson6"
@@ -741,7 +741,7 @@ const FormShedule = ({ colorProps, children }) => {
           </p>
           {/* 🦕 */}
           <input
-            className={formStyle.inputStyle}
+            className={formSheduleStyle.inputStyle}
             type="string"
             maxLength="25"
             name="lesson7"
@@ -754,7 +754,7 @@ const FormShedule = ({ colorProps, children }) => {
 
         <Button
           nameBtn="Зберегти"
-          classNameProps={formStyle.buttonStyle}
+          classNameProps={formSheduleStyle.buttonStyle}
           idProps={"btnInFormShedule"}
         />
       </form>

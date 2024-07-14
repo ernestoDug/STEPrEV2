@@ -3,7 +3,7 @@
 
 // https://www.youtube.com/watch?v=CgkZ7MvWUAA
 
-//30/06   2 50.0
+//14/07   3.20
 
 import { motion } from "framer-motion";
 // npm i framer-motion

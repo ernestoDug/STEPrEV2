@@ -5,11 +5,11 @@ import { useState } from "react";
 
 import { addItem } from "../../utils/indexdb";
 
-import Button from "../Button/Button";
+import Button from "../../Components/Button/Button";
 
 import formStyle from "./Form.module.css";
-import Counter from "../Counter/Counter";
-import Select from "../Select/Select";
+import Counter from "../../Components/Counter/Counter";
+import Select from "../../Components/Select/Select";
 
 const Form = () => {
   // obj for state
