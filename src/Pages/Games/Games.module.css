@@ -1,16 +1,14 @@
 .container {
-  max-width:1184px;
+  max-width: 1184px;
   margin: 0 auto;
   padding: 0 32px;
   height: 100%;
-  }
+}
 
-
-  .btnBlock {
-    margin: 20px 0;
-    margin-top: 40px;
-
-  }
+.btnBlock {
+  margin: 20px 0;
+  margin-top: 40px;
+}
 
 .btnGamesADD,
 .btnGamesDELL {
@@ -48,9 +46,6 @@
   );
 }
 
-
-
-
 .itemListGame {
   text-decoration: none;
   display: inline-block;
@@ -62,18 +57,12 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-
-
-.imgThumb  
-{
-width: 100px;
-height: 50px;
-
-
+.imgThumb {
+  width: 100px;
+  height: 50px;
 }
 
-.imgThumb img 
-{
+.imgThumb img {
   display: block;
   max-width: 100%;
   height: auto;

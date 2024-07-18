@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import PropTypes from "prop-types";
 
@@ -26,6 +26,9 @@ const Counter = ({ children }) => {
     // setCount((prevStatecount) => prevStatecount + 1);
     // setCount((prevStatecount) => prevStatecount + 4);
   };
+  // для спостережнян роботи юс еф з не пустою залежністюю
+useEffect(() => {document.title = `Count: ${count} `}, [count]);
+
 
   return (
     <>
@@ -44,6 +47,8 @@ const Counter = ({ children }) => {
     </>
   );
 };
+
+
 Counter.propTypes = {
   children: PropTypes.node,
 };

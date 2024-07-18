@@ -1,0 +1,33 @@
+.clockWrap {
+  background: #f060df;
+  border: 5px solid transparent;
+  border-image: 10
+    repeating-linear-gradient(
+      135deg,
+      #c42061,
+      #c42061 10px,
+      transparent 10px,
+      transparent 20px,
+      #fbcfdf 20px,
+      #fbcfdf 30px,
+      transparent 30px,
+      transparent 40px
+    );
+  font-family: "Playfair Display";
+  max-width: 350px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.clock {
+  background-color: rgb(44, 63, 44);
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.clockDgt {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: monospace;
+}

@@ -3,7 +3,7 @@ import { useState } from "react";
 import List from "../List/List";
 import Button from "../Button/Button";
 
-import toDoStyle from "./ToDo.module.css";
+import toDoStyle from "./Todo.module.css";
 import { nanoid } from "nanoid";
 
 const ToDo = () => {
@@ -53,9 +53,10 @@ const ToDo = () => {
 
   const wrapTask = (
     <div>
-      <h1>Я планую...</h1>
+      <h1 className={toDoStyle.h1Style}>Я планую...</h1>
       <div>
         <input
+          className={toDoStyle.inputPlane}
           type="text"
           value={newTask}
           placeholder="Новий план..."
@@ -65,7 +66,7 @@ const ToDo = () => {
         <Button
           nameBtn={"Додати план"}
           clickProps={addTask}
-          classNameProps={toDoStyle.btnToDoAdd}
+          classNameProps={toDoStyle.btnAd}
           idProps={"buttonTodoAdd"}
         />
       </div>
@@ -74,22 +75,22 @@ const ToDo = () => {
           <List key={nanoid()} id={index}>
             <span>{task}</span>
             <Button
-              nameBtn={"Видалити план"}
+              nameBtn={"Видалити"}
               clickProps={() => delTask(index)}
-              classNameProps={toDoStyle.btnToDoDel}
+              classNameProps={toDoStyle.btnDel}
               idProps={"buttonTodoAdd"}
             />
             <Button
               nameBtn={"Вгору"}
               clickProps={() => moveTaskUp(index)}
-              classNameProps={toDoStyle.btnToDoAdd}
+              classNameProps={toDoStyle.btnUp}
               idProps={"buttonTodomoveUp"}
             />
 
             <Button
-              nameBtn={"ВНиз"}
+              nameBtn={"Вниз"}
               clickProps={() => moveTaskDown(index)}
-              classNameProps={toDoStyle.btnToDoAd}
+              classNameProps={toDoStyle.btnDown}
               idProps={"buttonTodomoveDown"}
             />
           </List>

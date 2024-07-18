@@ -1,9 +1,24 @@
-.btnTodoAdd,
-.btnTodoDel {
+
+.h1Style  {
+    
+  background: #59a8ee;
+
+  background: radial-gradient(circle farthest-side at right center, #534cb5 45%, #bf8151 87%,  #3f98d9 100%);
+  background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+.btnAd,
+.btnDel,
+.btnUp,
+.btnDown
+{
   text-decoration: none;
   display: inline-block;
   color: white;
   padding: 5px;
+  margin-left: 10px;
 
   border-radius: 5px;
   font-family: "Montserrat", sans-serif;
@@ -24,12 +39,44 @@
   background-position: right center;
 }
 
-.btnTodoAdd,
-.btnTodoDel {
+.btnDel {
   background-image: linear-gradient(
     to right,
     #eb4550 0%,
     #eba80d 51%,
     #eeea08 100%
   );
+}
+
+.btnUp{
+  background-image: linear-gradient(
+    to right,
+    #eb45db 0%,
+    #1c0deb 51%,
+    #08a5ee 100%
+  );
+}
+.btnDown{
+  background-image: linear-gradient(
+    to right,
+    #705927 0%,
+    #e7b643 51%,
+    #08a5ee 100%
+  );
+}
+
+.inputPlane {
+  width: 15%;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-left: 10px;
+  line-height: 35px;
+  border-width: 0;
+  outline: none;
+  background: rgb(239, 218, 186)
+    url(https://html5book.ru/wp-content/uploads/2016/12/bg-form.png) bottom left
+    repeat-x;
+  background-size: 8px 35px;
+  font-family: "Playfair Display";
+  cursor: pointer;
 }
