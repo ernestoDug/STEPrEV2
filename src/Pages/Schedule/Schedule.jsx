@@ -21,7 +21,7 @@ const Shedule = () => {
       .then((items) => {
         setDayShedule(items);
 
-        console.log(items, "shed");
+        // console.log(items, "shed");
       })
       .catch(() => {
         console.log(Error);

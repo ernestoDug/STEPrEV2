@@ -1,6 +1,8 @@
+import { useState } from "react";
+
+import Timer from "../../Components/Timer/Timer";
 import Button from "../../Components/Button/Button";
 import List from "../../Components/List/List";
-import { useState } from "react";
 
 import MyBriksPicture from "../../assets/imgs/bricks.jpg";
 import MyWindowsPicture from "../../assets/imgs/windows.jpg";
@@ -56,6 +58,7 @@ const Games = () => {
         
         </div>
       </div>
+      <Timer></Timer>
     </>
   );
 };

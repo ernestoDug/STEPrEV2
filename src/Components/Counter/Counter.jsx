@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, } from "react";
 
 import PropTypes from "prop-types";
 
 import Button from "../Button/Button";
 
-// import { addItem } from "../../utils/indexdb";
-// import { nanoid } from "nanoid";
-
-// import useDebounce from "../../utils/customHooks/useDebounse";
-
 import counterStyle from "./Counter.module.css";
+
+// const for contexs********************************
+// pay attention to how we name the variable blah blah Context
+// *************************************
 
 const Counter = ({ children }) => {
   const [count, setCount] = useState(0);
@@ -39,7 +38,7 @@ useEffect(() => {document.title = `Count: ${count} `}, [count]);
         nameBtn="Cправи на сьогодні"
         classNameProps={counterStyle.btn}
         clickProps={handleClickCount}
-        // this props only get here and get in form.шедуал from data-Atribute
+        // this props only get here and get in шедуал from data-Atribute
         dbPropsFromCount={count}
         idProps="btnInCount"
       />

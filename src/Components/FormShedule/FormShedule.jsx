@@ -8,8 +8,7 @@ import Button from "../Button/Button";
 import Select from "../Select/Select";
 
 import formSheduleStyle from "./FormShedule.module.css";
-// FOR STYLE BUTTON IN THIS FORM = AS IN FORM and input style
-// import formStyle from "../../Components/Form/Form.module.css";
+
 
 const FormShedule = ({ colorProps, children }) => {
   // obj for state
@@ -43,12 +42,12 @@ const FormShedule = ({ colorProps, children }) => {
 
   const submiterSheduleForm = (e) => {
     e.preventDefault();
-     // отрима. елемент по аді
-     let getElOnId = document.getElementById("btnInCount");
+    // отрима. елемент по аді
+    let getElOnId = document.getElementById("btnInCount");
 
     //  console.log(getElOnId.attributes["data-dbPropsFromCountAtr"].value, "po id dataAtr99");
- 
-     // id використовується я ключ до бази глянь в утилсах индекс дб**
+
+    // id використовується я ключ до бази глянь в утилсах индекс дб**
 
     // this obj for db ++++++++++++++++++
     const dayShedule = {
@@ -75,7 +74,7 @@ const FormShedule = ({ colorProps, children }) => {
       animalIcon5: lessons.animalIcon5,
       animalIcon6: lessons.animalIcon6,
       animalIcon7: lessons.animalIcon7,
-// закиндаю до базии значення дейта атрибуту копки каунтера що передав пропсом з каунтера
+      // закиндаю до базии значення дейта атрибуту копки каунтера що передав пропсом з каунтера
       // витащу його в list sheduale
       coutDb: getElOnId.attributes["data-dbpropsfromcountatr"].value,
       comment: lessons.comment,
@@ -305,459 +304,460 @@ const FormShedule = ({ colorProps, children }) => {
 
   return (
     <>
-      <form action="" onSubmit={submiterSheduleForm}>
-        <label className={formSheduleStyle.labelShedule} htmlFor="date">
-          Сьогодні{" "}
-        </label>
-        <input
-          className={formSheduleStyle.inputSheduleDay}
-          type="date"
-          name="date"
-          placeholder="ДД.ММ.РР"
-          value={lessons.dateSh}
-          onChange={changerFormShedule}
-        />
-                <Select
-          wraperClassProps={formSheduleStyle.selectWrap}
-          labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-          labelTextProps={"День тижня"}
-          selectClassProps={formSheduleStyle.selectStyle}
-          nameSelectProps={"dayWeek"}
-          optionTextProps={""}
-          optionClassProps={formSheduleStyle.optionStyle}
-          valueOptio1Props={"Понеділок"}
-          valueOptio2Props={"Вівторок"}
-          valueOptio3Props={"Середа"}
-          valueOptio4Props={"Четвер"}
-          valueOptio5Props={"П'ятниця"}
-          changerProps={changerFormShedule}
-          idSelectProps={"animalIcon3ID"}
-        />
-     
-
-                {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
-          <div className={formSheduleStyle.selectWrap}>
-          <label
-            className={formSheduleStyle.labelSelectChoiseStyle}
-            htmlFor="moodGoodID"
-          >
-            Мій настрій: <span>👍</span>
+           <form action="" onSubmit={submiterSheduleForm}>
+          <label className={formSheduleStyle.labelShedule} htmlFor="date">
+            Сьогодні{" "}
           </label>
-
           <input
-            type="radio"
-            id="moodGoodID"
-            name="moodGood"
-            value="Fine"
-            checked={lessons.moodGood === "Fine"}
-            // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
+            className={formSheduleStyle.inputSheduleDay}
+            type="date"
+            name="date"
+            placeholder="ДД.ММ.РР"
+            value={lessons.dateSh}
             onChange={changerFormShedule}
           />
-        </div>
-         <Counter>
-          {/* for e[amle used props children ] */}
-          <p>😺</p>
-        </Counter>
-        <label className={formSheduleStyle.labelSelect} htmlFor="date">
-          Мій настрій такий тому що...
-        </label>
-        <textarea
-          className={formSheduleStyle.textAreaStyle}
-          name="comment"
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Як ти вважаєш чому сьогодні у тебе саме такий настрій?"
-          onChange={changerFormShedule}
-          required
-        ></textarea>
-
-<p>Мій розклад</p>
-        {/* 1 */}
-        <div className={formSheduleStyle.wrapShedule}>
-          <input
-            className={formSheduleStyle.inputShedule}
-            type="number"
-            maxLength="2"
-            name="numberLesson1"
-            placeholder="№"
-            value={lessons.numberLesson1}
-            onChange={changerFormShedule}
-          />
-
           <Select
             wraperClassProps={formSheduleStyle.selectWrap}
             labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-            labelTextProps={"Істотка"}
+            labelTextProps={"День тижня"}
             selectClassProps={formSheduleStyle.selectStyle}
-            nameSelectProps={"animalIcon1"}
-            optionTextProps={"Зоопарк"}
+            nameSelectProps={"dayWeek"}
+            optionTextProps={""}
             optionClassProps={formSheduleStyle.optionStyle}
-            valueOptio1Props={"🦍"}
-            valueOptio2Props={"🐕"}
-            valueOptio3Props={"🐈"}
-            valueOptio4Props={"🐅"}
-            valueOptio5Props={"🐆"}
-            valueOptio6Props={"🐎"}
-            valueOptio7Props={"🦓"}
-            valueOptio8Props={"🦬"}
-            valueOptio9Props={"🐫"}
-            valueOptio10Props={"🦌"}
-            valueOptio11Props={"🐀"}
-            valueOptio12Props={"🦆"}
-            valueOptio13Props={"🦣"}
-            changerProps={changerFormShedule}
-            idSelectProps={"animalIcon1ID"}
-          />
-
-          {/* ------------------------------------------------------  */}
-
-          <p
-            className={formSheduleStyle.iconAnimals}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
-          >
-            {lessons.animalIcon1}
-          </p>
-
-          <input
-            className={formSheduleStyle.inputStyle}
-            type="string"
-            maxLength="25"
-            name="lesson1"
-            placeholder="Назва предмету"
-            value={lessons.lesson1}
-            onChange={changerFormShedule}
-          />
-        </div>
-        {/* 2 */}
-        <div className={formSheduleStyle.wrapShedule}>
-          <input
-            className={formSheduleStyle.inputShedule}
-            type="number"
-            maxLength="2"
-            name="numberLesson2"
-            placeholder="№"
-            value={lessons.numberLesson2}
-            onChange={changerFormShedule}
-          />
-
-          <Select
-            wraperClassProps={formSheduleStyle.selectWrap}
-            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-            labelTextProps={"Істотка"}
-            selectClassProps={formSheduleStyle.selectStyle}
-            nameSelectProps={"animalIcon2"}
-            optionTextProps={"Зоопарк"}
-            optionClassProps={formSheduleStyle.optionStyle}
-            valueOptio1Props={"🦍"}
-            valueOptio2Props={"🐕"}
-            valueOptio3Props={"🐈"}
-            valueOptio4Props={"🐅"}
-            valueOptio5Props={"🐆"}
-            valueOptio6Props={"🐎"}
-            valueOptio7Props={"🦓"}
-            valueOptio8Props={"🦬"}
-            valueOptio9Props={"🐫"}
-            valueOptio10Props={"🦌"}
-            valueOptio11Props={"🐀"}
-            valueOptio12Props={"🦆"}
-            valueOptio13Props={"🦣"}
-            changerProps={changerFormShedule}
-            idSelectProps={"animalIcon2ID"}
-          />
-
-          <p
-            className={formSheduleStyle.iconAnimals}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
-          >
-            {lessons.animalIcon2}
-          </p>
-          <input
-            className={formSheduleStyle.inputStyle}
-            type="string"
-            maxLength="25"
-            name="lesson2"
-            placeholder="Назва предмету"
-            value={lessons.lesson2}
-            onChange={changerFormShedule}
-          />
-        </div>
-
-        {/* 3 */}
-        <div className={formSheduleStyle.wrapShedule}>
-          <input
-            className={formSheduleStyle.inputShedule}
-            type="number"
-            maxLength="2"
-            name="numberLesson3"
-            placeholder="№"
-            value={lessons.numberLesson3}
-            onChange={changerFormShedule}
-          />
-
-          <Select
-            wraperClassProps={formSheduleStyle.selectWrap}
-            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-            labelTextProps={"Істотка"}
-            selectClassProps={formSheduleStyle.selectStyle}
-            nameSelectProps={"animalIcon3"}
-            optionTextProps={"Зоопарк"}
-            optionClassProps={formSheduleStyle.optionStyle}
-            valueOptio1Props={"🦍"}
-            valueOptio2Props={"🐕"}
-            valueOptio3Props={"🐈"}
-            valueOptio4Props={"🐅"}
-            valueOptio5Props={"🐆"}
-            valueOptio6Props={"🐎"}
-            valueOptio7Props={"🦓"}
-            valueOptio8Props={"🦬"}
-            valueOptio9Props={"🐫"}
-            valueOptio10Props={"🦌"}
-            valueOptio11Props={"🐀"}
-            valueOptio12Props={"🦆"}
-            valueOptio13Props={"🦣"}
+            valueOptio1Props={"Понеділок"}
+            valueOptio2Props={"Вівторок"}
+            valueOptio3Props={"Середа"}
+            valueOptio4Props={"Четвер"}
+            valueOptio5Props={"П'ятниця"}
             changerProps={changerFormShedule}
             idSelectProps={"animalIcon3ID"}
           />
 
-          <p
-            className={formSheduleStyle.iconAnimals}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
-          >
-            {lessons.animalIcon3}
-          </p>
+          {/* radioooooooooooooooooooooooooooooooooooooooooooooooooooooooo */}
+          <div className={formSheduleStyle.selectWrap}>
+            <label
+              className={formSheduleStyle.labelSelectChoiseStyle}
+              htmlFor="moodGoodID"
+            >
+              Мій настрій: <span>👍</span>
+            </label>
 
-          <input
-            className={formSheduleStyle.inputStyle}
-            type="string"
-            maxLength="25"
-            name="lesson3"
-            placeholder="Назва предмету"
-            value={lessons.lesson3}
+            <input
+              type="radio"
+              id="moodGoodID"
+              name="moodGood"
+              value="Fine"
+              checked={lessons.moodGood === "Fine"}
+              // !*!*!*!* The expression in the check will be like the TRUTH!*!*!*!* !*!*!*!*
+              onChange={changerFormShedule}
+            />
+          </div>
+          <Counter>
+            {/* for e[amle used props children ] */}
+            <p>😺</p>
+          </Counter>
+          <label className={formSheduleStyle.labelSelect} htmlFor="date">
+            Мій настрій такий тому що...
+          </label>
+          <textarea
+            className={formSheduleStyle.textAreaStyle}
+            name="comment"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Як ти вважаєш чому сьогодні у тебе саме такий настрій?"
             onChange={changerFormShedule}
-          />
-        </div>
-        {/* 4 */}
-        <div className={formSheduleStyle.wrapShedule}>
-          <input
-            className={formSheduleStyle.inputShedule}
-            type="number"
-            maxLength="2"
-            name="numberLesson4"
-            placeholder="№"
-            value={lessons.numberLesson4}
-            onChange={changerFormShedule}
-          />
-          <Select
-            wraperClassProps={formSheduleStyle.selectWrap}
-            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-            labelTextProps={"Істотка"}
-            selectClassProps={formSheduleStyle.selectStyle}
-            nameSelectProps={"animalIcon4"}
-            optionTextProps={"Зоопарк"}
-            optionClassProps={formSheduleStyle.optionStyle}
-            valueOptio1Props={"🦍"}
-            valueOptio2Props={"🐕"}
-            valueOptio3Props={"🐈"}
-            valueOptio4Props={"🐅"}
-            valueOptio5Props={"🐆"}
-            valueOptio6Props={"🐎"}
-            valueOptio7Props={"🦓"}
-            valueOptio8Props={"🦬"}
-            valueOptio9Props={"🐫"}
-            valueOptio10Props={"🦌"}
-            valueOptio11Props={"🐀"}
-            valueOptio12Props={"🦆"}
-            valueOptio13Props={"🦣"}
-            changerProps={changerFormShedule}
-            idSelectProps={"animalIcon4ID"}
-          />
+            required
+          ></textarea>
 
-          <p
-            className={formSheduleStyle.iconAnimals}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
-          >
-            {lessons.animalIcon4}
-          </p>
+          <p>Мій розклад</p>
+          {/* 1 */}
+          <div className={formSheduleStyle.wrapShedule}>
+            <input
+              className={formSheduleStyle.inputShedule}
+              type="number"
+              maxLength="2"
+              name="numberLesson1"
+              placeholder="№"
+              value={lessons.numberLesson1}
+              onChange={changerFormShedule}
+            />
 
-          <input
-            className={formSheduleStyle.inputStyle}
-            type="string"
-            maxLength="25"
-            name="lesson4"
-            placeholder="Назва предмету"
-            value={lessons.lesson4}
-            onChange={changerFormShedule}
-          />
-        </div>
-        {/* 5 */}
-        <div className={formSheduleStyle.wrapShedule}>
-          <input
-            className={formSheduleStyle.inputShedule}
-            type="number"
-            maxLength="2"
-            name="numberLesson5"
-            placeholder="№"
-            value={lessons.numberLesson5}
-            onChange={changerFormShedule}
-          />
-          <Select
-            wraperClassProps={formSheduleStyle.selectWrap}
-            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-            labelTextProps={"Істотка"}
-            selectClassProps={formSheduleStyle.selectStyle}
-            nameSelectProps={"animalIcon5"}
-            optionTextProps={"Зоопарк"}
-            optionClassProps={formSheduleStyle.optionStyle}
-            valueOptio1Props={"🦍"}
-            valueOptio2Props={"🐕"}
-            valueOptio3Props={"🐈"}
-            valueOptio4Props={"🐅"}
-            valueOptio5Props={"🐆"}
-            valueOptio6Props={"🐎"}
-            valueOptio7Props={"🦓"}
-            valueOptio8Props={"🦬"}
-            valueOptio9Props={"🐫"}
-            valueOptio10Props={"🦌"}
-            valueOptio11Props={"🐀"}
-            valueOptio12Props={"🦆"}
-            valueOptio13Props={"🦣"}
-            changerProps={changerFormShedule}
-            idSelectProps={"animalIcon5ID"}
-          />
+            <Select
+              wraperClassProps={formSheduleStyle.selectWrap}
+              labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+              labelTextProps={"Істотка"}
+              selectClassProps={formSheduleStyle.selectStyle}
+              nameSelectProps={"animalIcon1"}
+              optionTextProps={"Зоопарк"}
+              optionClassProps={formSheduleStyle.optionStyle}
+              valueOptio1Props={"🦍"}
+              valueOptio2Props={"🐕"}
+              valueOptio3Props={"🐈"}
+              valueOptio4Props={"🐅"}
+              valueOptio5Props={"🐆"}
+              valueOptio6Props={"🐎"}
+              valueOptio7Props={"🦓"}
+              valueOptio8Props={"🦬"}
+              valueOptio9Props={"🐫"}
+              valueOptio10Props={"🦌"}
+              valueOptio11Props={"🐀"}
+              valueOptio12Props={"🦆"}
+              valueOptio13Props={"🦣"}
+              changerProps={changerFormShedule}
+              idSelectProps={"animalIcon1ID"}
+            />
 
-          <p
-            className={formSheduleStyle.iconAnimals}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
-          >
-            {lessons.animalIcon5}
-          </p>
+            {/* ------------------------------------------------------  */}
 
-          <input
-            className={formSheduleStyle.inputStyle}
-            type="string"
-            maxLength="25"
-            name="lesson5"
-            placeholder="Назва предмету"
-            value={lessons.lesson5}
-            onChange={changerFormShedule}
-          />
-        </div>
-        {/* 6 */}
-        <div className={formSheduleStyle.wrapShedule}>
-          <input
-            className={formSheduleStyle.inputShedule}
-            type="number"
-            maxLength="2"
-            name="numberLesson6"
-            placeholder="№"
-            value={lessons.numberLesson6}
-            onChange={changerFormShedule}
-          />
-          <Select
-            wraperClassProps={formSheduleStyle.selectWrap}
-            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-            labelTextProps={"Істотка"}
-            selectClassProps={formSheduleStyle.selectStyle}
-            nameSelectProps={"animalIcon6"}
-            optionTextProps={"Зоопарк"}
-            optionClassProps={formSheduleStyle.optionStyle}
-            valueOptio1Props={"🦍"}
-            valueOptio2Props={"🐕"}
-            valueOptio3Props={"🐈"}
-            valueOptio4Props={"🐅"}
-            valueOptio5Props={"🐆"}
-            valueOptio6Props={"🐎"}
-            valueOptio7Props={"🦓"}
-            valueOptio8Props={"🦬"}
-            valueOptio9Props={"🐫"}
-            valueOptio10Props={"🦌"}
-            valueOptio11Props={"🐀"}
-            valueOptio12Props={"🦆"}
-            valueOptio13Props={"🦣"}
-            changerProps={changerFormShedule}
-            idSelectProps={"animalIcon6ID"}
-          />
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {lessons.animalIcon1}
+            </p>
 
-          <p
-            className={formSheduleStyle.iconAnimals}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
-          >
-            {lessons.animalIcon6}
-          </p>
+            <input
+              className={formSheduleStyle.inputStyle}
+              type="string"
+              maxLength="25"
+              name="lesson1"
+              placeholder="Назва предмету"
+              value={lessons.lesson1}
+              onChange={changerFormShedule}
+            />
+          </div>
+          {/* 2 */}
+          <div className={formSheduleStyle.wrapShedule}>
+            <input
+              className={formSheduleStyle.inputShedule}
+              type="number"
+              maxLength="2"
+              name="numberLesson2"
+              placeholder="№"
+              value={lessons.numberLesson2}
+              onChange={changerFormShedule}
+            />
 
-          <input
-            className={formSheduleStyle.inputStyle}
-            type="string"
-            maxLength="25"
-            name="lesson6"
-            placeholder="Назва предмету"
-            value={lessons.lesson6}
-            onChange={changerFormShedule}
-          />
-        </div>
-        {/* 7 */}
+            <Select
+              wraperClassProps={formSheduleStyle.selectWrap}
+              labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+              labelTextProps={"Істотка"}
+              selectClassProps={formSheduleStyle.selectStyle}
+              nameSelectProps={"animalIcon2"}
+              optionTextProps={"Зоопарк"}
+              optionClassProps={formSheduleStyle.optionStyle}
+              valueOptio1Props={"🦍"}
+              valueOptio2Props={"🐕"}
+              valueOptio3Props={"🐈"}
+              valueOptio4Props={"🐅"}
+              valueOptio5Props={"🐆"}
+              valueOptio6Props={"🐎"}
+              valueOptio7Props={"🦓"}
+              valueOptio8Props={"🦬"}
+              valueOptio9Props={"🐫"}
+              valueOptio10Props={"🦌"}
+              valueOptio11Props={"🐀"}
+              valueOptio12Props={"🦆"}
+              valueOptio13Props={"🦣"}
+              changerProps={changerFormShedule}
+              idSelectProps={"animalIcon2ID"}
+            />
 
-        <div className={formSheduleStyle.wrapShedule}>
-          <input
-            className={formSheduleStyle.inputShedule}
-            type="number"
-            maxLength="2"
-            name="numberLesson7"
-            placeholder="№"
-            value={lessons.numberLesson7}
-            onChange={changerFormShedule}
-          />
-          <Select
-            wraperClassProps={formSheduleStyle.selectWrap}
-            labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
-            labelTextProps={"Істотка"}
-            selectClassProps={formSheduleStyle.selectStyle}
-            nameSelectProps={"animalIcon7"}
-            optionTextProps={"Зоопарк"}
-            optionClassProps={formSheduleStyle.optionStyle}
-            valueOptio1Props={"🦍"}
-            valueOptio2Props={"🐕"}
-            valueOptio3Props={"🐈"}
-            valueOptio4Props={"🐅"}
-            valueOptio5Props={"🐆"}
-            valueOptio6Props={"🐎"}
-            valueOptio7Props={"🦓"}
-            valueOptio8Props={"🦬"}
-            valueOptio9Props={"🐫"}
-            valueOptio10Props={"🦌"}
-            valueOptio11Props={"🐀"}
-            valueOptio12Props={"🦆"}
-            valueOptio13Props={"🦣"}
-            changerProps={changerFormShedule}
-            idSelectProps={"animalIcon7ID"}
-          />
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {lessons.animalIcon2}
+            </p>
+            <input
+              className={formSheduleStyle.inputStyle}
+              type="string"
+              maxLength="25"
+              name="lesson2"
+              placeholder="Назва предмету"
+              value={lessons.lesson2}
+              onChange={changerFormShedule}
+            />
+          </div>
 
-          <p
-            className={formSheduleStyle.iconAnimals}
-            style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
-          >
-            {lessons.animalIcon7}
-          </p>
-          {/* 🦕 */}
-          <input
-            className={formSheduleStyle.inputStyle}
-            type="string"
-            maxLength="25"
-            name="lesson7"
-            placeholder="Назва предмету"
-                value={lessons.lesson7}
-            onChange={changerFormShedule}
-          />
-        </div>
-        {children}
+          {/* 3 */}
+          <div className={formSheduleStyle.wrapShedule}>
+            <input
+              className={formSheduleStyle.inputShedule}
+              type="number"
+              maxLength="2"
+              name="numberLesson3"
+              placeholder="№"
+              value={lessons.numberLesson3}
+              onChange={changerFormShedule}
+            />
 
-        <Button
-          nameBtn="Зберегти"
-          classNameProps={formSheduleStyle.buttonStyle}
-          idProps={"btnInFormShedule"}
-        />
-      </form>
+            <Select
+              wraperClassProps={formSheduleStyle.selectWrap}
+              labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+              labelTextProps={"Істотка"}
+              selectClassProps={formSheduleStyle.selectStyle}
+              nameSelectProps={"animalIcon3"}
+              optionTextProps={"Зоопарк"}
+              optionClassProps={formSheduleStyle.optionStyle}
+              valueOptio1Props={"🦍"}
+              valueOptio2Props={"🐕"}
+              valueOptio3Props={"🐈"}
+              valueOptio4Props={"🐅"}
+              valueOptio5Props={"🐆"}
+              valueOptio6Props={"🐎"}
+              valueOptio7Props={"🦓"}
+              valueOptio8Props={"🦬"}
+              valueOptio9Props={"🐫"}
+              valueOptio10Props={"🦌"}
+              valueOptio11Props={"🐀"}
+              valueOptio12Props={"🦆"}
+              valueOptio13Props={"🦣"}
+              changerProps={changerFormShedule}
+              idSelectProps={"animalIcon3ID"}
+            />
+
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {lessons.animalIcon3}
+            </p>
+
+            <input
+              className={formSheduleStyle.inputStyle}
+              type="string"
+              maxLength="25"
+              name="lesson3"
+              placeholder="Назва предмету"
+              value={lessons.lesson3}
+              onChange={changerFormShedule}
+            />
+          </div>
+          {/* 4 */}
+          <div className={formSheduleStyle.wrapShedule}>
+            <input
+              className={formSheduleStyle.inputShedule}
+              type="number"
+              maxLength="2"
+              name="numberLesson4"
+              placeholder="№"
+              value={lessons.numberLesson4}
+              onChange={changerFormShedule}
+            />
+            <Select
+              wraperClassProps={formSheduleStyle.selectWrap}
+              labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+              labelTextProps={"Істотка"}
+              selectClassProps={formSheduleStyle.selectStyle}
+              nameSelectProps={"animalIcon4"}
+              optionTextProps={"Зоопарк"}
+              optionClassProps={formSheduleStyle.optionStyle}
+              valueOptio1Props={"🦍"}
+              valueOptio2Props={"🐕"}
+              valueOptio3Props={"🐈"}
+              valueOptio4Props={"🐅"}
+              valueOptio5Props={"🐆"}
+              valueOptio6Props={"🐎"}
+              valueOptio7Props={"🦓"}
+              valueOptio8Props={"🦬"}
+              valueOptio9Props={"🐫"}
+              valueOptio10Props={"🦌"}
+              valueOptio11Props={"🐀"}
+              valueOptio12Props={"🦆"}
+              valueOptio13Props={"🦣"}
+              changerProps={changerFormShedule}
+              idSelectProps={"animalIcon4ID"}
+            />
+
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {lessons.animalIcon4}
+            </p>
+
+            <input
+              className={formSheduleStyle.inputStyle}
+              type="string"
+              maxLength="25"
+              name="lesson4"
+              placeholder="Назва предмету"
+              value={lessons.lesson4}
+              onChange={changerFormShedule}
+            />
+          </div>
+          {/* 5 */}
+          <div className={formSheduleStyle.wrapShedule}>
+            <input
+              className={formSheduleStyle.inputShedule}
+              type="number"
+              maxLength="2"
+              name="numberLesson5"
+              placeholder="№"
+              value={lessons.numberLesson5}
+              onChange={changerFormShedule}
+            />
+            <Select
+              wraperClassProps={formSheduleStyle.selectWrap}
+              labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+              labelTextProps={"Істотка"}
+              selectClassProps={formSheduleStyle.selectStyle}
+              nameSelectProps={"animalIcon5"}
+              optionTextProps={"Зоопарк"}
+              optionClassProps={formSheduleStyle.optionStyle}
+              valueOptio1Props={"🦍"}
+              valueOptio2Props={"🐕"}
+              valueOptio3Props={"🐈"}
+              valueOptio4Props={"🐅"}
+              valueOptio5Props={"🐆"}
+              valueOptio6Props={"🐎"}
+              valueOptio7Props={"🦓"}
+              valueOptio8Props={"🦬"}
+              valueOptio9Props={"🐫"}
+              valueOptio10Props={"🦌"}
+              valueOptio11Props={"🐀"}
+              valueOptio12Props={"🦆"}
+              valueOptio13Props={"🦣"}
+              changerProps={changerFormShedule}
+              idSelectProps={"animalIcon5ID"}
+            />
+
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {lessons.animalIcon5}
+            </p>
+
+            <input
+              className={formSheduleStyle.inputStyle}
+              type="string"
+              maxLength="25"
+              name="lesson5"
+              placeholder="Назва предмету"
+              value={lessons.lesson5}
+              onChange={changerFormShedule}
+            />
+          </div>
+          {/* 6 */}
+          <div className={formSheduleStyle.wrapShedule}>
+            <input
+              className={formSheduleStyle.inputShedule}
+              type="number"
+              maxLength="2"
+              name="numberLesson6"
+              placeholder="№"
+              value={lessons.numberLesson6}
+              onChange={changerFormShedule}
+            />
+            <Select
+              wraperClassProps={formSheduleStyle.selectWrap}
+              labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+              labelTextProps={"Істотка"}
+              selectClassProps={formSheduleStyle.selectStyle}
+              nameSelectProps={"animalIcon6"}
+              optionTextProps={"Зоопарк"}
+              optionClassProps={formSheduleStyle.optionStyle}
+              valueOptio1Props={"🦍"}
+              valueOptio2Props={"🐕"}
+              valueOptio3Props={"🐈"}
+              valueOptio4Props={"🐅"}
+              valueOptio5Props={"🐆"}
+              valueOptio6Props={"🐎"}
+              valueOptio7Props={"🦓"}
+              valueOptio8Props={"🦬"}
+              valueOptio9Props={"🐫"}
+              valueOptio10Props={"🦌"}
+              valueOptio11Props={"🐀"}
+              valueOptio12Props={"🦆"}
+              valueOptio13Props={"🦣"}
+              changerProps={changerFormShedule}
+              idSelectProps={"animalIcon6ID"}
+            />
+
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {lessons.animalIcon6}
+            </p>
+
+            <input
+              className={formSheduleStyle.inputStyle}
+              type="string"
+              maxLength="25"
+              name="lesson6"
+              placeholder="Назва предмету"
+              value={lessons.lesson6}
+              onChange={changerFormShedule}
+            />
+          </div>
+          {/* 7 */}
+
+          <div className={formSheduleStyle.wrapShedule}>
+            <input
+              className={formSheduleStyle.inputShedule}
+              type="number"
+              maxLength="2"
+              name="numberLesson7"
+              placeholder="№"
+              value={lessons.numberLesson7}
+              onChange={changerFormShedule}
+            />
+            <Select
+              wraperClassProps={formSheduleStyle.selectWrap}
+              labelClassProps={formSheduleStyle.labelSelectChoiseStyle}
+              labelTextProps={"Істотка"}
+              selectClassProps={formSheduleStyle.selectStyle}
+              nameSelectProps={"animalIcon7"}
+              optionTextProps={"Зоопарк"}
+              optionClassProps={formSheduleStyle.optionStyle}
+              valueOptio1Props={"🦍"}
+              valueOptio2Props={"🐕"}
+              valueOptio3Props={"🐈"}
+              valueOptio4Props={"🐅"}
+              valueOptio5Props={"🐆"}
+              valueOptio6Props={"🐎"}
+              valueOptio7Props={"🦓"}
+              valueOptio8Props={"🦬"}
+              valueOptio9Props={"🐫"}
+              valueOptio10Props={"🦌"}
+              valueOptio11Props={"🐀"}
+              valueOptio12Props={"🦆"}
+              valueOptio13Props={"🦣"}
+              changerProps={changerFormShedule}
+              idSelectProps={"animalIcon7ID"}
+            />
+
+            <p
+              className={formSheduleStyle.iconAnimals}
+              style={{ border: "RGB(" + r + "," + g + "," + b + ")1px solid" }}
+            >
+              {lessons.animalIcon7}
+            </p>
+            {/* 🦕 */}
+            <input
+              className={formSheduleStyle.inputStyle}
+              type="string"
+              maxLength="25"
+              name="lesson7"
+              placeholder="Назва предмету"
+              value={lessons.lesson7}
+              onChange={changerFormShedule}
+            />
+          </div>
+          {children}
+
+          <Button
+            nameBtn="Зберегти"
+            classNameProps={formSheduleStyle.buttonStyle}
+            idProps={"btnInFormShedule"}
+          />
+        </form>
+      
+   
     </>
   );
 };
